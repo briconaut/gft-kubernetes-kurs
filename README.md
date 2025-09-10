@@ -3,7 +3,7 @@
 ## 🧭 Workshop Overview
 
 - **Dauer**: 4 Stunden  
-- **Publikum**: Keine Erfahrung, aber technisches Publikum  
+- **Publikum**: Keine Erfahrung, aber technisches Publikum - primär Entwickler (auch für Business-Consultants?)
 - **Voraussetzungen**:
   - Git-Bash
   - Rancher oder Docker Desktop installiert
@@ -14,7 +14,7 @@
 
 ## 📘 Vorwissen
 
-- Docker Container-Kenntnisse
+- Container-Kenntnisse
 
 ---
 
@@ -26,7 +26,7 @@
 
 - Cluster
 - Nodes
-- Pods + Container
+- Pods + Container (-Runtime)
 - Networking
 - Namespaces
 
