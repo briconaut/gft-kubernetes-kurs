@@ -12,9 +12,15 @@
 
 ---
 
+## Installation der nötigen Software
+
+- Git-Bash
+- Rancher oder Docker Desktop installieren
+
 ## 📘 Vorwissen
 
 - Container-Kenntnisse
+- Shell-Kenntnisse
 
 ---
 
