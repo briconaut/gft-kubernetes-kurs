@@ -32,9 +32,19 @@
 
 ### 3. `kubectl` – CLI für Kubernetes
 
-- Events
+- cluster-info
+- Namespaces
 - Pods
 - Logs
+- Events
+
+#### 🧪 Übung: Erste kubectl Befehle
+
+- Kubernetes starten
+- `kubectl cluster-info`
+- `kubectl get namespaces`
+- `kubectl get nodes`
+- `kubectl get pods -n kube-system`
 
 ### 4. Deployment
 
