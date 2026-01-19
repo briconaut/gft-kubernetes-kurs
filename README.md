@@ -8,7 +8,6 @@
   - Git-Bash
   - Rancher oder Docker Desktop installiert
   - GitLab Zugang (lesend)
-  - Nexus Zugang (lesend)
 
 ---
 
@@ -35,6 +34,8 @@
 - Pods + Container (-Runtime)
 - Networking
 - Namespaces
+- Flüchtigkeit + Persistenz
+- 12 Factor Apps
 
 ### 3. `kubectl` – CLI für Kubernetes
 
@@ -64,10 +65,15 @@
 
 ### 5. Services & Kube-Proxy
 
-- NodePort
-- Ingress
-- Gateway
-- LoadBalancer
+- Kube-Proxy erklären
+
+- Labels und Selectors
+
+- Service-Typen:
+  - NodePort
+  - Ingress
+  - Gateway
+  - LoadBalancer
 
 #### 🧪 Übung: Deployment mit Service
 
@@ -91,6 +97,6 @@
 - DaemonSet
 - Init-Container
 
-### 8. CI / CD
+### 8. CI / CD mit Kubernetes
 
-### 9. Helm und Kustomize
+### 9. Deployment Templates: Helm und Kustomize
