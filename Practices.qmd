@@ -1,0 +1,121 @@
+---
+title: "GFT Kubernetes-Workshop"
+subtitle: "Practices"
+author: "Kai Gellien & Max Hütter"
+date: "2026-01-21"
+abstract: "Overview of planned practices. Used images based on [GitHub: Kubernetes in Action, 2nd Edition](https://github.com/luksa/kubernetes-in-action-2nd-edition)"
+format:
+  pdf:
+    latex_engine: xelatex
+    documentclass: scrartcl # default
+    #documentclass: scrreprt
+    #documentclass: scrbook
+    classoption: [twoside]
+    keep-tex: false
+    papersize: a4
+    toc: false
+    lof: false
+    toc-depth: 2
+    toc-title: Contents
+    number-sections: true
+    number-depth: 2
+    page-layout: full
+    geometry:
+      - top=15mm
+      - bottom=25mm
+      - left=15mm
+      - right=10mm
+      - heightrounded
+    colorlinks: true
+    include-in-header:
+      text: |
+        \usepackage{fancyhdr}
+        \pagestyle{fancy}
+        \pagenumbering{arabic}
+        \newcommand{\mytitle}{{}{{< meta title >}}{}}
+        \lhead[\thepage]{\itshape \mytitle}
+        \rhead[\itshape \mytitle]{\thepage}
+        \lfoot[\thepage]{}
+        \cfoot{(\today)}
+        \rfoot[\thepage]{}
+fontsize: 11pt
+lang: en
+numbersections: true
+---
+
+# Local K8s Cluster Setup
+
+## Docker Desktop on Win11 (4.57.0)
+
+### Activate K8s in Gui
+
+- Create Kubernetes Cluster: Kubeadm (v1.34.1); show system container (for illustration)
+
+Above creates single node cluster and puts config into `~/.kube/config`
+
+### `kubectl`
+
+Installed e.g. via `winget` or `chocolatey`
+
+```bash
+cat ~/.kube/config
+```
+
+### Environment
+
+We work inside Git Bash.
+
+You might want to activate Tab-Completion via `source <(kubectl completion bash)`.
+
+When working with multiple clusters, you can use
+
+```bash
+export KUBECONFIG=/path/to/custom/kubeconfig
+```
+
+to set the appropriate config.
+Default config is `~/.kube/config`
+
+
+# First steps with `kubectl`
+
+```bash
+kubectl cluster-info
+kubectl get nodes
+kubectl describe node docker-desktop
+kubectl get namespaces
+kubectl config set-context --current --namespace <namespace_name>
+kubectl get pods -n kube-system
+```
+
+
+# Deployment of 2 containers into cluster
+
+
+## Deploy your first application:
+
+```bash
+kubectl create deployment kiada --image=luksa/kiada:0.1
+kubectl get deployments
+kubectl describe deployment kiada
+kubectl get pods
+kubectl describe pod kiada-5c98fddf88-8nq8c
+```
+
+## Cluster access
+
+```bash
+kubectl delete pod kiada-5c98fddf88-8nq8c  # hangs about 30 seconds; how to return directly?
+kubectl get pods # you should see an new pod created (deployment guarantees one running pod)
+```
+
+
+# Deployment with Services
+
+- Replica: 2
+- NodePort (Gateway?)
+
+
+# Deployment with ConfigMap and Secret
+
+
