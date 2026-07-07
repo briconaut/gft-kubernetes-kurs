@@ -71,7 +71,7 @@ A Kubernetes cluster consists logically of two components:
 
 Source: [Kubernetes](https://kubernetes.io/docs/concepts/overview/components/)
 
-![Components of Kubernetes](components-of-kubernetes.svg){width=12cm height=6cm}
+![Components of Kubernetes](.media/components-of-kubernetes.svg){width=12cm height=6cm}
 
 
 ## Control Plane
@@ -98,7 +98,7 @@ Each node runs the container runtime (e.g., Docker or containerd) and the Kubern
 
 # Key Concepts
 
-![Kubernetes Concepts](KubernetesConcepts.svg){width=14cm height=8cm}
+![Kubernetes Concepts](.media/KubernetesConcepts.svg){width=14cm height=8cm}
 
 ## Pods + Container (-Runtime)
 
