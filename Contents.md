@@ -1,47 +1,12 @@
 ---
+revision: 1
 title: "GFT Kubernetes-Workshop"
 subtitle: "Contents"
-author: "Kai Gellien & Max Hütter"
-date: "2026-01-21"
-format:
-  pdf:
-    latex_engine: xelatex
-    documentclass: scrartcl # default
-    #documentclass: scrreprt
-    #documentclass: scrbook
-    classoption: [twoside]
-    keep-tex: false
-    papersize: a4
-    toc: true
-    lof: false
-    toc-depth: 2
-    toc-title: Contents
-    number-sections: true
-    number-depth: 2
-    page-layout: full
-    geometry:
-      - top=15mm
-      - bottom=25mm
-      - left=15mm
-      - right=10mm
-      - heightrounded
-    colorlinks: true
-    include-in-header:
-      text: |
-        \usepackage{fancyhdr}
-        \pagestyle{fancy}
-        \pagenumbering{arabic}
-        \newcommand{\mytitle}{{}{{< meta title >}}{}}
-        \lhead[\thepage]{\itshape \mytitle}
-        \rhead[\itshape \mytitle]{\thepage}
-        \lfoot[\thepage]{}
-        \cfoot{(\today)}
-        \rfoot[\thepage]{}
-  revealjs:
-    incremental: false
-fontsize: 11pt
 lang: en
 numbersections: true
+state: preliminary
+finished_sections: [ ]
+history: [ ]
 ---
 
 # What is Kubernetes and Why should I Care? 

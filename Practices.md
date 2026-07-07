@@ -1,46 +1,13 @@
 ---
+revision: 1
 title: "GFT Kubernetes-Workshop"
 subtitle: "Practices"
-author: "Kai Gellien & Max Hütter"
-date: "2026-01-21"
 abstract: "Overview of planned practices. Used images based on [GitHub: Kubernetes in Action, 2nd Edition](https://github.com/luksa/kubernetes-in-action-2nd-edition)"
-format:
-  pdf:
-    latex_engine: xelatex
-    documentclass: scrartcl # default
-    #documentclass: scrreprt
-    #documentclass: scrbook
-    classoption: [twoside]
-    keep-tex: false
-    papersize: a4
-    toc: false
-    lof: false
-    toc-depth: 2
-    toc-title: Contents
-    number-sections: true
-    number-depth: 2
-    page-layout: full
-    geometry:
-      - top=15mm
-      - bottom=25mm
-      - left=15mm
-      - right=10mm
-      - heightrounded
-    colorlinks: true
-    include-in-header:
-      text: |
-        \usepackage{fancyhdr}
-        \pagestyle{fancy}
-        \pagenumbering{arabic}
-        \newcommand{\mytitle}{{}{{< meta title >}}{}}
-        \lhead[\thepage]{\itshape \mytitle}
-        \rhead[\itshape \mytitle]{\thepage}
-        \lfoot[\thepage]{}
-        \cfoot{(\today)}
-        \rfoot[\thepage]{}
-fontsize: 11pt
 lang: en
 numbersections: true
+state: preliminary
+finished_sections: [ ]
+history: [ ]
 ---
 
 # Local K8s Cluster Setup

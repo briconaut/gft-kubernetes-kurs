@@ -1,43 +1,68 @@
+---
+revision: 1
+title: "README.md"
+abstract: "Structure and contents of the kubernetes workshop"
+lang: en
+numbersections: true
+state: preliminary
+finished_sections: [ ]
+history: [ ]
+---
+
+
 # 2025-Kubernetes-Workshop
 
 ## 🧭 Workshop Overview
 
-- **Dauer**: 4 Stunden  
-- **Publikum**: Keine Erfahrung, aber technisches Publikum - primär Entwickler (auch für Business-Consultants?)
-- **Voraussetzungen**:
-  - Git-Bash
-  - Rancher oder Docker Desktop installiert
-  - GitLab Zugang (lesend)
+- **Duration**: 4 hours  
+- **Audience**: A technical audience with litte knowledge about kubernetes - primarily developers (also for business consultants?)
+- **Prerequisites**:
+  - Git Bash
+  - Rancher or Docker Desktop installed
+  - GitLab access (read-only)
 
 ---
 
-## Installation der nötigen Software
+## Installing the required software
 
-- Git-Bash
-- Rancher oder Docker Desktop installieren
+- Git Bash
+- Install Rancher or Docker Desktop
 
-## 📘 Vorwissen
+## 📘 Prior knowledge
 
-- Container-Kenntnisse
-- Shell-Kenntnisse
+- Container/Docker knowledge
+- Shell knowledge (bash)
 
 ---
 
-## 🚀 Inhalte
+## 🚀 Contents
 
-### 1. Container Orchestrierung – Einführung & Motivation
+### 1. Container orchestration – introduction & motivation
 
-### 2. Kubernetes-Architektur
+- What are containers
+
+#### 🧪 Exercise: First docker commands
+
+- Sart/stop a container
+
+### 2. Kubernetes architecture / infrastructure
+
+#### Infrastructure
 
 - Cluster
 - Nodes
-- Pods + Container (-Runtime)
 - Networking
-- Namespaces
-- Flüchtigkeit + Persistenz
-- 12 Factor Apps
+- Data stroage
 
-### 3. `kubectl` – CLI für Kubernetes
+#### Basic concepts
+
+- Pods + container (runtime)
+- Services
+- Namespaces
+- Ports & Gateways
+- Ephemerality + persistence
+
+### 3. `kubectl` – CLI for Kubernetes
 
 - cluster-info
 - Namespaces
@@ -45,9 +70,9 @@
 - Logs
 - Events
 
-#### 🧪 Übung: Erste kubectl Befehle
+#### 🧪 Exercise: First kubectl commands
 
-- Kubernetes starten
+- Start Kubernetes
 - `kubectl cluster-info`
 - `kubectl get namespaces`
 - `kubectl get nodes`
@@ -55,48 +80,48 @@
 
 ### 4. Deployment
 
-- Deployment-Typen
+- Deployment types
 - Replicas
 
-#### 🧪 Übung: Deployment von 2 Containern im Cluster
+#### 🧪 Exercise: Deploying 2 containers in the cluster
 
-- Zugriff im Cluster
+- Access within the cluster
 - `kubectl delete pod ...`
 
-### 5. Services & Kube-Proxy
+### 5. Services & kube-proxy
 
-- Kube-Proxy erklären
+- Explain kube-proxy
 
-- Labels und Selectors
+- Labels and selectors
 
-- Service-Typen:
+- Service types:
   - NodePort
   - Ingress
   - Gateway
   - LoadBalancer
 
-#### 🧪 Übung: Deployment mit Service
+#### 🧪 Exercise: Deployment with service
 
-- Replica: 2
+- Replicas: 2
 - NodePort (Gateway?)
 
-### 6. Konfiguration
+### 6. Configuration
 
 - ConfigMaps
 - Secrets
 
-#### 🧪 Übung: Deployment mit ConfigMap und Secret
+#### 🧪 Exercise: Deployment with ConfigMap and secret
 
-### 7. Erweiterte Konzepte
+### 7. Advanced concepts
 
 - Namespaces
-- Rechte-Management
-- Service-Accounts
-- Persistenz
+- Rights management
+- Service accounts
+- Persistence
 - StatefulSet
 - DaemonSet
-- Init-Container
+- Init containers
 
-### 8. CI / CD mit Kubernetes
+### 8. CI / CD with Kubernetes
 
-### 9. Deployment Templates: Helm und Kustomize
+### 9. Deployment templates: Helm and Kustomize
