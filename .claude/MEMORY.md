@@ -1,6 +1,6 @@
 ---
-revision: 2
-path: ".claude/MEMORY.md"
+revision: 3
+path: ".claude/Memory.md"
 title: "Project Memory"
 abstract: "Cross-cutting decisions and conventions needed for consistency across tasks. Minimal by design — see CLAUDE.md > Memory Structure for scope and update rules."
 state: in progress
@@ -10,6 +10,7 @@ finished_sections: [ ]
 history:
   - "v1: seeded, empty — populated as Phase 2+ tasks make cross-cutting decisions"
   - "v2: added task 1.4 entry — how the old Contents.qmd draft's structure was reused/deviated from in Contents.md, incl. section mapping, dropped/added topics, and a missing diagram asset"
+  - "v3: fixed `path` frontmatter field (was \".claude/MEMORY.md\", wrong case, now \".claude/Memory.md\") per header-completeness check"
 ---
 
 # Project Memory

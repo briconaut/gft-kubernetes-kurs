@@ -1,3 +1,16 @@
+---
+revision: 1
+path: "kubectl.md"
+title: "kubectl Overview"
+abstract: "Cheat-sheet of common kubectl commands (get, describe, apply, create, delete, logs, exec, scale, config, rollout, cordon/drain), grouped by task."
+state: in progress
+lang: en
+numbersections: true
+finished_sections: [ ]
+history:
+  - "v1: added missing frontmatter per CLAUDE.md styleguide header-completeness check; body content unchanged"
+---
+
 # kubectl Overview (by Devstral-small)
 
 ## Basic Commands

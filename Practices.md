@@ -1,13 +1,15 @@
 ---
-revision: 1
+revision: 2
+path: "Practices.md"
 title: "GFT Kubernetes-Workshop"
 subtitle: "Practices"
 abstract: "Overview of planned practices. Used images based on [GitHub: Kubernetes in Action, 2nd Edition](https://github.com/luksa/kubernetes-in-action-2nd-edition)"
 lang: en
 numbersections: true
-state: preliminary
+state: not started
 finished_sections: [ ]
-history: [ ]
+history:
+  - "v2: added missing `path` frontmatter field and fixed invalid `state: preliminary` value (not an allowed state per CLAUDE.md styleguide) to `not started`, per header-completeness check — content itself is still the unprocessed pre-Phase-0 draft, pending Phase 4"
 ---
 
 # Local K8s Cluster Setup
