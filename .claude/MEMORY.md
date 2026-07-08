@@ -1,5 +1,5 @@
 ---
-revision: 3
+revision: 4
 path: ".claude/Memory.md"
 title: "Project Memory"
 abstract: "Cross-cutting decisions and conventions needed for consistency across tasks. Minimal by design — see CLAUDE.md > Memory Structure for scope and update rules."
@@ -11,6 +11,7 @@ history:
   - "v1: seeded, empty — populated as Phase 2+ tasks make cross-cutting decisions"
   - "v2: added task 1.4 entry — how the old Contents.qmd draft's structure was reused/deviated from in Contents.md, incl. section mapping, dropped/added topics, and a missing diagram asset"
   - "v3: fixed `path` frontmatter field (was \".claude/MEMORY.md\", wrong case, now \".claude/Memory.md\") per header-completeness check"
+  - "v4: added cross-cutting entry for the folder/lesson-file numbering convention introduced in Tasks 1.3/1.3.1 (`folder:`/`lesson:` HTML comments in Contents.md), so Phase 2 knows where to find and how to interpret it"
 ---
 
 # Project Memory
@@ -29,3 +30,11 @@ Entries are added here only when a decision or convention from one task is neede
 - **Entirely new topics, not present in the draft at all**: "How is Kubernetes different from plain Docker?" (bridges the assumed Docker prerequisite explicitly), "What is GitOps?" (draft's "# CI / CD" heading was empty), the Docker Desktop `hostpath` StorageClass bullet, and the `kubectl apply/create/delete` bullet (draft's kubectl list only had read-only verbs: cluster-info/namespaces/pods/logs/events).
 - **Dropped from the draft**: all inline explanatory prose and links (e.g. the Ingress-vs-Gateway-API blog link under the old Services section) — `Contents.md` keeps only the original 4 links under "Further Reading / Links". Such supplementary links can be reintroduced in Phase 2 lesson content if useful there.
 - **Diagram assets**: the draft referenced two SVGs. Only `.media/components-of-kubernetes.svg` still exists in the repo; `KubernetesConcepts.svg` (used for the old Pods/Namespaces section) is missing. Phase 2 either needs a replacement diagram for `03-pods-and-namespaces` or should proceed without one.
+
+## Folder & lesson-file numbering convention (Tasks 1.3, 1.3.1)
+
+- Every `#` top-level section in `Contents.md` carries a `<!-- folder: <nr>-<section> -->` HTML comment directly under the heading — the authoritative folder name for Phase 2 (`Contents/<nr>-<section>/`). Global sequence `01`–`13`.
+- Every `##` topic heading, except `## Practice: ...`, carries a `<!-- lesson: Contents/<nr>-<section>/<nr>-<lesson>.md -->` HTML comment with the full stable path — the authoritative file name for Phase 2's lesson stub. Numbering is a **local, per-section** counter restarting at `01` (not a running count across the whole document).
+- `## Practice: ...` headings are intentionally excluded from lesson numbering — those get their own `<nr>.<subnr>-<practice/solution>.md` naming in Phase 6, derived from `Practices.md`, not from these comments.
+- "Further Reading / Links" (the final `#` section) has neither a `folder:` nor a `lesson:` comment — it's reference-only, not a lesson module, and gets no Phase 2 folder at all.
+- Both comment kinds are HTML comments (invisible in rendered Markdown), so they don't violate the Phase 1 "headings + bullets only, no prose" rule. Phase 2 should grep `Contents.md` for `folder:`/`lesson:` to get exact paths rather than re-deriving slugs from heading text.
