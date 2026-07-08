@@ -35,7 +35,7 @@ history:
 
 ## Automated scheduling & placement
 
-In a multi-host Kubernetes cluster, Kubernetes uses several distribution strategies to place your container. These can be influenced by node selectors and affinity rules (briefly covered later), so containers can be placed on hosts that offer specific features. With plain Docker, you pick the host yourself — you run `docker run` on a specific machine, or `docker compose up` on the one machine Compose knows about. In a Kubernetes cluster, you instead describe what you want to run and how much CPU/memory it needs, and the **scheduler** picks a suitable node for it automatically, based on which nodes currently have enough free capacity.
+In a multi-host Kubernetes cluster, Kubernetes uses several scheduling strategies to place your container. These can be influenced by node selectors and affinity rules (briefly covered later), so containers can be placed on hosts that offer specific features. With plain Docker, you pick the host yourself — you run `docker run` on a specific machine, or `docker compose up` on the one machine Compose knows about. In a Kubernetes cluster, you instead describe what you want to run and how much CPU/memory it needs, and the **scheduler** picks a suitable node for it automatically, based on which nodes currently have enough free capacity.
 
 In case a node fails or a new one joins the cluster, that placement decision is made again automatically.
 
