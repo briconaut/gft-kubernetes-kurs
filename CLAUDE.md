@@ -1,5 +1,5 @@
 ---
-revision: 10
+revision: 11
 path: "CLAUDE.md"
 title: "CLAUDE.md"
 abstract: "Guidance for the Claude Code agent that builds the GFT Kubernetes Workshop content and exercises in this repository."
@@ -19,6 +19,7 @@ history:
   - "v8: replaced the Eckpunkte/verbose-fill model with a per-file workflow: Phase 1-2 fully process Contents.md (topic list, then folders/lesson files/content/links), Phase 3 plans Phase 4, Phase 4-6 do the analogous work for Practices.md. Dropped the Part 1/Part 2 split from all automated phases (kept only as background info, finalized manually by the workshop author after Phase 6). README.md is out of scope for phases 0-6. Exercise/solution file naming changed to <nr>.<subnr>-<practice>.md / <nr>.<subnr>-<solution>.md."
   - "v9: added Follow-up Refinement Subtasks convention to Task Definition — records content/formatting follow-up prompts issued after a task's completion as <phase>.<sequence>.<subsequence> subtasks, consolidating related small prompts and excluding tooling/process prompts."
   - "v10: Added 'path' to the header of md-files."
+  - "v11: Follow-up Refinement Subtasks are now scoped to changes executed via the `/improve` skill (`.claude/skills/improve/`); ad-hoc follow-up prompts outside the skill are still carried out but no longer logged as subtasks."
 ---
 
 # CLAUDE.md
@@ -148,11 +149,11 @@ One task = one file or one clearly bounded edit. Avoid tasks like "write Content
 
 ### Follow-up Refinement Subtasks
 
-A task in `[X]` state can still receive follow-up refinement in the same session — e.g. the user asks Claude Code for improvement suggestions on the output of a just-completed task, and the resulting changes are applied on the spot. This refinement work is recorded as a subtask numbered `<phase>.<sequence>.<subsequence>` (e.g. `1.1.1`, `1.1.2` for two follow-up prompts on task `1.1`).
+A task in `[X]` state can still receive follow-up refinement in the same session, via the `/improve <prompt>` skill (`.claude/skills/improve/SKILL.md`). The skill drafts a plan against the reference task's output, gets it reviewed, and — once approved as drafted or after the user's own manual edits — applies the change directly. **Only refinements executed through `/improve` are recorded as Follow-up Refinement Subtasks.** Ad-hoc follow-up prompts issued outside the skill are still carried out as requested, but are not logged as subtasks. This refinement work is recorded as a subtask numbered `<phase>.<sequence>.<subsequence>` (e.g. `1.1.1`, `1.1.2` for two `/improve` runs on task `1.1`).
 
 Rules:
-- Only prompts concerning the **content or formatting of the workshop material** are recorded (e.g. "improve wording", "restructure this section", "add a missing bullet point"). Prompts about tooling/process (e.g. `git commit`, environment setup, unrelated questions) are **not** recorded.
-- Several small, closely related follow-up prompts are consolidated into a **single** subtask entry summarizing the resulting change — not one subtask per literal prompt.
+- Only prompts run through `/improve` **and** concerning the **content or formatting of the workshop material** are recorded (e.g. "improve wording", "restructure this section", "add a missing bullet point"). Prompts about tooling/process (e.g. `git commit`, environment setup, unrelated questions) are **not** recorded, even if run through `/improve`.
+- Several small, closely related `/improve` prompts are consolidated into a **single** subtask entry summarizing the resulting change — not one subtask per literal prompt.
 - Subtasks document work already completed, so they are logged directly as `[X]` (no intermediate `[ ]`/`[~]` state).
 - Subtasks are nested directly under their parent task in `.claude/TASKS.md`, e.g.:
 
