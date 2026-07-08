@@ -1,5 +1,5 @@
 ---
-revision: 6
+revision: 7
 path: "Contents/01-introduction/01-container-orchestration.md"
 title: "What is Kubernetes and Why Should I Care? / What is container orchestration?"
 abstract: "Lesson skeleton for this topic; explanatory prose pending Phase 4."
@@ -14,6 +14,7 @@ history:
   - "v4: reviewed the manual edit via /review — fixed 'Kubernetes' capitalization and 'distribution strategies' wording, corrected the labels/selectors reference to node selectors/affinity, and added paragraph breaks between the three sentences; kept the Docker Swarm mention as accepted by the user"
   - "v5: added prose for '## Desired-state reconciliation' per Task 4.2"
   - "v6: reviewed the manual edit to '## Desired-state reconciliation' via /review — removed the redundant second sentence of the control-loop paragraph, which restated the first sentence and preempted the upcoming 'Self-healing' bullet's content; kept the new 'declarative approach' opening sentence"
+  - "v7: added prose for '## Self-healing / auto-restart of failed containers' per Task 4.3"
 ---
 
 # What is Kubernetes and Why Should I Care? / What is container orchestration?
@@ -46,7 +47,9 @@ This is different from a plain `docker run` or `docker compose up`, which execut
 
 ## Self-healing / auto-restart of failed containers
 
-_Content pending (Phase 4)._
+If a container crashes, or the node it runs on becomes unreachable, Kubernetes notices and replaces it automatically — the same reconciliation loop from the previous section keeps doing its job.
+
+With plain Docker, a crashed container only comes back if you explicitly configured a restart policy (--restart=always), and even then only on the same host. Kubernetes continuously enforces the desired state cluster-wide by default, including rescheduling onto a different node if the original one fails.
 
 ## Horizontal & vertical scaling
 
