@@ -1,5 +1,5 @@
 ---
-revision: 8
+revision: 9
 path: ".claude/TASKS.md"
 title: "Task Backlog"
 abstract: "Single, cumulative task list for all workshop phases (0-6), grouped by phase. Status model: [ ] Open, [~] In Progress, [R] Needs Rework, [B] Blocked, [X] Done."
@@ -16,6 +16,7 @@ history:
   - "v6: replaced with per-file workflow per CLAUDE.md v8 — Phase 1-2 fully process Contents.md, Phase 4/6 do the analogous work for Practices.md (planned in Phase 3/5). Dropped Part 1/Part 2 split tasks (now manual, out of scope)."
   - "v7: adopted Follow-up Refinement Subtasks convention (<phase>.<sequence>.<subsequence>) per CLAUDE.md v9 Task Definition update."
   - "v8: retroactively added Follow-up Refinement Subtasks 1.2.1 and 1.2.2 (bullet/question-fit review and audience-completeness review) for Task 1.2, per CLAUDE.md v9 convention"
+  - "v9: retroactively added Follow-up Refinement Subtask 1.1.1 (expanded subtopic bullet lists to at least 6 points, commit 0e21a8d) for Task 1.1, per CLAUDE.md v9 convention"
 ---
 
 # Task Backlog
@@ -31,6 +32,7 @@ Status model, task-selection algorithm and the Follow-up Refinement Subtasks con
 ## Phase 1 — Execution (Claude Code agent, this repo) — Contents.md topic list
 
 - 1.1 [X] Review the existing Contents.md draft (inspiration only, not binding) and produce a definitive list of topics to cover, organized into logical sections — headings + bullet points only, no explanatory prose (file: Contents.md)
+  - 1.1.1 [X] Expanded every subtopic's bullet list to at least 6 points (commit 0e21a8d)
 - 1.2 [X] Phrase each topic as a concrete, answerable question in the audience's terms (e.g. "What is a container?", "What is a Node?", "What is a Pod?", "What is a Service?") rather than abstract chapter titles (file: Contents.md)
   - 1.2.1 [X] Verified bullets answer their subheading's question; tightened "What components run on a worker node?" to name components rather than responsibilities
   - 1.2.2 [X] Verified bullet completeness for the intro audience; added Pod IP address, `kubectl apply/create/delete`, Docker Desktop `hostpath` StorageClass, and GitOps tool-example bullets, and replaced a redundant Docker-comparison bullet
