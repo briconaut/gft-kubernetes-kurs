@@ -1,8 +1,8 @@
 ---
-revision: 13
+revision: 15
 path: ".claude/TASKS.md"
 title: "Task Backlog"
-abstract: "Single, cumulative task list for all workshop phases (0-6), grouped by phase. Status model: [ ] Open, [~] In Progress, [R] Needs Rework, [B] Blocked, [X] Done."
+abstract: "Single, cumulative task list for all workshop phases (0-8), grouped by phase. Status model: [ ] Open, [~] In Progress, [R] Needs Rework, [B] Blocked, [X] Done."
 state: in progress
 lang: en
 numbersections: false
@@ -21,6 +21,8 @@ history:
   - "v11: completed task 1.3 — assigned <nr>-<section> folder slugs (01-introduction .. 13-service-mesh) to all top-level sections in Contents.md; excluded 'Further Reading / Links' (not a lesson module)"
   - "v12: completed task 1.4 — recorded how the old Contents.qmd draft's structure was reused/deviated from in .claude/Memory.md, closing out Phase 1"
   - "v13: added Follow-up Refinement Subtask 1.3.1 (per-lesson `<!-- lesson: ... -->` path comments in Contents.md, via /improve) for Task 1.3"
+  - "v14: reworded task 2.1/2.2 to reference the folder:/lesson: HTML comments as the binding path source (CLAUDE.md v12); reworded task 2.3 to reference the new Styleguide → Lesson File Body Format (CLAUDE.md v13) instead of the vague 'fill in actual lesson content' phrasing"
+  - "v15: renumbered per CLAUDE.md v14 (9-phase model, 0–8). Phase 2 narrowed to skeleton creation only (2.1–2.3: folders, lesson-file skeletons with placeholders, Contents.md links — content-fill removed). Added new Phase 3 planning placeholders (3.1–3.2, planning Phase 4 content-fill tasks) and new Phase 4 execution placeholder (Contents.md lesson content). Former Phase 3 planning tasks → Phase 5 (5.1–5.2). Former Phase 4 Practices.md topic-list placeholder → Phase 6. Former Phase 5 planning tasks → Phase 7 (7.1–7.2). Former Phase 6 exercise-content placeholder → Phase 8."
 ---
 
 # Task Backlog
@@ -42,30 +44,38 @@ Status model, task-selection algorithm and the Follow-up Refinement Subtasks con
   - 1.2.2 [X] Verified bullet completeness for the intro audience; added Pod IP address, `kubectl apply/create/delete`, Docker Desktop `hostpath` StorageClass, and GitOps tool-example bullets, and replaced a redundant Docker-comparison bullet
   - 1.2.3 [X] Added "Resource requests & limits (brief mention)" bullet under "What is container orchestration?" (kept as an addition, not a replacement, to avoid colliding with the dedicated Configuration Management section)
 - 1.3 [X] Assign a stable `<nr>-<section>` folder slug to each top-level section, to be used as the folder name in Phase 2 (file: Contents.md)
-  - 1.3.1 [X] Added a stable full-path `<!-- lesson: Contents/<nr>-<section>/<nr>-<lesson>.md -->` comment under each `##` topic heading (per-section local numbering), analogous to the section-level `folder:` comments; `## Practice: ...` headings excluded (Phase 6 scheme)
+  - 1.3.1 [X] Added a stable full-path `<!-- lesson: Contents/<nr>-<section>/<nr>-<lesson>.md -->` comment under each `##` topic heading (per-section local numbering), analogous to the section-level `folder:` comments; `## Practice: ...` headings excluded (Phase 8 scheme)
 - 1.4 [X] Note in `.claude/Memory.md` how the old draft's structure was reused or deviated from, so Phase 2 stays consistent (file: .claude/Memory.md)
 
-## Phase 2 — Execution (Claude Code agent, this repo) — Contents.md lesson content
+## Phase 2 — Execution (Claude Code agent, this repo) — Contents.md structure (folders + lesson-file skeletons)
 
-- 2.1 [ ] For each top-level section from Contents.md, create the folder `Contents/<nr>-<section>/` if it doesn't exist yet (file: Contents/<nr>-<section>/)
-- 2.2 [ ] For each topic/question within a section, create a dummy `<nr>-<lesson>.md` stub file with correct frontmatter and a one-line placeholder (file: Contents/<nr>-<section>/<nr>-<lesson>.md)
-- 2.3 [ ] Fill in the actual lesson content for each `<nr>-<lesson>.md` stub, module by module, following the Language/Audience conventions and Styleguide (file: Contents/<nr>-<section>/<nr>-<lesson>.md)
-- 2.4 [ ] Update Contents.md: replace each topic heading with a link to its corresponding `<nr>-<lesson>.md` file (file: Contents.md)
+- 2.1 [ ] Create the 13 folders `Contents/<nr>-<section>/` named by the `<!-- folder: ... -->` comments in Contents.md, if they don't exist yet (file: Contents/<nr>-<section>/)
+- 2.2 [ ] For every `<!-- lesson: Contents/<nr>-<section>/<local-nr>-<lesson>.md -->` comment in Contents.md, create the lesson file at exactly that path with correct frontmatter (`state: not started`) and the skeleton body per CLAUDE.md → Styleguide → Lesson File Body Format (H1, linked `## Overview`, one empty `##` heading per bullet with a `_Content pending (Phase 4)._` placeholder) — no prose yet. Use the path from the comment verbatim (file: Contents/<nr>-<section>/<local-nr>-<lesson>.md)
+- 2.3 [ ] Update Contents.md: turn each `##` topic heading into a Markdown link to its `lesson:` file, keeping the underlying `<!-- lesson: ... -->` comment intact; leave `## Practice: ...` headings untouched (file: Contents.md)
 
 ## Phase 3 — Planning (done in Claude Project chat)
 
-- 3.1 [ ] Review Phase 1/2 output (Contents.md + lesson files); update CLAUDE.md if needed
-- 3.2 [ ] Add detailed Phase 4 tasks (3.x → 4.x) to this file, analogous to Phase 1's tasks but for Practices.md
+- 3.1 [ ] Review Phase 1/2 output (Contents.md + lesson-file skeletons); update CLAUDE.md if needed
+- 3.2 [ ] Add detailed Phase 4 tasks (3.x → 4.x) to this file — one task per lesson file (or grouped per module) to replace the `_Content pending (Phase 4)._` placeholders with actual prose
 
-## Phase 4 — Execution (Claude Code agent, this repo) — Practices.md topic list
+## Phase 4 — Execution (Claude Code agent, this repo) — Contents.md lesson content
 
-_Tasks added during Phase 3 planning, once Contents.md and the lesson content from Phase 1/2 are final._
+_Tasks added during Phase 3 planning, once the Contents.md skeleton structure from Phase 1/2 is final._
 
 ## Phase 5 — Planning (done in Claude Project chat)
 
-- 5.1 [ ] Review Phase 4 output (Practices.md); update CLAUDE.md if needed
-- 5.2 [ ] Add detailed Phase 6 tasks (5.x → 6.x) to this file, analogous to Phase 2's tasks but for exercise/solution files
+- 5.1 [ ] Review Phase 1/2/4 output (Contents.md + finished lesson content); update CLAUDE.md if needed
+- 5.2 [ ] Add detailed Phase 6 tasks (5.x → 6.x) to this file, analogous to Phase 1's tasks but for Practices.md
 
-## Phase 6 — Execution (Claude Code agent, this repo) — Practices.md exercise content
+## Phase 6 — Execution (Claude Code agent, this repo) — Practices.md topic list
 
-_Tasks added during Phase 5 planning, once Practices.md from Phase 4 is final._
+_Tasks added during Phase 5 planning, once Contents.md and its lesson content from Phase 1/2/4 are final._
+
+## Phase 7 — Planning (done in Claude Project chat)
+
+- 7.1 [ ] Review Phase 6 output (Practices.md); update CLAUDE.md if needed
+- 7.2 [ ] Add detailed Phase 8 tasks (7.x → 8.x) to this file, analogous to Phase 2's tasks but for exercise/solution files
+
+## Phase 8 — Execution (Claude Code agent, this repo) — Practices.md exercise content
+
+_Tasks added during Phase 7 planning, once Practices.md from Phase 6 is final._
