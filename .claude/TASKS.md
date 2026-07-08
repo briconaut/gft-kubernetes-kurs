@@ -1,5 +1,5 @@
 ---
-revision: 29
+revision: 30
 path: ".claude/TASKS.md"
 title: "Task Backlog"
 abstract: "Single, cumulative task list for all workshop phases (0-8), grouped by phase. Status model: [ ] Open, [~] In Progress, [R] Needs Rework, [B] Blocked, [X] Done."
@@ -38,6 +38,7 @@ history:
   - "v28: completed task 4.5 — added prose for '## Rolling updates without downtime' in Contents/01-introduction/01-container-orchestration.md"
   - "v29: completed task 4.6 — added prose for '## Declarative configuration via manifests' in Contents/01-introduction/01-container-orchestration.md"
   - "v30: completed task 4.7 — added prose for '## Resource requests & limits (brief mention)' in Contents/01-introduction/01-container-orchestration.md; all 7 bullets now filled, file state advanced to 'in progress'"
+  - "v31: completed task 4.8 — reviewed Contents/01-introduction/01-container-orchestration.md; no [R] rework recommended for 4.1-4.7, closing out this lesson file"
 ---
 
 # Task Backlog
@@ -96,7 +97,8 @@ One task per `## <bullet>` subheading (replaces its `_Content pending (Phase 4).
 - 4.5 [X] Write prose for `## Rolling updates without downtime` in Contents/01-introduction/01-container-orchestration.md (file: Contents/01-introduction/01-container-orchestration.md)
 - 4.6 [X] Write prose for `## Declarative configuration via manifests` in Contents/01-introduction/01-container-orchestration.md (file: Contents/01-introduction/01-container-orchestration.md)
 - 4.7 [X] Write prose for `## Resource requests & limits (brief mention)` in Contents/01-introduction/01-container-orchestration.md (file: Contents/01-introduction/01-container-orchestration.md)
-- 4.8 [ ] Review Contents/01-introduction/01-container-orchestration.md: subheading consistency/style; fit of each subheading and the whole file for the workshop (scope/audience/non-goals per CLAUDE.md) and for its topic "What is container orchestration?" (file: Contents/01-introduction/01-container-orchestration.md)
+- 4.8 [X] Review Contents/01-introduction/01-container-orchestration.md: subheading consistency/style; fit of each subheading and the whole file for the workshop (scope/audience/non-goals per CLAUDE.md) and for its topic "What is container orchestration?" (file: Contents/01-introduction/01-container-orchestration.md)
+  - No `[R]` rework recommended for 4.1–4.7. Consistent style/cross-references across all 7 subheadings; fits scope/audience/non-goals and the parent topic. Noted (not flagged as new): the Docker Swarm aside in 4.1 is a previously user-accepted, `Contents.md`-external mention; "distribution strategies" is non-standard terminology but too minor for rework.
 
 **Contents/01-introduction/02-kubernetes-vs-docker.md** — "How is Kubernetes different from plain Docker?"
 
