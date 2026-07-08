@@ -1,5 +1,5 @@
 ---
-revision: 7
+revision: 8
 path: "Contents/01-introduction/01-container-orchestration.md"
 title: "What is Kubernetes and Why Should I Care? / What is container orchestration?"
 abstract: "Lesson skeleton for this topic; explanatory prose pending Phase 4."
@@ -15,6 +15,7 @@ history:
   - "v5: added prose for '## Desired-state reconciliation' per Task 4.2"
   - "v6: reviewed the manual edit to '## Desired-state reconciliation' via /review — removed the redundant second sentence of the control-loop paragraph, which restated the first sentence and preempted the upcoming 'Self-healing' bullet's content; kept the new 'declarative approach' opening sentence"
   - "v7: added prose for '## Self-healing / auto-restart of failed containers' per Task 4.3"
+  - "v8: added prose for '## Horizontal & vertical scaling' per Task 4.4"
 ---
 
 # What is Kubernetes and Why Should I Care? / What is container orchestration?
@@ -53,7 +54,9 @@ With plain Docker, a crashed container only comes back if you explicitly configu
 
 ## Horizontal & vertical scaling
 
-_Content pending (Phase 4)._
+Kubernetes can adjust capacity in two ways: **horizontally**, by running more (or fewer) copies of the same container, and **vertically**, by giving each container more or less CPU/memory. Horizontal scaling is the more common approach in Kubernetes and is covered in more depth later.
+
+With plain Docker, scaling out means manually starting more containers yourself. Kubernetes instead treats the replica count as part of the same declarative desired state described above — you change one number, and the reconciliation loop does the rest.
 
 ## Rolling updates without downtime
 

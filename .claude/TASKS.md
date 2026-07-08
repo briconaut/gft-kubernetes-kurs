@@ -1,5 +1,5 @@
 ---
-revision: 25
+revision: 26
 path: ".claude/TASKS.md"
 title: "Task Backlog"
 abstract: "Single, cumulative task list for all workshop phases (0-8), grouped by phase. Status model: [ ] Open, [~] In Progress, [R] Needs Rework, [B] Blocked, [X] Done."
@@ -34,6 +34,7 @@ history:
   - "v24: completed task 4.1 — added prose for '## Automated scheduling & placement' in Contents/01-introduction/01-container-orchestration.md; Phase 4 underway"
   - "v25: completed task 4.2 — added prose for '## Desired-state reconciliation' in Contents/01-introduction/01-container-orchestration.md"
   - "v26: completed task 4.3 — added prose for '## Self-healing / auto-restart of failed containers' in Contents/01-introduction/01-container-orchestration.md"
+  - "v27: completed task 4.4 — added prose for '## Horizontal & vertical scaling' in Contents/01-introduction/01-container-orchestration.md"
 ---
 
 # Task Backlog
@@ -88,7 +89,7 @@ One task per `## <bullet>` subheading (replaces its `_Content pending (Phase 4).
 - 4.1 [X] Write prose for `## Automated scheduling & placement` in Contents/01-introduction/01-container-orchestration.md (file: Contents/01-introduction/01-container-orchestration.md)
 - 4.2 [X] Write prose for `## Desired-state reconciliation` in Contents/01-introduction/01-container-orchestration.md (file: Contents/01-introduction/01-container-orchestration.md)
 - 4.3 [X] Write prose for `## Self-healing / auto-restart of failed containers` in Contents/01-introduction/01-container-orchestration.md (file: Contents/01-introduction/01-container-orchestration.md)
-- 4.4 [ ] Write prose for `## Horizontal & vertical scaling` in Contents/01-introduction/01-container-orchestration.md (file: Contents/01-introduction/01-container-orchestration.md)
+- 4.4 [X] Write prose for `## Horizontal & vertical scaling` in Contents/01-introduction/01-container-orchestration.md (file: Contents/01-introduction/01-container-orchestration.md)
 - 4.5 [ ] Write prose for `## Rolling updates without downtime` in Contents/01-introduction/01-container-orchestration.md (file: Contents/01-introduction/01-container-orchestration.md)
 - 4.6 [ ] Write prose for `## Declarative configuration via manifests` in Contents/01-introduction/01-container-orchestration.md (file: Contents/01-introduction/01-container-orchestration.md)
 - 4.7 [ ] Write prose for `## Resource requests & limits (brief mention)` in Contents/01-introduction/01-container-orchestration.md (file: Contents/01-introduction/01-container-orchestration.md)
