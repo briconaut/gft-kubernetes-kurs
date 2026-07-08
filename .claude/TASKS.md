@@ -1,5 +1,5 @@
 ---
-revision: 23
+revision: 24
 path: ".claude/TASKS.md"
 title: "Task Backlog"
 abstract: "Single, cumulative task list for all workshop phases (0-8), grouped by phase. Status model: [ ] Open, [~] In Progress, [R] Needs Rework, [B] Blocked, [X] Done."
@@ -32,6 +32,7 @@ history:
   - "v22: completed task 3.1 (executed by Claude Code per user instruction) — reviewed Phase 1/2 output, found no scope/content issues, and fixed one spec/reality drift in .claude/STYLE.md (bullet-anchor-link convention from 2.3.1 was undocumented)"
   - "v23: completed task 3.2 (executed by Claude Code per user instruction) — generated 229 Phase 4 tasks (4.1-4.229): one per `## <bullet>` subheading across all 32 lesson files (197 tasks) plus one review task per file (32 tasks), grouped by file in Contents.md/folder order"
   - "v24: completed task 4.1 — added prose for '## Automated scheduling & placement' in Contents/01-introduction/01-container-orchestration.md; Phase 4 underway"
+  - "v25: completed task 4.2 — added prose for '## Desired-state reconciliation' in Contents/01-introduction/01-container-orchestration.md"
 ---
 
 # Task Backlog
@@ -84,7 +85,7 @@ One task per `## <bullet>` subheading (replaces its `_Content pending (Phase 4).
 **Contents/01-introduction/01-container-orchestration.md** — "What is container orchestration?"
 
 - 4.1 [X] Write prose for `## Automated scheduling & placement` in Contents/01-introduction/01-container-orchestration.md (file: Contents/01-introduction/01-container-orchestration.md)
-- 4.2 [ ] Write prose for `## Desired-state reconciliation` in Contents/01-introduction/01-container-orchestration.md (file: Contents/01-introduction/01-container-orchestration.md)
+- 4.2 [X] Write prose for `## Desired-state reconciliation` in Contents/01-introduction/01-container-orchestration.md (file: Contents/01-introduction/01-container-orchestration.md)
 - 4.3 [ ] Write prose for `## Self-healing / auto-restart of failed containers` in Contents/01-introduction/01-container-orchestration.md (file: Contents/01-introduction/01-container-orchestration.md)
 - 4.4 [ ] Write prose for `## Horizontal & vertical scaling` in Contents/01-introduction/01-container-orchestration.md (file: Contents/01-introduction/01-container-orchestration.md)
 - 4.5 [ ] Write prose for `## Rolling updates without downtime` in Contents/01-introduction/01-container-orchestration.md (file: Contents/01-introduction/01-container-orchestration.md)

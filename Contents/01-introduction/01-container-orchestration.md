@@ -1,5 +1,5 @@
 ---
-revision: 4
+revision: 6
 path: "Contents/01-introduction/01-container-orchestration.md"
 title: "What is Kubernetes and Why Should I Care? / What is container orchestration?"
 abstract: "Lesson skeleton for this topic; explanatory prose pending Phase 4."
@@ -12,6 +12,8 @@ history:
   - "v2: added prose for '## Automated scheduling & placement' per Task 4.1"
   - "v3: manually improved 4.1"
   - "v4: reviewed the manual edit via /review — fixed 'Kubernetes' capitalization and 'distribution strategies' wording, corrected the labels/selectors reference to node selectors/affinity, and added paragraph breaks between the three sentences; kept the Docker Swarm mention as accepted by the user"
+  - "v5: added prose for '## Desired-state reconciliation' per Task 4.2"
+  - "v6: reviewed the manual edit to '## Desired-state reconciliation' via /review — removed the redundant second sentence of the control-loop paragraph, which restated the first sentence and preempted the upcoming 'Self-healing' bullet's content; kept the new 'declarative approach' opening sentence"
 ---
 
 # What is Kubernetes and Why Should I Care? / What is container orchestration?
@@ -36,7 +38,11 @@ Docker swarm offers a similar feature, although greatly reduced in scope.
 
 ## Desired-state reconciliation
 
-_Content pending (Phase 4)._
+Kubernetes allows a declarative approach to defining its state. You tell Kubernetes the state you want — for example, "3 replicas of this container should be running" — instead of the individual steps to get there.
+
+A background control loop continuously compares this desired state against the cluster's actual state and implements the necessary changes.
+
+This is different from a plain `docker run` or `docker compose up`, which execute once and then stop watching. If a container dies afterwards, nothing brings it back automatically — you'd have to notice and restart it yourself.
 
 ## Self-healing / auto-restart of failed containers
 
