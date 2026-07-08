@@ -1,5 +1,5 @@
 ---
-revision: 15
+revision: 16
 path: ".claude/TASKS.md"
 title: "Task Backlog"
 abstract: "Single, cumulative task list for all workshop phases (0-8), grouped by phase. Status model: [ ] Open, [~] In Progress, [R] Needs Rework, [B] Blocked, [X] Done."
@@ -23,11 +23,12 @@ history:
   - "v13: added Follow-up Refinement Subtask 1.3.1 (per-lesson `<!-- lesson: ... -->` path comments in Contents.md, via /improve) for Task 1.3"
   - "v14: reworded task 2.1/2.2 to reference the folder:/lesson: HTML comments as the binding path source (CLAUDE.md v12); reworded task 2.3 to reference the new Styleguide → Lesson File Body Format (CLAUDE.md v13) instead of the vague 'fill in actual lesson content' phrasing"
   - "v15: renumbered per CLAUDE.md v14 (9-phase model, 0–8). Phase 2 narrowed to skeleton creation only (2.1–2.3: folders, lesson-file skeletons with placeholders, Contents.md links — content-fill removed). Added new Phase 3 planning placeholders (3.1–3.2, planning Phase 4 content-fill tasks) and new Phase 4 execution placeholder (Contents.md lesson content). Former Phase 3 planning tasks → Phase 5 (5.1–5.2). Former Phase 4 Practices.md topic-list placeholder → Phase 6. Former Phase 5 planning tasks → Phase 7 (7.1–7.2). Former Phase 6 exercise-content placeholder → Phase 8."
+  - "v16: updated tasks 2.2, 2.3, and 3.2 to reference the new `.claude/STYLE.md` (CLAUDE.md v15) instead of the now-removed CLAUDE.md → Styleguide → Lesson File Body Format section."
 ---
 
 # Task Backlog
 
-Status model, task-selection algorithm and the Follow-up Refinement Subtasks convention are defined in `CLAUDE.md` → Styleguide → Task Definition. Numbering is `<phase>.<sequence>`, with optional follow-up-refinement subtasks `<phase>.<sequence>.<subsequence>`.
+Status model, task-selection algorithm and the Follow-up Refinement Subtasks convention are defined in `CLAUDE.md` → Styleguide → Task Definition. File-format rules referenced below live in `.claude/STYLE.md`. Numbering is `<phase>.<sequence>`, with optional follow-up-refinement subtasks `<phase>.<sequence>.<subsequence>`.
 
 ## Phase 0 — Planning (done in Claude Project chat)
 
@@ -50,13 +51,13 @@ Status model, task-selection algorithm and the Follow-up Refinement Subtasks con
 ## Phase 2 — Execution (Claude Code agent, this repo) — Contents.md structure (folders + lesson-file skeletons)
 
 - 2.1 [ ] Create the 13 folders `Contents/<nr>-<section>/` named by the `<!-- folder: ... -->` comments in Contents.md, if they don't exist yet (file: Contents/<nr>-<section>/)
-- 2.2 [ ] For every `<!-- lesson: Contents/<nr>-<section>/<local-nr>-<lesson>.md -->` comment in Contents.md, create the lesson file at exactly that path with correct frontmatter (`state: not started`) and the skeleton body per CLAUDE.md → Styleguide → Lesson File Body Format (H1, linked `## Overview`, one empty `##` heading per bullet with a `_Content pending (Phase 4)._` placeholder) — no prose yet. Use the path from the comment verbatim (file: Contents/<nr>-<section>/<local-nr>-<lesson>.md)
-- 2.3 [ ] Update Contents.md: turn each `##` topic heading into a Markdown link to its `lesson:` file, keeping the underlying `<!-- lesson: ... -->` comment intact; leave `## Practice: ...` headings untouched (file: Contents.md)
+- 2.2 [ ] For every `<!-- lesson: Contents/<nr>-<section>/<local-nr>-<lesson>.md -->` comment in Contents.md, create the lesson file at exactly that path with correct frontmatter (`state: not started`) and the skeleton body per `.claude/STYLE.md` → Lesson File Format (H1, linked `## Overview`, one empty `##` heading per bullet with a `_Content pending (Phase 4)._` placeholder) — no prose yet. Use the path from the comment verbatim (file: Contents/<nr>-<section>/<local-nr>-<lesson>.md)
+- 2.3 [ ] Update Contents.md: turn each `##` topic heading into a Markdown link to its `lesson:` file (link format per `.claude/STYLE.md` → Format of Contents.md), keeping the underlying `<!-- lesson: ... -->` comment intact; leave `## Practice: ...` headings untouched (file: Contents.md)
 
 ## Phase 3 — Planning (done in Claude Project chat)
 
-- 3.1 [ ] Review Phase 1/2 output (Contents.md + lesson-file skeletons); update CLAUDE.md if needed
-- 3.2 [ ] Add detailed Phase 4 tasks (3.x → 4.x) to this file — one task per lesson file (or grouped per module) to replace the `_Content pending (Phase 4)._` placeholders with actual prose
+- 3.1 [ ] Review Phase 1/2 output (Contents.md + lesson-file skeletons); update CLAUDE.md/.claude/STYLE.md if needed
+- 3.2 [ ] Add detailed Phase 4 tasks (3.x → 4.x) to this file — one task per lesson file (or grouped per module) to replace the `_Content pending (Phase 4)._` placeholders with actual prose, per `.claude/STYLE.md` → Lesson File Format
 
 ## Phase 4 — Execution (Claude Code agent, this repo) — Contents.md lesson content
 
@@ -64,7 +65,7 @@ _Tasks added during Phase 3 planning, once the Contents.md skeleton structure fr
 
 ## Phase 5 — Planning (done in Claude Project chat)
 
-- 5.1 [ ] Review Phase 1/2/4 output (Contents.md + finished lesson content); update CLAUDE.md if needed
+- 5.1 [ ] Review Phase 1/2/4 output (Contents.md + finished lesson content); update CLAUDE.md/.claude/STYLE.md if needed
 - 5.2 [ ] Add detailed Phase 6 tasks (5.x → 6.x) to this file, analogous to Phase 1's tasks but for Practices.md
 
 ## Phase 6 — Execution (Claude Code agent, this repo) — Practices.md topic list
@@ -73,7 +74,7 @@ _Tasks added during Phase 5 planning, once Contents.md and its lesson content fr
 
 ## Phase 7 — Planning (done in Claude Project chat)
 
-- 7.1 [ ] Review Phase 6 output (Practices.md); update CLAUDE.md if needed
+- 7.1 [ ] Review Phase 6 output (Practices.md); update CLAUDE.md/.claude/STYLE.md if needed
 - 7.2 [ ] Add detailed Phase 8 tasks (7.x → 8.x) to this file, analogous to Phase 2's tasks but for exercise/solution files
 
 ## Phase 8 — Execution (Claude Code agent, this repo) — Practices.md exercise content
