@@ -1,5 +1,5 @@
 ---
-revision: 6
+revision: 7
 title: "GFT Kubernetes-Workshop"
 subtitle: "Contents"
 abstract: "Definitive, section-organized list of workshop topics (headings and bullet points only); supersedes the narrative v1 draft."
@@ -13,6 +13,7 @@ history:
   - "v4: rephrased every `##` topic heading as a concrete, answerable question in audience terms per TASKS.md 1.2; left `#` section headings and `## Practice: ...` headings unchanged"
   - "v5: tightened bullets under \"What components run on a worker node?\" to name components rather than responsibilities, per bullet/question fit review"
   - "v6: completeness pass — added Pod IP address bullet, `kubectl apply/create/delete` bullet, Docker Desktop hostpath StorageClass bullet, GitOps tool examples (Argo CD/Flux); replaced a redundant bullet in the Docker-comparison topic"
+  - "v7: added 'Resource requests & limits (brief mention)' bullet under \"What is container orchestration?\", per /improve request — kept as an addition rather than replacing the existing declarative-config bullet, to avoid colliding with the dedicated Configuration Management section"
 ---
 
 # What is Kubernetes and Why Should I Care?
@@ -25,6 +26,7 @@ history:
 - Horizontal & vertical scaling
 - Rolling updates without downtime
 - Declarative configuration via manifests
+- Resource requests & limits (brief mention)
 
 ## How is Kubernetes different from plain Docker?
 

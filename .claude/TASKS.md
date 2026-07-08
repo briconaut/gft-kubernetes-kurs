@@ -1,5 +1,5 @@
 ---
-revision: 9
+revision: 10
 path: ".claude/TASKS.md"
 title: "Task Backlog"
 abstract: "Single, cumulative task list for all workshop phases (0-6), grouped by phase. Status model: [ ] Open, [~] In Progress, [R] Needs Rework, [B] Blocked, [X] Done."
@@ -17,6 +17,7 @@ history:
   - "v7: adopted Follow-up Refinement Subtasks convention (<phase>.<sequence>.<subsequence>) per CLAUDE.md v9 Task Definition update."
   - "v8: retroactively added Follow-up Refinement Subtasks 1.2.1 and 1.2.2 (bullet/question-fit review and audience-completeness review) for Task 1.2, per CLAUDE.md v9 convention"
   - "v9: retroactively added Follow-up Refinement Subtask 1.1.1 (expanded subtopic bullet lists to at least 6 points, commit 0e21a8d) for Task 1.1, per CLAUDE.md v9 convention"
+  - "v10: added Follow-up Refinement Subtask 1.2.3 (added 'Resource requests & limits' bullet to Contents.md via /improve) for Task 1.2"
 ---
 
 # Task Backlog
@@ -36,6 +37,7 @@ Status model, task-selection algorithm and the Follow-up Refinement Subtasks con
 - 1.2 [X] Phrase each topic as a concrete, answerable question in the audience's terms (e.g. "What is a container?", "What is a Node?", "What is a Pod?", "What is a Service?") rather than abstract chapter titles (file: Contents.md)
   - 1.2.1 [X] Verified bullets answer their subheading's question; tightened "What components run on a worker node?" to name components rather than responsibilities
   - 1.2.2 [X] Verified bullet completeness for the intro audience; added Pod IP address, `kubectl apply/create/delete`, Docker Desktop `hostpath` StorageClass, and GitOps tool-example bullets, and replaced a redundant Docker-comparison bullet
+  - 1.2.3 [X] Added "Resource requests & limits (brief mention)" bullet under "What is container orchestration?" (kept as an addition, not a replacement, to avoid colliding with the dedicated Configuration Management section)
 - 1.3 [ ] Assign a stable `<nr>-<section>` folder slug to each top-level section, to be used as the folder name in Phase 2 (file: Contents.md)
 - 1.4 [ ] Note in `.claude/Memory.md` how the old draft's structure was reused or deviated from, so Phase 2 stays consistent (file: .claude/Memory.md)
 
