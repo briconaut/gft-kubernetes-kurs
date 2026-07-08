@@ -1,5 +1,5 @@
 ---
-revision: 16
+revision: 17
 path: ".claude/TASKS.md"
 title: "Task Backlog"
 abstract: "Single, cumulative task list for all workshop phases (0-8), grouped by phase. Status model: [ ] Open, [~] In Progress, [R] Needs Rework, [B] Blocked, [X] Done."
@@ -24,6 +24,7 @@ history:
   - "v14: reworded task 2.1/2.2 to reference the folder:/lesson: HTML comments as the binding path source (CLAUDE.md v12); reworded task 2.3 to reference the new Styleguide → Lesson File Body Format (CLAUDE.md v13) instead of the vague 'fill in actual lesson content' phrasing"
   - "v15: renumbered per CLAUDE.md v14 (9-phase model, 0–8). Phase 2 narrowed to skeleton creation only (2.1–2.3: folders, lesson-file skeletons with placeholders, Contents.md links — content-fill removed). Added new Phase 3 planning placeholders (3.1–3.2, planning Phase 4 content-fill tasks) and new Phase 4 execution placeholder (Contents.md lesson content). Former Phase 3 planning tasks → Phase 5 (5.1–5.2). Former Phase 4 Practices.md topic-list placeholder → Phase 6. Former Phase 5 planning tasks → Phase 7 (7.1–7.2). Former Phase 6 exercise-content placeholder → Phase 8."
   - "v16: updated tasks 2.2, 2.3, and 3.2 to reference the new `.claude/STYLE.md` (CLAUDE.md v15) instead of the now-removed CLAUDE.md → Styleguide → Lesson File Body Format section."
+  - "v17: completed task 2.1 — created all 13 `Contents/<nr>-<section>/` folders per the `folder:` comments in Contents.md"
 ---
 
 # Task Backlog
@@ -50,7 +51,7 @@ Status model, task-selection algorithm and the Follow-up Refinement Subtasks con
 
 ## Phase 2 — Execution (Claude Code agent, this repo) — Contents.md structure (folders + lesson-file skeletons)
 
-- 2.1 [ ] Create the 13 folders `Contents/<nr>-<section>/` named by the `<!-- folder: ... -->` comments in Contents.md, if they don't exist yet (file: Contents/<nr>-<section>/)
+- 2.1 [X] Create the 13 folders `Contents/<nr>-<section>/` named by the `<!-- folder: ... -->` comments in Contents.md, if they don't exist yet (file: Contents/<nr>-<section>/)
 - 2.2 [ ] For every `<!-- lesson: Contents/<nr>-<section>/<local-nr>-<lesson>.md -->` comment in Contents.md, create the lesson file at exactly that path with correct frontmatter (`state: not started`) and the skeleton body per `.claude/STYLE.md` → Lesson File Format (H1, linked `## Overview`, one empty `##` heading per bullet with a `_Content pending (Phase 4)._` placeholder) — no prose yet. Use the path from the comment verbatim (file: Contents/<nr>-<section>/<local-nr>-<lesson>.md)
 - 2.3 [ ] Update Contents.md: turn each `##` topic heading into a Markdown link to its `lesson:` file (link format per `.claude/STYLE.md` → Format of Contents.md), keeping the underlying `<!-- lesson: ... -->` comment intact; leave `## Practice: ...` headings untouched (file: Contents.md)
 
