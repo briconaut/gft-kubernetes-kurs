@@ -1,5 +1,5 @@
 ---
-revision: 9
+revision: 10
 path: "Contents/01-introduction/01-container-orchestration.md"
 title: "What is Kubernetes and Why Should I Care? / What is container orchestration?"
 abstract: "Lesson skeleton for this topic; explanatory prose pending Phase 4."
@@ -17,6 +17,7 @@ history:
   - "v7: added prose for '## Self-healing / auto-restart of failed containers' per Task 4.3"
   - "v8: added prose for '## Horizontal & vertical scaling' per Task 4.4"
   - "v9: added prose for '## Rolling updates without downtime' per Task 4.5"
+  - "v10: added prose for '## Declarative configuration via manifests' per Task 4.6"
 ---
 
 # What is Kubernetes and Why Should I Care? / What is container orchestration?
@@ -67,7 +68,9 @@ This is different from replacing a single `docker run` container, where stopping
 
 ## Declarative configuration via manifests
 
-_Content pending (Phase 4)._
+The desired state described above isn't just a mental model — you write it down as YAML (or JSON) **manifest** files, one per resource (a Deployment, a Service, and so on), and hand them to Kubernetes with `kubectl apply -f`. These files are the source of truth for what should exist in the cluster, and since they're plain text, you can check them into version control alongside your application code.
+
+This replaces a sequence of imperative `docker run` commands with a description of the end result. Reapplying the same file is safe to repeat — Kubernetes only changes what's actually different from the current state.
 
 ## Resource requests & limits (brief mention)
 

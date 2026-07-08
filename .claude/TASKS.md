@@ -1,5 +1,5 @@
 ---
-revision: 27
+revision: 28
 path: ".claude/TASKS.md"
 title: "Task Backlog"
 abstract: "Single, cumulative task list for all workshop phases (0-8), grouped by phase. Status model: [ ] Open, [~] In Progress, [R] Needs Rework, [B] Blocked, [X] Done."
@@ -36,6 +36,7 @@ history:
   - "v26: completed task 4.3 — added prose for '## Self-healing / auto-restart of failed containers' in Contents/01-introduction/01-container-orchestration.md"
   - "v27: completed task 4.4 — added prose for '## Horizontal & vertical scaling' in Contents/01-introduction/01-container-orchestration.md"
   - "v28: completed task 4.5 — added prose for '## Rolling updates without downtime' in Contents/01-introduction/01-container-orchestration.md"
+  - "v29: completed task 4.6 — added prose for '## Declarative configuration via manifests' in Contents/01-introduction/01-container-orchestration.md"
 ---
 
 # Task Backlog
@@ -92,7 +93,7 @@ One task per `## <bullet>` subheading (replaces its `_Content pending (Phase 4).
 - 4.3 [X] Write prose for `## Self-healing / auto-restart of failed containers` in Contents/01-introduction/01-container-orchestration.md (file: Contents/01-introduction/01-container-orchestration.md)
 - 4.4 [X] Write prose for `## Horizontal & vertical scaling` in Contents/01-introduction/01-container-orchestration.md (file: Contents/01-introduction/01-container-orchestration.md)
 - 4.5 [X] Write prose for `## Rolling updates without downtime` in Contents/01-introduction/01-container-orchestration.md (file: Contents/01-introduction/01-container-orchestration.md)
-- 4.6 [ ] Write prose for `## Declarative configuration via manifests` in Contents/01-introduction/01-container-orchestration.md (file: Contents/01-introduction/01-container-orchestration.md)
+- 4.6 [X] Write prose for `## Declarative configuration via manifests` in Contents/01-introduction/01-container-orchestration.md (file: Contents/01-introduction/01-container-orchestration.md)
 - 4.7 [ ] Write prose for `## Resource requests & limits (brief mention)` in Contents/01-introduction/01-container-orchestration.md (file: Contents/01-introduction/01-container-orchestration.md)
 - 4.8 [ ] Review Contents/01-introduction/01-container-orchestration.md: subheading consistency/style; fit of each subheading and the whole file for the workshop (scope/audience/non-goals per CLAUDE.md) and for its topic "What is container orchestration?" (file: Contents/01-introduction/01-container-orchestration.md)
 
