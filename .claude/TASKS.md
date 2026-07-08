@@ -1,5 +1,5 @@
 ---
-revision: 6
+revision: 8
 path: ".claude/TASKS.md"
 title: "Task Backlog"
 abstract: "Single, cumulative task list for all workshop phases (0-6), grouped by phase. Status model: [ ] Open, [~] In Progress, [R] Needs Rework, [B] Blocked, [X] Done."
@@ -14,11 +14,13 @@ history:
   - "v4: renumbered all phases/tasks per CLAUDE.md v6 (superseded)"
   - "v5: split former Phase 1 into Phase 1 (Eckpunkte) and Phase 2 (verbose fill-in) per CLAUDE.md v7 (superseded)"
   - "v6: replaced with per-file workflow per CLAUDE.md v8 — Phase 1-2 fully process Contents.md, Phase 4/6 do the analogous work for Practices.md (planned in Phase 3/5). Dropped Part 1/Part 2 split tasks (now manual, out of scope)."
+  - "v7: adopted Follow-up Refinement Subtasks convention (<phase>.<sequence>.<subsequence>) per CLAUDE.md v9 Task Definition update."
+  - "v8: retroactively added Follow-up Refinement Subtasks 1.2.1 and 1.2.2 (bullet/question-fit review and audience-completeness review) for Task 1.2, per CLAUDE.md v9 convention"
 ---
 
 # Task Backlog
 
-Status model and task-selection algorithm are defined in `CLAUDE.md` → Styleguide → Task Definition. Numbering is `<phase>.<sequence>`.
+Status model, task-selection algorithm and the Follow-up Refinement Subtasks convention are defined in `CLAUDE.md` → Styleguide → Task Definition. Numbering is `<phase>.<sequence>`, with optional follow-up-refinement subtasks `<phase>.<sequence>.<subsequence>`.
 
 ## Phase 0 — Planning (done in Claude Project chat)
 
@@ -30,6 +32,8 @@ Status model and task-selection algorithm are defined in `CLAUDE.md` → Stylegu
 
 - 1.1 [X] Review the existing Contents.md draft (inspiration only, not binding) and produce a definitive list of topics to cover, organized into logical sections — headings + bullet points only, no explanatory prose (file: Contents.md)
 - 1.2 [X] Phrase each topic as a concrete, answerable question in the audience's terms (e.g. "What is a container?", "What is a Node?", "What is a Pod?", "What is a Service?") rather than abstract chapter titles (file: Contents.md)
+  - 1.2.1 [X] Verified bullets answer their subheading's question; tightened "What components run on a worker node?" to name components rather than responsibilities
+  - 1.2.2 [X] Verified bullet completeness for the intro audience; added Pod IP address, `kubectl apply/create/delete`, Docker Desktop `hostpath` StorageClass, and GitOps tool-example bullets, and replaced a redundant Docker-comparison bullet
 - 1.3 [ ] Assign a stable `<nr>-<section>` folder slug to each top-level section, to be used as the folder name in Phase 2 (file: Contents.md)
 - 1.4 [ ] Note in `.claude/Memory.md` how the old draft's structure was reused or deviated from, so Phase 2 stays consistent (file: .claude/Memory.md)
 
