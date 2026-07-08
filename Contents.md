@@ -1,5 +1,5 @@
 ---
-revision: 4
+revision: 6
 title: "GFT Kubernetes-Workshop"
 subtitle: "Contents"
 abstract: "Definitive, section-organized list of workshop topics (headings and bullet points only); supersedes the narrative v1 draft."
@@ -11,6 +11,8 @@ history:
   - "v2: replaced narrative v1 draft with a definitive, section-organized topic list (headings + bullets only) per TASKS.md 1.1; fixed invalid `state: preliminary` value and added missing `abstract` field per CLAUDE.md styleguide."
   - "v3: expanded every `##` subheading to at least 6 bullet points"
   - "v4: rephrased every `##` topic heading as a concrete, answerable question in audience terms per TASKS.md 1.2; left `#` section headings and `## Practice: ...` headings unchanged"
+  - "v5: tightened bullets under \"What components run on a worker node?\" to name components rather than responsibilities, per bullet/question fit review"
+  - "v6: completeness pass — added Pod IP address bullet, `kubectl apply/create/delete` bullet, Docker Desktop hostpath StorageClass bullet, GitOps tool examples (Argo CD/Flux); replaced a redundant bullet in the Docker-comparison topic"
 ---
 
 # What is Kubernetes and Why Should I Care?
@@ -30,7 +32,7 @@ history:
 - Manual `docker run`/`compose` vs. declarative manifests
 - No built-in scheduling in plain Docker
 - No built-in self-healing in plain Docker
-- Docker Compose scope vs. cluster-wide orchestration
+- No cross-host service discovery/networking in Docker Compose
 - When plain Docker is still sufficient
 
 ## What are the key benefits of using Kubernetes?
@@ -75,10 +77,10 @@ history:
 
 - kubelet
 - kube-proxy
-- Container runtime
-- Node-level resource reporting
-- Pod lifecycle management on the node
+- Container runtime (containerd, CRI-O, etc.)
 - Container Runtime Interface (CRI) concept
+- kubelet reports node-level resource status to the API Server
+- kubelet manages Pod lifecycle on the node
 
 # Pods & Namespaces
 
@@ -90,6 +92,7 @@ history:
 - Shared storage volumes within a pod
 - Pod lifecycle & phases
 - Ephemeral nature (pods are not durable identities)
+- Each Pod gets its own (ephemeral) cluster-internal IP address
 
 ## What are labels and selectors?
 
@@ -116,6 +119,7 @@ history:
 - cluster-info, namespaces, pods, logs, events
 - Context & namespace switching
 - `kubectl get` / `describe` / `logs` verbs
+- `kubectl apply -f` / `create` / `delete` — creating and updating resources from manifests
 - Output formats (-o wide/yaml/json)
 - `kubectl explain` for discovering fields
 - Interacting with kube-system components
@@ -264,6 +268,7 @@ history:
 - Access modes (ReadWriteOnce, ReadWriteMany, etc.)
 - Volume lifecycle vs. pod lifecycle
 - emptyDir vs. persistent volumes
+- Docker Desktop's default `hostpath` StorageClass (exercise environment)
 
 ## What is a StatefulSet?
 
@@ -322,6 +327,7 @@ history:
 - Declarative desired state stored in Git
 - Drift detection & auto-correction
 - Auditability via commit history
+- Examples: Argo CD, Flux (brief mention)
 
 ## How does a deployment pipeline work with Kubernetes?
 
