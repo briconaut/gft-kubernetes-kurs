@@ -1,5 +1,5 @@
 ---
-revision: 5
+revision: 6
 path: ".claude/Memory.md"
 title: "Project Memory"
 abstract: "Cross-cutting decisions and conventions needed for consistency across tasks. Minimal by design — see CLAUDE.md > Memory Structure for scope and update rules."
@@ -13,6 +13,7 @@ history:
   - "v3: fixed `path` frontmatter field (was \".claude/MEMORY.md\", wrong case, now \".claude/Memory.md\") per header-completeness check"
   - "v4: added cross-cutting entry for the folder/lesson-file numbering convention introduced in Tasks 1.3/1.3.1 (`folder:`/`lesson:` HTML comments in Contents.md), so Phase 2 knows where to find and how to interpret it"
   - "v5: condensed the 'Folder & lesson-file numbering convention' entry into a pointer to `.claude/STYLE.md` → Format of Contents.md, where the rule is now documented as binding style (previously duplicated here almost verbatim). This also fixes a stale reference to 'Phase 6' for exercise naming, which should have read 'Phase 8' after the CLAUDE.md v14 phase renumbering and was missed at the time."
+  - "v6: added the 'Review Notes' section (per .claude/skills/review/SKILL.md) and its first entry, for the manually-edited Contents/01-introduction/01-container-orchestration.md / '## Automated scheduling & placement'"
 ---
 
 # Project Memory
@@ -35,3 +36,12 @@ Entries are added here only when a decision or convention from one task is neede
 ## Folder & lesson-file numbering convention (Tasks 1.3, 1.3.1)
 
 The `folder:`/`lesson:` HTML-comment convention established by these tasks is now documented as binding style in `.claude/STYLE.md` → Format of Contents.md — see there for the exact rule (comment placement, global vs. local numbering, `## Practice: ...` and "Further Reading / Links" exclusions). Nothing further to add here.
+
+## Review Notes
+
+Deliberate exception to the "current state, not append-only log" rule above (per `.claude/skills/review/SKILL.md` → Step 8): one entry per reviewed manual edit, recording what it reveals about the user's content/style preferences. Entries accumulate and are never condensed or overwritten.
+
+### Contents/01-introduction/01-container-orchestration.md — "## Automated scheduling & placement" (reviewed after Task 4.1)
+
+- **Content**: The user's manual edit added (1) a claim that scheduling placement "can be influenced by labels and selectors", and (2) a brief Docker Swarm comparison. (1) pointed at the wrong later topic — `Contents.md`'s "What are labels and selectors?" lesson covers Deployment/Service label matching, not node placement — and was corrected during review to "node selectors and affinity". (2) is **not** a topic anywhere in `Contents.md`, but the user explicitly confirmed it's fine as a short, harmless aside — the user is comfortable with brief topic-list-external comparisons/asides as long as they stay short, even outside the fixed topic structure.
+- **Style**: Leans toward slightly more specific/technical phrasing than this agent's default conceptual tone (e.g. names "distribution strategies" rather than staying at "the scheduler picks a node"). Tends to draft short, separate sentences meant as distinct paragraphs (one idea per line) rather than one flowing paragraph — when reviewing similar edits, check that intended paragraph breaks got blank lines, since the raw draft often omits them. First-pass drafts routinely contain minor slips (missed capitalization of "Kubernetes", small grammar issues) that are expected to be caught at review time, not something to flag as a concern in itself.

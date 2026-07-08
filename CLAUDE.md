@@ -1,12 +1,12 @@
 ---
-revision: 16
+revision: 17
 path: "CLAUDE.md"
 title: "CLAUDE.md"
 abstract: "Guidance for the Claude Code agent that builds the GFT Kubernetes Workshop content and exercises in this repository."
 state: in progress
 lang: en
 numbersections: true
-current_phase: 3
+current_phase: 4
 finished_sections: [ ]
 history:
   - "v1 (preliminary): initial description of repository purpose, phase model and file styleguide"
@@ -26,6 +26,7 @@ history:
   - "v15: moved all file-format styleguides (Frontmatter for generated .md files, Lesson File Format) out of this file into the new `.claude/STYLE.md`, plus a newly consolidated 'Format of Contents.md' section (previously scattered across this file's Process/Phases table and .claude/Memory.md). Styleguide section here now only covers Task Definition and Memory Structure (process-facing formats, not generated-content formats) and points to `.claude/STYLE.md` for the rest. Folder & File Conventions and the Process/Phases table now reference `.claude/STYLE.md` instead of restating format details."
   - "v16: Phase 3 generates Phase 4 tasks per lesson-file subheading (one task per `## <bullet>` heading, excluding `## Overview`) instead of one per lesson file/module, plus a dedicated review task per lesson file (subheading consistency; fit of each subheading and of the whole file against its topic heading and the workshop) once that file's subheading tasks are done. Updated Process/Phases table Phase 3 row accordingly; full detail lives in `.claude/TASKS.md` task 3.2, per existing non-duplication convention."
   - "v17: Phase 2 complete (all tasks [X] per TASKS.md v19-20); advanced current_phase to 3."
+  - "v18: Phase 3 complete (all tasks [X] per TASKS.md v22-23); advanced current_phase to 4."
 ---
 
 # CLAUDE.md

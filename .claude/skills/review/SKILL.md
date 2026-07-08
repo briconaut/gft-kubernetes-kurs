@@ -106,9 +106,9 @@ Present, in one message, without editing anything yet:
 
 - **Original** and **manuelle Änderung** (diff or clear before/after).
 - **Bericht**:
-  - Eignung für das Subheading
-  - Eignung für das Heading
-  - Eignung für den Workshop
+  - Eignung für das Subheading. Schlage ergänzungen/änderung vor um die Eignung zu verbessern.
+  - Eignung für das Heading. Schlage ergänzungen/änderung vor um die Eignung zu verbessern.
+  - Eignung für den Workshop. Schlage ergänzungen/änderung vor um die Eignung zu verbessern.
   - Entdeckte Fehler (inhaltlich, technisch, formal)
   - Verbesserungsvorschläge (concrete; may be empty if the edit is already sound)
 
