@@ -1,5 +1,5 @@
 ---
-revision: 7
+revision: 8
 title: "GFT Kubernetes-Workshop"
 subtitle: "Contents"
 abstract: "Definitive, section-organized list of workshop topics (headings and bullet points only); supersedes the narrative v1 draft."
@@ -14,9 +14,11 @@ history:
   - "v5: tightened bullets under \"What components run on a worker node?\" to name components rather than responsibilities, per bullet/question fit review"
   - "v6: completeness pass — added Pod IP address bullet, `kubectl apply/create/delete` bullet, Docker Desktop hostpath StorageClass bullet, GitOps tool examples (Argo CD/Flux); replaced a redundant bullet in the Docker-comparison topic"
   - "v7: added 'Resource requests & limits (brief mention)' bullet under \"What is container orchestration?\", per /improve request — kept as an addition rather than replacing the existing declarative-config bullet, to avoid colliding with the dedicated Configuration Management section"
+  - "v8: assigned a stable <nr>-<section> folder slug to each top-level section as an HTML comment under its `#` heading, per TASKS.md 1.3, for use as the Phase 2 folder name; marked 'Further Reading / Links' as excluded (not a lesson module)"
 ---
 
 # What is Kubernetes and Why Should I Care?
+<!-- folder: 01-introduction -->
 
 ## What is container orchestration?
 
@@ -47,6 +49,7 @@ history:
 - Extensibility via API & ecosystem
 
 # Kubernetes Architecture
+<!-- folder: 02-architecture -->
 
 ## What is a cluster, and what is a node?
 
@@ -85,6 +88,7 @@ history:
 - kubelet manages Pod lifecycle on the node
 
 # Pods & Namespaces
+<!-- folder: 03-pods-and-namespaces -->
 
 ## What is a Pod?
 
@@ -115,6 +119,7 @@ history:
 - Naming & switching context with `kubectl`
 
 # `kubectl` — CLI for Kubernetes
+<!-- folder: 04-kubectl -->
 
 ## How do I interact with a cluster using `kubectl`?
 
@@ -136,6 +141,7 @@ history:
 - Explore a resource's fields via `kubectl explain`
 
 # Deployments
+<!-- folder: 05-deployments -->
 
 ## What is a Deployment, and how does it relate to a ReplicaSet?
 
@@ -174,6 +180,7 @@ history:
 - Clean up the Deployment
 
 # Services & Networking
+<!-- folder: 06-services-and-networking -->
 
 ## What is a Service?
 
@@ -212,6 +219,7 @@ history:
 - Clean up Service & Deployment
 
 # Configuration Management
+<!-- folder: 07-configuration-management -->
 
 ## What is a ConfigMap?
 
@@ -241,6 +249,7 @@ history:
 - Clean up ConfigMap, Secret & Deployment
 
 # Access Control
+<!-- folder: 08-access-control -->
 
 ## What is RBAC (Role-Based Access Control)?
 
@@ -261,6 +270,7 @@ history:
 - Disabling auto-mount for security
 
 # Storage & State
+<!-- folder: 09-storage-and-state -->
 
 ## How does Kubernetes handle persistent storage?
 
@@ -282,6 +292,7 @@ history:
 - Use cases: databases, distributed systems
 
 # Workload Patterns
+<!-- folder: 10-workload-patterns -->
 
 ## What is a DaemonSet?
 
@@ -320,6 +331,7 @@ history:
 - Operator Framework / OperatorHub (brief mention)
 
 # CI/CD with Kubernetes
+<!-- folder: 11-ci-cd -->
 
 ## What is GitOps?
 
@@ -341,6 +353,7 @@ history:
 - Separation of CI (build/test) and CD (deploy) concerns
 
 # Package Management: Helm & Kustomize
+<!-- folder: 12-package-management -->
 
 ## What is Helm?
 
@@ -361,6 +374,7 @@ history:
 - No templating language required
 
 # Service Mesh
+<!-- folder: 13-service-mesh -->
 
 ## What is a service mesh, and why would I need one?
 
@@ -372,6 +386,7 @@ history:
 - When a service mesh is (not) needed
 
 # Further Reading / Links
+<!-- no folder: reference links only, not a lesson module -->
 
 - [What is Kubernetes? An Introduction With Examples](https://www.datacamp.com/blog/what-is-kubernetes)
 - [Kubernetes: An Introduction for Beginners](https://tecadmin.net/kubernetes-introduction/)
