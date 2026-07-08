@@ -28,6 +28,7 @@ history:
   - "v18: completed task 2.2 — created all 32 lesson-file skeletons (H1, linked Overview, per-bullet placeholder headings) at the exact `lesson:` comment paths, per .claude/STYLE.md → Lesson File Format; `## Practice: ...` topics correctly excluded (7 of them, no lesson file)"
   - "v19: completed task 2.3 — linked all 32 `##` topic headings in Contents.md to their lesson files; Phase 2 complete"
   - "v20: added Follow-up Refinement Subtask 2.3.1 (bullet-level links to lesson-file anchors in Contents.md, via /improve) for Task 2.3"
+  - "v21: reworded task 3.2 — Phase 4 tasks are now generated per lesson-file subheading (one task per `## <bullet>` heading, excluding `## Overview`) instead of one per lesson file/module; added a dedicated per-lesson-file review task (subheading consistency; fit of each subheading and of the whole file against its topic heading and against the workshop), inserted after that file's subheading tasks. Review tasks are explicitly regular `4.x` tasks, not Follow-up Refinement Subtasks. Per CLAUDE.md v16."
 ---
 
 # Task Backlog
@@ -62,7 +63,15 @@ Status model, task-selection algorithm and the Follow-up Refinement Subtasks con
 ## Phase 3 — Planning (done in Claude Project chat)
 
 - 3.1 [ ] Review Phase 1/2 output (Contents.md + lesson-file skeletons); update CLAUDE.md/.claude/STYLE.md if needed
-- 3.2 [ ] Add detailed Phase 4 tasks (3.x → 4.x) to this file — one task per lesson file (or grouped per module) to replace the `_Content pending (Phase 4)._` placeholders with actual prose, per `.claude/STYLE.md` → Lesson File Format
+- 3.2 [ ] Add detailed Phase 4 tasks (3.x → 4.x) to this file, based on the finished lesson-file skeletons from Phase 2. For each lesson file:
+  - One task per `## <bullet>` subheading (excluding `## Overview`), replacing that heading's `_Content pending (Phase 4)._` placeholder with actual prose, per `.claude/STYLE.md` → Lesson File Format.
+  - One additional task, inserted directly after that file's last subheading task, reviewing the now-complete lesson file for:
+    - Consistency of phrasing/style across the file's subheadings
+    - Fit of each subheading for the workshop (scope, audience, non-goals per CLAUDE.md)
+    - Fit of each subheading for its parent `##` topic heading
+    - Fit of the whole lesson file for its parent `##` topic heading
+    - Fit of the whole lesson file for the workshop (scope, audience, non-goals per CLAUDE.md)
+  - Review tasks are regular top-level `4.x` tasks — **not** Follow-up Refinement Subtasks (`4.x.y` stays reserved for post-completion `/improve` runs per CLAUDE.md → Follow-up Refinement Subtasks). A review task does not edit content itself; if it finds issues, it may recommend `[R]` rework for the affected subheading task(s) per CLAUDE.md → Task Definition.
 
 ## Phase 4 — Execution (Claude Code agent, this repo) — Contents.md lesson content
 
