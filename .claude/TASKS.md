@@ -1,5 +1,5 @@
 ---
-revision: 20
+revision: 21
 path: ".claude/TASKS.md"
 title: "Task Backlog"
 abstract: "Single, cumulative task list for all workshop phases (0-8), grouped by phase. Status model: [ ] Open, [~] In Progress, [R] Needs Rework, [B] Blocked, [X] Done."
@@ -29,6 +29,7 @@ history:
   - "v19: completed task 2.3 — linked all 32 `##` topic headings in Contents.md to their lesson files; Phase 2 complete"
   - "v20: added Follow-up Refinement Subtask 2.3.1 (bullet-level links to lesson-file anchors in Contents.md, via /improve) for Task 2.3"
   - "v21: reworded task 3.2 — Phase 4 tasks are now generated per lesson-file subheading (one task per `## <bullet>` heading, excluding `## Overview`) instead of one per lesson file/module; added a dedicated per-lesson-file review task (subheading consistency; fit of each subheading and of the whole file against its topic heading and against the workshop), inserted after that file's subheading tasks. Review tasks are explicitly regular `4.x` tasks, not Follow-up Refinement Subtasks. Per CLAUDE.md v16."
+  - "v22: completed task 3.1 (executed by Claude Code per user instruction) — reviewed Phase 1/2 output, found no scope/content issues, and fixed one spec/reality drift in .claude/STYLE.md (bullet-anchor-link convention from 2.3.1 was undocumented)"
 ---
 
 # Task Backlog
@@ -62,7 +63,8 @@ Status model, task-selection algorithm and the Follow-up Refinement Subtasks con
 
 ## Phase 3 — Planning (done in Claude Project chat)
 
-- 3.1 [ ] Review Phase 1/2 output (Contents.md + lesson-file skeletons); update CLAUDE.md/.claude/STYLE.md if needed
+- 3.1 [X] Review Phase 1/2 output (Contents.md + lesson-file skeletons); update CLAUDE.md/.claude/STYLE.md if needed
+  - Executed by the Claude Code agent per explicit user instruction (normally a planning-chat task). Verified: all 13 folders, all 32 lesson-file skeletons match `.claude/STYLE.md` → Frontmatter and Lesson File Format (spot-checked `Contents/07-configuration-management/02-secret.md`); Contents.md structure (32 linked topics, 4 untouched `## Practice: ...`, 197 bullet-anchor links, `folder:`/`lesson:` comments) matches counts from Tasks 2.1–2.3.1. Found and fixed one spec/reality drift: `.claude/STYLE.md` → "Format of Contents.md" didn't document the bullet-anchor-link convention from Task 2.3.1 (intentionally left out of that `/improve` run) — added it now. No CLAUDE.md scope/content issues found.
 - 3.2 [ ] Add detailed Phase 4 tasks (3.x → 4.x) to this file, based on the finished lesson-file skeletons from Phase 2. For each lesson file:
   - One task per `## <bullet>` subheading (excluding `## Overview`), replacing that heading's `_Content pending (Phase 4)._` placeholder with actual prose, per `.claude/STYLE.md` → Lesson File Format.
   - One additional task, inserted directly after that file's last subheading task, reviewing the now-complete lesson file for:

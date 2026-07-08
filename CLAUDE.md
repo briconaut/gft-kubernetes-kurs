@@ -1,12 +1,12 @@
 ---
-revision: 15
+revision: 16
 path: "CLAUDE.md"
 title: "CLAUDE.md"
 abstract: "Guidance for the Claude Code agent that builds the GFT Kubernetes Workshop content and exercises in this repository."
 state: in progress
 lang: en
 numbersections: true
-current_phase: 2
+current_phase: 3
 finished_sections: [ ]
 history:
   - "v1 (preliminary): initial description of repository purpose, phase model and file styleguide"
@@ -25,6 +25,7 @@ history:
   - "v14: renumbered the phase model from 7 phases (0–6) to 9 phases (0–8), per user correction — Phase 2 no longer fills lesson-file prose. Former Phase 2 split into Phase 2 (folders + lesson-file skeletons: H1, linked Overview, empty bullet headings with a placeholder) and Phase 4 (fill in the actual prose beneath those headings), with a new Phase 3 planning step in between. Former Phases 3–6 (Practices.md planning/topic-list/planning/exercise-content) shifted to Phases 5–8. Updated Folder & File Conventions, Process/Phases table and notes, Lesson File Body Format (now spans Phases 2 & 4, added `_Content pending (Phase 4)._` placeholder convention), and Memory Structure phase references accordingly. current_phase stays 2 — effectively unchanged, now more narrowly scoped to skeleton creation only."
   - "v15: moved all file-format styleguides (Frontmatter for generated .md files, Lesson File Format) out of this file into the new `.claude/STYLE.md`, plus a newly consolidated 'Format of Contents.md' section (previously scattered across this file's Process/Phases table and .claude/Memory.md). Styleguide section here now only covers Task Definition and Memory Structure (process-facing formats, not generated-content formats) and points to `.claude/STYLE.md` for the rest. Folder & File Conventions and the Process/Phases table now reference `.claude/STYLE.md` instead of restating format details."
   - "v16: Phase 3 generates Phase 4 tasks per lesson-file subheading (one task per `## <bullet>` heading, excluding `## Overview`) instead of one per lesson file/module, plus a dedicated review task per lesson file (subheading consistency; fit of each subheading and of the whole file against its topic heading and the workshop) once that file's subheading tasks are done. Updated Process/Phases table Phase 3 row accordingly; full detail lives in `.claude/TASKS.md` task 3.2, per existing non-duplication convention."
+  - "v17: Phase 2 complete (all tasks [X] per TASKS.md v19-20); advanced current_phase to 3."
 ---
 
 # CLAUDE.md

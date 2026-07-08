@@ -1,5 +1,5 @@
 ---
-revision: 1
+revision: 2
 path: ".claude/STYLE.md"
 title: "Style Guide"
 abstract: "Binding format specifications for generated artifacts: frontmatter header, lesson-file structure, and the format of Contents.md. Referenced from CLAUDE.md."
@@ -9,6 +9,7 @@ numbersections: true
 finished_sections: [ ]
 history:
   - "v1: extracted from CLAUDE.md v14 (Frontmatter for generated .md files, Lesson File Body Format) per user request. Added a new 'Format of Contents.md' section, consolidating rules previously scattered across CLAUDE.md → Process/Phases and .claude/Memory.md → 'Folder & lesson-file numbering convention' into a single explicit style spec."
+  - "v2: documented the bullet-anchor-link convention (Task 2.3.1) in 'Format of Contents.md' — Contents.md's bullets were changed to link to their lesson-file anchor via /improve, but that change intentionally left this file unedited at the time; Task 3.1 review reconciles the spec with the actual, now-established format."
 ---
 
 # Style Guide
@@ -81,6 +82,7 @@ Structure, top to bottom:
 - One `#` top-level heading per section, each immediately followed by a `<!-- folder: <nr>-<section> -->` HTML comment giving its stable Phase-2 folder name (global sequence `01`–`13`).
 - Within a section, one `##` heading per topic, phrased as a concrete, answerable question in the audience's terms (e.g. "What is a Pod?") rather than an abstract chapter title. Each is immediately followed by a `<!-- lesson: Contents/<nr>-<section>/<local-nr>-<lesson>.md -->` HTML comment giving its stable Phase-2 lesson-file path (local sequence restarting at `01` within each section — see `CLAUDE.md` → Folder & File Conventions).
 - Directly under each `##` topic heading, a flat bullet list answering that question — headings + bullet points only, **no explanatory prose**. Established practice targets at least ~6 bullets per topic for completeness (per Task 1.1.1); review new topics against this bar.
+- Once a topic has a lesson file (Phase 2.2), each bullet in its list becomes a Markdown link to its own anchor inside that lesson file (`<lesson path>#<anchor>`), reusing the anchor already assigned to that bullet's `##` heading there (see Lesson File Format above) — not just a link to the file itself. Added in Task 2.3.1. Bullets under `## Practice: ...` topics stay plain text (no lesson file to link to).
 - Exercise placeholder headings use `## Practice: ...` instead of a question, carry **no** `lesson:` comment (Phase 8 uses its own `<nr>.<subnr>` scheme derived from `Practices.md`, not from these comments), and have no bullet-count expectation.
 - The final section, `# Further Reading / Links`, is reference-only: a flat list of links, no `folder:`/`lesson:` comments, no Phase-2 folder at all.
 - Both comment kinds are HTML comments (invisible in rendered Markdown) — they don't violate the "headings + bullets only" rule. Later phases should `grep` `Contents.md` for `folder:`/`lesson:` to get exact paths rather than re-deriving slugs from heading text.
