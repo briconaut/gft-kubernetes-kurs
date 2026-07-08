@@ -1,5 +1,6 @@
 ---
-revision: 8
+revision: 10
+path: "Contents.md"
 title: "GFT Kubernetes-Workshop"
 subtitle: "Contents"
 abstract: "Definitive, section-organized list of workshop topics (headings and bullet points only); supersedes the narrative v1 draft."
@@ -15,12 +16,15 @@ history:
   - "v6: completeness pass — added Pod IP address bullet, `kubectl apply/create/delete` bullet, Docker Desktop hostpath StorageClass bullet, GitOps tool examples (Argo CD/Flux); replaced a redundant bullet in the Docker-comparison topic"
   - "v7: added 'Resource requests & limits (brief mention)' bullet under \"What is container orchestration?\", per /improve request — kept as an addition rather than replacing the existing declarative-config bullet, to avoid colliding with the dedicated Configuration Management section"
   - "v8: assigned a stable <nr>-<section> folder slug to each top-level section as an HTML comment under its `#` heading, per TASKS.md 1.3, for use as the Phase 2 folder name; marked 'Further Reading / Links' as excluded (not a lesson module)"
+  - "v9: added missing `path` frontmatter field per CLAUDE.md styleguide header-completeness check"
+  - "v10: added `<!-- lesson: Contents/<nr>-<section>/<nr>-<lesson>.md -->` path comments under each `##` topic heading (per-section local numbering, 01..N), analogous to the `folder:` comments from task 1.3, to fix the Phase 2 lesson-file path per /improve request; `## Practice: ...` headings excluded (Phase 6 uses its own <nr>.<subnr> scheme)"
 ---
 
 # What is Kubernetes and Why Should I Care?
 <!-- folder: 01-introduction -->
 
 ## What is container orchestration?
+<!-- lesson: Contents/01-introduction/01-container-orchestration.md -->
 
 - Automated scheduling & placement
 - Desired-state reconciliation
@@ -31,6 +35,7 @@ history:
 - Resource requests & limits (brief mention)
 
 ## How is Kubernetes different from plain Docker?
+<!-- lesson: Contents/01-introduction/02-kubernetes-vs-docker.md -->
 
 - Single host vs. multi-node cluster
 - Manual `docker run`/`compose` vs. declarative manifests
@@ -40,6 +45,7 @@ history:
 - When plain Docker is still sufficient
 
 ## What are the key benefits of using Kubernetes?
+<!-- lesson: Contents/01-introduction/03-key-benefits.md -->
 
 - Scalability
 - Self-healing
@@ -52,6 +58,7 @@ history:
 <!-- folder: 02-architecture -->
 
 ## What is a cluster, and what is a node?
+<!-- lesson: Contents/02-architecture/01-cluster-and-node.md -->
 
 - Cluster = set of nodes
 - Control plane vs. worker roles
@@ -61,6 +68,7 @@ history:
 - How Docker Desktop's single-node cluster maps to this model
 
 ## What is the difference between the control plane and worker nodes?
+<!-- lesson: Contents/02-architecture/02-control-plane-vs-worker.md -->
 
 - Control plane: cluster-wide decisions
 - Worker nodes: run application containers
@@ -70,6 +78,7 @@ history:
 - Failure impact: control plane vs. worker node outage
 
 ## What components make up the control plane?
+<!-- lesson: Contents/02-architecture/03-control-plane-components.md -->
 
 - API Server
 - Scheduler
@@ -79,6 +88,7 @@ history:
 - All components communicate through the API Server
 
 ## What components run on a worker node?
+<!-- lesson: Contents/02-architecture/04-worker-node-components.md -->
 
 - kubelet
 - kube-proxy
@@ -91,6 +101,7 @@ history:
 <!-- folder: 03-pods-and-namespaces -->
 
 ## What is a Pod?
+<!-- lesson: Contents/03-pods-and-namespaces/01-pod.md -->
 
 - Smallest deployable unit
 - Single- vs. multi-container pods
@@ -101,6 +112,7 @@ history:
 - Each Pod gets its own (ephemeral) cluster-internal IP address
 
 ## What are labels and selectors?
+<!-- lesson: Contents/03-pods-and-namespaces/02-labels-and-selectors.md -->
 
 - Key/value metadata on objects
 - Used by Deployments & Services to match pods
@@ -110,6 +122,7 @@ history:
 - Common labeling conventions (app, version, environment)
 
 ## What is a Namespace?
+<!-- lesson: Contents/03-pods-and-namespaces/03-namespace.md -->
 
 - Logical partitioning of a cluster
 - Environment separation (dev/staging/prod)
@@ -122,6 +135,7 @@ history:
 <!-- folder: 04-kubectl -->
 
 ## How do I interact with a cluster using `kubectl`?
+<!-- lesson: Contents/04-kubectl/01-kubectl-basics.md -->
 
 - cluster-info, namespaces, pods, logs, events
 - Context & namespace switching
@@ -144,6 +158,7 @@ history:
 <!-- folder: 05-deployments -->
 
 ## What is a Deployment, and how does it relate to a ReplicaSet?
+<!-- lesson: Contents/05-deployments/01-deployment-and-replicaset.md -->
 
 - Deployment manages a ReplicaSet
 - Declarative desired-state for Pods
@@ -153,6 +168,7 @@ history:
 - When to use a bare ReplicaSet vs. a Deployment
 
 ## How does Kubernetes scale and self-heal Pods?
+<!-- lesson: Contents/05-deployments/02-scaling-and-self-healing.md -->
 
 - Scaling replica count
 - Automatic pod replacement on failure
@@ -162,6 +178,7 @@ history:
 - Manual vs. automatic (HPA) scaling (brief mention)
 
 ## How do rolling updates and rollbacks work?
+<!-- lesson: Contents/05-deployments/03-rolling-updates-and-rollbacks.md -->
 
 - Gradual version replacement
 - Reverting to a previous revision
@@ -183,6 +200,7 @@ history:
 <!-- folder: 06-services-and-networking -->
 
 ## What is a Service?
+<!-- lesson: Contents/06-services-and-networking/01-service.md -->
 
 - Stable virtual IP/DNS name
 - Load balancing across matching pods
@@ -192,6 +210,7 @@ history:
 - Headless services (brief mention)
 
 ## What types of Services are there?
+<!-- lesson: Contents/06-services-and-networking/02-service-types.md -->
 
 - ClusterIP
 - NodePort
@@ -201,6 +220,7 @@ history:
 - When to choose which type
 
 ## How do I expose a Service outside the cluster?
+<!-- lesson: Contents/06-services-and-networking/03-exposing-services.md -->
 
 - Host/path-based external routing
 - Gateway API vs. Ingress
@@ -222,6 +242,7 @@ history:
 <!-- folder: 07-configuration-management -->
 
 ## What is a ConfigMap?
+<!-- lesson: Contents/07-configuration-management/01-configmap.md -->
 
 - Externalized non-sensitive configuration
 - Env vars vs. mounted files
@@ -231,6 +252,7 @@ history:
 - Referencing a ConfigMap in a Pod spec
 
 ## What is a Secret, and how does it differ from a ConfigMap?
+<!-- lesson: Contents/07-configuration-management/02-secret.md -->
 
 - Externalized sensitive data
 - Access restrictions vs. ConfigMaps
@@ -252,6 +274,7 @@ history:
 <!-- folder: 08-access-control -->
 
 ## What is RBAC (Role-Based Access Control)?
+<!-- lesson: Contents/08-access-control/01-rbac.md -->
 
 - Roles / RoleBindings
 - ClusterRoles / ClusterRoleBindings
@@ -261,6 +284,7 @@ history:
 - Principle of least privilege
 
 ## What is a Service Account?
+<!-- lesson: Contents/08-access-control/02-service-account.md -->
 
 - Pod identity toward the API server
 - Default vs. custom service accounts
@@ -273,6 +297,7 @@ history:
 <!-- folder: 09-storage-and-state -->
 
 ## How does Kubernetes handle persistent storage?
+<!-- lesson: Contents/09-storage-and-state/01-persistent-storage.md -->
 
 - Volumes
 - PersistentVolume / PersistentVolumeClaim
@@ -283,6 +308,7 @@ history:
 - Docker Desktop's default `hostpath` StorageClass (exercise environment)
 
 ## What is a StatefulSet?
+<!-- lesson: Contents/09-storage-and-state/02-statefulset.md -->
 
 - Stable per-replica identity
 - Ordered deployment & scaling
@@ -295,6 +321,7 @@ history:
 <!-- folder: 10-workload-patterns -->
 
 ## What is a DaemonSet?
+<!-- lesson: Contents/10-workload-patterns/01-daemonset.md -->
 
 - One pod per (selected) node
 - Use case: log/monitoring agents
@@ -304,6 +331,7 @@ history:
 - Update strategies for DaemonSets
 
 ## What is an Init Container?
+<!-- lesson: Contents/10-workload-patterns/02-init-container.md -->
 
 - Run-to-completion before app containers
 - Use case: setup/dependency waits
@@ -313,6 +341,7 @@ history:
 - Common patterns: schema migration, config generation
 
 ## What is a Sidecar Container?
+<!-- lesson: Contents/10-workload-patterns/03-sidecar-container.md -->
 
 - Auxiliary container in the same pod
 - Use case: proxies, log shippers
@@ -322,6 +351,7 @@ history:
 - Examples: service mesh proxies, log forwarders
 
 ## What is an Operator?
+<!-- lesson: Contents/10-workload-patterns/04-operator.md -->
 
 - Custom controller + CRD
 - Automates day-2 operational tasks
@@ -334,6 +364,7 @@ history:
 <!-- folder: 11-ci-cd -->
 
 ## What is GitOps?
+<!-- lesson: Contents/11-ci-cd/01-gitops.md -->
 
 - Git as source of truth
 - Automated sync/reconciliation (conceptual)
@@ -344,6 +375,7 @@ history:
 - Examples: Argo CD, Flux (brief mention)
 
 ## How does a deployment pipeline work with Kubernetes?
+<!-- lesson: Contents/11-ci-cd/02-deployment-pipeline.md -->
 
 - Build → test → package → deploy
 - Environment promotion (dev → staging → prod)
@@ -356,6 +388,7 @@ history:
 <!-- folder: 12-package-management -->
 
 ## What is Helm?
+<!-- lesson: Contents/12-package-management/01-helm.md -->
 
 - Package manager ("charts") for Kubernetes
 - Install/upgrade/rollback as a unit
@@ -365,6 +398,7 @@ history:
 - Managing multi-resource applications as one unit
 
 ## What is Kustomize?
+<!-- lesson: Contents/12-package-management/02-kustomize.md -->
 
 - Overlay-based YAML customization
 - Built into `kubectl -k`
@@ -377,6 +411,7 @@ history:
 <!-- folder: 13-service-mesh -->
 
 ## What is a service mesh, and why would I need one?
+<!-- lesson: Contents/13-service-mesh/01-service-mesh.md -->
 
 - Service-to-service traffic layer (routing, retries, mTLS)
 - Examples: Istio, Traefik Mesh

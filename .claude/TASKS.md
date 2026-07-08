@@ -1,5 +1,5 @@
 ---
-revision: 12
+revision: 13
 path: ".claude/TASKS.md"
 title: "Task Backlog"
 abstract: "Single, cumulative task list for all workshop phases (0-6), grouped by phase. Status model: [ ] Open, [~] In Progress, [R] Needs Rework, [B] Blocked, [X] Done."
@@ -20,6 +20,7 @@ history:
   - "v10: added Follow-up Refinement Subtask 1.2.3 (added 'Resource requests & limits' bullet to Contents.md via /improve) for Task 1.2"
   - "v11: completed task 1.3 — assigned <nr>-<section> folder slugs (01-introduction .. 13-service-mesh) to all top-level sections in Contents.md; excluded 'Further Reading / Links' (not a lesson module)"
   - "v12: completed task 1.4 — recorded how the old Contents.qmd draft's structure was reused/deviated from in .claude/Memory.md, closing out Phase 1"
+  - "v13: added Follow-up Refinement Subtask 1.3.1 (per-lesson `<!-- lesson: ... -->` path comments in Contents.md, via /improve) for Task 1.3"
 ---
 
 # Task Backlog
@@ -41,6 +42,7 @@ Status model, task-selection algorithm and the Follow-up Refinement Subtasks con
   - 1.2.2 [X] Verified bullet completeness for the intro audience; added Pod IP address, `kubectl apply/create/delete`, Docker Desktop `hostpath` StorageClass, and GitOps tool-example bullets, and replaced a redundant Docker-comparison bullet
   - 1.2.3 [X] Added "Resource requests & limits (brief mention)" bullet under "What is container orchestration?" (kept as an addition, not a replacement, to avoid colliding with the dedicated Configuration Management section)
 - 1.3 [X] Assign a stable `<nr>-<section>` folder slug to each top-level section, to be used as the folder name in Phase 2 (file: Contents.md)
+  - 1.3.1 [X] Added a stable full-path `<!-- lesson: Contents/<nr>-<section>/<nr>-<lesson>.md -->` comment under each `##` topic heading (per-section local numbering), analogous to the section-level `folder:` comments; `## Practice: ...` headings excluded (Phase 6 scheme)
 - 1.4 [X] Note in `.claude/Memory.md` how the old draft's structure was reused or deviated from, so Phase 2 stays consistent (file: .claude/Memory.md)
 
 ## Phase 2 — Execution (Claude Code agent, this repo) — Contents.md lesson content
