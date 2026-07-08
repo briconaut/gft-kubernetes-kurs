@@ -1,5 +1,5 @@
 ---
-revision: 8
+revision: 10
 path: "CLAUDE.md"
 title: "CLAUDE.md"
 abstract: "Guidance for the Claude Code agent that builds the GFT Kubernetes Workshop content and exercises in this repository."
@@ -17,6 +17,8 @@ history:
   - "v6: renumbered phases — harness generation is now Phase 0 (was Phase 1); workshop-structure generation is now Phase 1 (was Phase 2); all subsequent phases shifted down by one (superseded by v7)"
   - "v7: split former Phase 1 into Phase 1 (Eckpunkte) and Phase 2 (verbose fill-in) (superseded by v8)"
   - "v8: replaced the Eckpunkte/verbose-fill model with a per-file workflow: Phase 1-2 fully process Contents.md (topic list, then folders/lesson files/content/links), Phase 3 plans Phase 4, Phase 4-6 do the analogous work for Practices.md. Dropped the Part 1/Part 2 split from all automated phases (kept only as background info, finalized manually by the workshop author after Phase 6). README.md is out of scope for phases 0-6. Exercise/solution file naming changed to <nr>.<subnr>-<practice>.md / <nr>.<subnr>-<solution>.md."
+  - "v9: added Follow-up Refinement Subtasks convention to Task Definition — records content/formatting follow-up prompts issued after a task's completion as <phase>.<sequence>.<subsequence> subtasks, consolidating related small prompts and excluding tooling/process prompts."
+  - "v10: Added 'path' to the header of md-files."
 ---
 
 # CLAUDE.md
@@ -90,6 +92,7 @@ Notes:
 
     ---
     revision: <int, starts at 1, incremented on every regenerated version>
+    path: <path to the file>
     title: "<title>"
     abstract: "<one-sentence description>"
     state: <not started|in progress|done>
@@ -107,7 +110,7 @@ Rules:
 
 ## Task Definition (`.claude/TASKS.md`)
 
-All tasks across all phases live in the single file `.claude/TASKS.md`, grouped by phase, numbered `<phase>.<sequence>` (e.g. `2.3` = Phase 2, third task), so numeric order and phase order coincide.
+All tasks across all phases live in the single file `.claude/TASKS.md`, grouped by phase, numbered `<phase>.<sequence>` (e.g. `2.3` = Phase 2, third task), so numeric order and phase order coincide. Follow-up refinement work on an already-completed task is recorded separately as a subtask — see Follow-up Refinement Subtasks below.
 
 ### Status values
 
@@ -142,6 +145,21 @@ A later task may only be started once all earlier tasks have status `[X]`. Excep
 ### Task granularity
 
 One task = one file or one clearly bounded edit. Avoid tasks like "write Contents.md" for an entire file — split per section/module. Tasks name the target file path so Claude Code doesn't have to infer it.
+
+### Follow-up Refinement Subtasks
+
+A task in `[X]` state can still receive follow-up refinement in the same session — e.g. the user asks Claude Code for improvement suggestions on the output of a just-completed task, and the resulting changes are applied on the spot. This refinement work is recorded as a subtask numbered `<phase>.<sequence>.<subsequence>` (e.g. `1.1.1`, `1.1.2` for two follow-up prompts on task `1.1`).
+
+Rules:
+- Only prompts concerning the **content or formatting of the workshop material** are recorded (e.g. "improve wording", "restructure this section", "add a missing bullet point"). Prompts about tooling/process (e.g. `git commit`, environment setup, unrelated questions) are **not** recorded.
+- Several small, closely related follow-up prompts are consolidated into a **single** subtask entry summarizing the resulting change — not one subtask per literal prompt.
+- Subtasks document work already completed, so they are logged directly as `[X]` (no intermediate `[ ]`/`[~]` state).
+- Subtasks are nested directly under their parent task in `.claude/TASKS.md`, e.g.:
+
+      - 1.1 [X] Produce a definitive topic list ... (file: Contents.md)
+        - 1.1.1 [X] Reworded topic questions for consistency with the audience's terms
+        - 1.1.2 [X] Merged two overlapping topics into one, per review feedback
+- Subtasks do not participate in the task-selection algorithm above (which only considers top-level `<phase>.<sequence>` tasks); they exist purely as a record of iterative refinement.
 
 ## Memory Structure (`Memory.md`)
 
