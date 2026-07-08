@@ -1,5 +1,5 @@
 ---
-revision: 3
+revision: 4
 title: "GFT Kubernetes-Workshop"
 subtitle: "Contents"
 abstract: "Definitive, section-organized list of workshop topics (headings and bullet points only); supersedes the narrative v1 draft."
@@ -10,11 +10,12 @@ finished_sections: [ ]
 history:
   - "v2: replaced narrative v1 draft with a definitive, section-organized topic list (headings + bullets only) per TASKS.md 1.1; fixed invalid `state: preliminary` value and added missing `abstract` field per CLAUDE.md styleguide."
   - "v3: expanded every `##` subheading to at least 6 bullet points"
+  - "v4: rephrased every `##` topic heading as a concrete, answerable question in audience terms per TASKS.md 1.2; left `#` section headings and `## Practice: ...` headings unchanged"
 ---
 
 # What is Kubernetes and Why Should I Care?
 
-## Container Orchestration
+## What is container orchestration?
 
 - Automated scheduling & placement
 - Desired-state reconciliation
@@ -23,7 +24,7 @@ history:
 - Rolling updates without downtime
 - Declarative configuration via manifests
 
-## Kubernetes vs. Plain Docker/Containers
+## How is Kubernetes different from plain Docker?
 
 - Single host vs. multi-node cluster
 - Manual `docker run`/`compose` vs. declarative manifests
@@ -32,7 +33,7 @@ history:
 - Docker Compose scope vs. cluster-wide orchestration
 - When plain Docker is still sufficient
 
-## Key Benefits
+## What are the key benefits of using Kubernetes?
 
 - Scalability
 - Self-healing
@@ -43,7 +44,7 @@ history:
 
 # Kubernetes Architecture
 
-## Cluster & Nodes Overview
+## What is a cluster, and what is a node?
 
 - Cluster = set of nodes
 - Control plane vs. worker roles
@@ -52,7 +53,7 @@ history:
 - Cluster-wide vs. per-node resources
 - How Docker Desktop's single-node cluster maps to this model
 
-## Control Plane vs. Worker Nodes
+## What is the difference between the control plane and worker nodes?
 
 - Control plane: cluster-wide decisions
 - Worker nodes: run application containers
@@ -61,7 +62,7 @@ history:
 - Communication direction: API Server as central hub
 - Failure impact: control plane vs. worker node outage
 
-## Control Plane Components
+## What components make up the control plane?
 
 - API Server
 - Scheduler
@@ -70,7 +71,7 @@ history:
 - Cloud Controller Manager (brief mention)
 - All components communicate through the API Server
 
-## Worker Node Components
+## What components run on a worker node?
 
 - kubelet
 - kube-proxy
@@ -81,7 +82,7 @@ history:
 
 # Pods & Namespaces
 
-## Pods
+## What is a Pod?
 
 - Smallest deployable unit
 - Single- vs. multi-container pods
@@ -90,7 +91,7 @@ history:
 - Pod lifecycle & phases
 - Ephemeral nature (pods are not durable identities)
 
-## Labels & Selectors
+## What are labels and selectors?
 
 - Key/value metadata on objects
 - Used by Deployments & Services to match pods
@@ -99,7 +100,7 @@ history:
 - Labels vs. annotations
 - Common labeling conventions (app, version, environment)
 
-## Namespaces
+## What is a Namespace?
 
 - Logical partitioning of a cluster
 - Environment separation (dev/staging/prod)
@@ -110,7 +111,7 @@ history:
 
 # `kubectl` — CLI for Kubernetes
 
-## Basic Cluster Interaction
+## How do I interact with a cluster using `kubectl`?
 
 - cluster-info, namespaces, pods, logs, events
 - Context & namespace switching
@@ -130,7 +131,7 @@ history:
 
 # Deployments
 
-## Deployments & ReplicaSets
+## What is a Deployment, and how does it relate to a ReplicaSet?
 
 - Deployment manages a ReplicaSet
 - Declarative desired-state for Pods
@@ -139,7 +140,7 @@ history:
 - Relationship: Deployment → ReplicaSet → Pods
 - When to use a bare ReplicaSet vs. a Deployment
 
-## Replicas & Self-Healing
+## How does Kubernetes scale and self-heal Pods?
 
 - Scaling replica count
 - Automatic pod replacement on failure
@@ -148,7 +149,7 @@ history:
 - Liveness probes trigger restarts (brief mention)
 - Manual vs. automatic (HPA) scaling (brief mention)
 
-## Rolling Updates & Rollback
+## How do rolling updates and rollbacks work?
 
 - Gradual version replacement
 - Reverting to a previous revision
@@ -168,7 +169,7 @@ history:
 
 # Services & Networking
 
-## Services
+## What is a Service?
 
 - Stable virtual IP/DNS name
 - Load balancing across matching pods
@@ -177,7 +178,7 @@ history:
 - Selector-based endpoint matching
 - Headless services (brief mention)
 
-## Service Types
+## What types of Services are there?
 
 - ClusterIP
 - NodePort
@@ -186,7 +187,7 @@ history:
 - Default type behavior
 - When to choose which type
 
-## Ingress / Gateway API
+## How do I expose a Service outside the cluster?
 
 - Host/path-based external routing
 - Gateway API vs. Ingress
@@ -206,7 +207,7 @@ history:
 
 # Configuration Management
 
-## ConfigMaps
+## What is a ConfigMap?
 
 - Externalized non-sensitive configuration
 - Env vars vs. mounted files
@@ -215,7 +216,7 @@ history:
 - Immutable ConfigMaps (brief mention)
 - Referencing a ConfigMap in a Pod spec
 
-## Secrets
+## What is a Secret, and how does it differ from a ConfigMap?
 
 - Externalized sensitive data
 - Access restrictions vs. ConfigMaps
@@ -235,7 +236,7 @@ history:
 
 # Access Control
 
-## RBAC
+## What is RBAC (Role-Based Access Control)?
 
 - Roles / RoleBindings
 - ClusterRoles / ClusterRoleBindings
@@ -244,7 +245,7 @@ history:
 - Namespace-scoped vs. cluster-scoped permissions
 - Principle of least privilege
 
-## Service Accounts
+## What is a Service Account?
 
 - Pod identity toward the API server
 - Default vs. custom service accounts
@@ -255,7 +256,7 @@ history:
 
 # Storage & State
 
-## Persistence
+## How does Kubernetes handle persistent storage?
 
 - Volumes
 - PersistentVolume / PersistentVolumeClaim
@@ -264,7 +265,7 @@ history:
 - Volume lifecycle vs. pod lifecycle
 - emptyDir vs. persistent volumes
 
-## StatefulSets
+## What is a StatefulSet?
 
 - Stable per-replica identity
 - Ordered deployment & scaling
@@ -275,7 +276,7 @@ history:
 
 # Workload Patterns
 
-## DaemonSet
+## What is a DaemonSet?
 
 - One pod per (selected) node
 - Use case: log/monitoring agents
@@ -284,7 +285,7 @@ history:
 - Comparison to Deployment (no fixed replica count)
 - Update strategies for DaemonSets
 
-## Init Containers
+## What is an Init Container?
 
 - Run-to-completion before app containers
 - Use case: setup/dependency waits
@@ -293,7 +294,7 @@ history:
 - Failure handling (pod restart on init failure)
 - Common patterns: schema migration, config generation
 
-## Sidecar Containers
+## What is a Sidecar Container?
 
 - Auxiliary container in the same pod
 - Use case: proxies, log shippers
@@ -302,7 +303,7 @@ history:
 - Native sidecar support (restartPolicy on init containers, brief mention)
 - Examples: service mesh proxies, log forwarders
 
-## Operators
+## What is an Operator?
 
 - Custom controller + CRD
 - Automates day-2 operational tasks
@@ -313,7 +314,7 @@ history:
 
 # CI/CD with Kubernetes
 
-## GitOps Concept
+## What is GitOps?
 
 - Git as source of truth
 - Automated sync/reconciliation (conceptual)
@@ -322,7 +323,7 @@ history:
 - Drift detection & auto-correction
 - Auditability via commit history
 
-## Deployment Pipelines (Conceptual)
+## How does a deployment pipeline work with Kubernetes?
 
 - Build → test → package → deploy
 - Environment promotion (dev → staging → prod)
@@ -333,7 +334,7 @@ history:
 
 # Package Management: Helm & Kustomize
 
-## Helm
+## What is Helm?
 
 - Package manager ("charts") for Kubernetes
 - Install/upgrade/rollback as a unit
@@ -342,7 +343,7 @@ history:
 - Release versioning & history
 - Managing multi-resource applications as one unit
 
-## Kustomize
+## What is Kustomize?
 
 - Overlay-based YAML customization
 - Built into `kubectl -k`
@@ -353,7 +354,7 @@ history:
 
 # Service Mesh
 
-## Purpose & Basic Concept
+## What is a service mesh, and why would I need one?
 
 - Service-to-service traffic layer (routing, retries, mTLS)
 - Examples: Istio, Traefik Mesh
