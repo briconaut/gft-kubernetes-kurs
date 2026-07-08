@@ -1,9 +1,9 @@
 ---
-revision: 10
+revision: 11
 path: "Contents/01-introduction/01-container-orchestration.md"
 title: "What is Kubernetes and Why Should I Care? / What is container orchestration?"
 abstract: "Lesson skeleton for this topic; explanatory prose pending Phase 4."
-state: not started
+state: in progress
 lang: en
 numbersections: true
 finished_sections: [ ]
@@ -18,6 +18,7 @@ history:
   - "v8: added prose for '## Horizontal & vertical scaling' per Task 4.4"
   - "v9: added prose for '## Rolling updates without downtime' per Task 4.5"
   - "v10: added prose for '## Declarative configuration via manifests' per Task 4.6"
+  - "v11: added prose for '## Resource requests & limits (brief mention)' per Task 4.7 — all placeholders filled, state moved to 'in progress' per .claude/STYLE.md"
 ---
 
 # What is Kubernetes and Why Should I Care? / What is container orchestration?
@@ -74,4 +75,4 @@ This replaces a sequence of imperative `docker run` commands with a description 
 
 ## Resource requests & limits (brief mention)
 
-_Content pending (Phase 4)._
+Beyond just choosing a node, you can tell Kubernetes how much CPU and memory each container needs: a **request** is what the scheduler reserves for it when picking a node, and a **limit** is the hard cap it isn't allowed to exceed. Conceptually this is what Docker's own `--memory`/`--cpus` flags do for a single container — Kubernetes just makes it part of the same declarative manifest, cluster-wide.
