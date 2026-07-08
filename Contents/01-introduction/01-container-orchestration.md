@@ -1,5 +1,5 @@
 ---
-revision: 8
+revision: 9
 path: "Contents/01-introduction/01-container-orchestration.md"
 title: "What is Kubernetes and Why Should I Care? / What is container orchestration?"
 abstract: "Lesson skeleton for this topic; explanatory prose pending Phase 4."
@@ -16,6 +16,7 @@ history:
   - "v6: reviewed the manual edit to '## Desired-state reconciliation' via /review — removed the redundant second sentence of the control-loop paragraph, which restated the first sentence and preempted the upcoming 'Self-healing' bullet's content; kept the new 'declarative approach' opening sentence"
   - "v7: added prose for '## Self-healing / auto-restart of failed containers' per Task 4.3"
   - "v8: added prose for '## Horizontal & vertical scaling' per Task 4.4"
+  - "v9: added prose for '## Rolling updates without downtime' per Task 4.5"
 ---
 
 # What is Kubernetes and Why Should I Care? / What is container orchestration?
@@ -60,7 +61,9 @@ With plain Docker, scaling out means manually starting more containers yourself.
 
 ## Rolling updates without downtime
 
-_Content pending (Phase 4)._
+When you deploy a new version of your container image, Kubernetes replaces the old Pods with new ones gradually — a few at a time — instead of stopping everything at once. Enough of the old version keeps running until enough of the new version is up, so the application stays reachable throughout the update.
+
+This is different from replacing a single `docker run` container, where stopping the old one before starting the new one causes a brief gap. The mechanics of rollouts and rollbacks are covered in more depth later.
 
 ## Declarative configuration via manifests
 
