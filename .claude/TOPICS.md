@@ -22,8 +22,6 @@ history:
 
 ### Installing git-bash
 
-### Installing kubectl
-
 ## Introduction to Kubernetes & Container Orchestration
 
 ### What Are Containers
@@ -144,6 +142,8 @@ history:
 
 ### Installing Required Software
 
+### Installing kubectl
+
 ## Kubernetes Architecture
 
 ### Infrastructure
@@ -178,6 +178,6 @@ history:
 
 ## CI/CD
 
-### ArgoCD
+### GitOps
 
 # New
