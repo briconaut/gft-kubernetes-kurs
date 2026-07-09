@@ -71,7 +71,7 @@ history:
 - No cloud-provider-specific content.
 - No CI/CD tool-specific implementation.
 - No production-hardening / security deep-dive beyond what's covered in the optional deep-dive part.
-- No Rancher-specific features — the exercise environment is Docker Desktop's built-in Kubernetes only.
+- No Rancher-specific features — the exercise environment is limited to the Docker compatibility of Rancher and the Kubernetes features of either Docker Desktop or Rancher Desktop.
 
 ### Supporting terminology / reference material
 
