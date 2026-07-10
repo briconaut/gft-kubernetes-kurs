@@ -1,6 +1,6 @@
 ---
 name: fill-subtopic
-description: Fill exactly one selected subtopic in Contents.md with a concise, non-redundant bullet list aligned to .claude/VISION.md, moving any existing list content to Contents-removed.md. No helper scripts are included or required.
+description: Fill exactly one selected subtopic in Contents.md with a concise, non-redundant bullet list of Steps aligned to .claude/VISION.md, moving any existing list content to Contents-removed.md. No helper scripts are included or required.
 ---
 
 # fill-subtopic
@@ -37,10 +37,12 @@ If the parameter does not identify exactly one Subtopic, stop and ask for a more
 - Preserve existing topic order, subtopic order, numbering, links, lesson comments, separators, and unrelated content.
 - Treat level-1 headings (`#`) as Topics.
 - Treat level-2 headings (`##`) as Subtopics.
+- Treat list elements (`-` or `*`) under a Subtopic as Steps.
 - Ignore markdown links when matching headings; compare visible link text.
 - Ignore numbering prefixes when matching headings:
   - Topic numbers such as `01`.
   - Subtopic numbers such as `01.02`.
+  - Step numbers such as `01.02.03`.
 - The selected Subtopic block starts at its `##` heading and ends before the next `##` or `#` heading, or end of file.
 
 ### `.claude/VISION.md`
@@ -143,6 +145,11 @@ Insert the generated list directly below the Subtopic lesson comment:
 Do not add point-level lesson or anchor comments. This skill creates plain bullet lists only.
 
 Do not renumber Topics, Subtopics, or Points. Numbering and link maintenance belongs to `build-contents`, not to `fill-subtopic`.
+
+## Documen versioning
+
+After all changes are done, increase the revision number in the header.
+Add a one-line descriptive message to the history.
 
 ## Selection algorithm
 

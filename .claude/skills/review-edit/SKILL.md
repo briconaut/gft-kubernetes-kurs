@@ -1,6 +1,6 @@
 ---
-name: review
-description: Use when the user runs /review <prompt> to review a manual edit made to workshop content, assess its fit against the subheading/heading/workshop context, and — on acceptance — record a style/content note in .claude/Memory.md so future generation stays consistent with it. Distinct from /improve: /review creates no TASKS.md entries; its purpose is training future content generation on the user's own editing patterns, not task refinement.
+name: review-edit
+description: Use when the user runs /review-edit <prompt> to review a manual edit made to workshop content, assess its fit against the subheading/heading/workshop context, and — on acceptance — record a style/content note in .claude/Memory.md so future generation stays consistent with it. Distinct from /improve: /review-edit creates no TASKS.md entries; its purpose is training future content generation on the user's own editing patterns, not task refinement.
 ---
 
 # Review
@@ -19,7 +19,7 @@ domain (`.claude/skills/improve/SKILL.md`).
 
 ## When this runs
 
-- Invoked explicitly as `/review <prompt>`.
+- Invoked explicitly as `/review-edit <prompt>`.
 - Expected after the user has manually edited a file that a task in
   `.claude/TASKS.md` previously produced (typically a Phase 4 lesson file).
 - `<prompt>` is optional. When given, it focuses the review (e.g. "check
