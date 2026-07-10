@@ -1,5 +1,5 @@
 ---
-revision: 1
+revision: 4
 path: "Contents.md"
 title: "GFT Kubernetes-Workshop"
 subtitle: "Contents"
@@ -10,6 +10,9 @@ state: in progress
 finished_sections: [ ]
 history:
   - "v1: intial, empty version."
+  - "v2: Filling 01.01 with content."
+  - "v3: Filling 01.02 with content."
+  - "v4: Filling 01.03 with content."
 ---
 
 ------------------------------------------------------------------------------
@@ -19,11 +22,31 @@ history:
 ## [01.01 Installing Docker Desktop](<Contents/01-Local Kubernetes Cluster Setup/01.01-Installing Docker Desktop.md>)
 <!-- lesson: Contents/01-Local Kubernetes Cluster Setup/01.01-Installing Docker Desktop.md -->
 
+- Download and install Docker Desktop for your operating system (Windows/macOS/Linux)
+- Enable Kubernetes in Docker Desktop's settings/preferences
+- Docker Desktop provisions a single-node, kubeadm-based Kubernetes cluster
+- Verify Kubernetes is running via Docker Desktop's status indicator
+- Resulting cluster configuration is written to `~/.kube/config`
+- No cloud account or external cluster required — everything runs locally
+
 ## [01.02 Installing Rancher Desktop](<Contents/01-Local Kubernetes Cluster Setup/01.02-Installing Rancher Desktop.md>)
 <!-- lesson: Contents/01-Local Kubernetes Cluster Setup/01.02-Installing Rancher Desktop.md -->
 
+- Download and install Rancher Desktop for your operating system (Windows/macOS/Linux)
+- Choose a container runtime (dockerd/moby or containerd) during setup
+- Enable Kubernetes in Rancher Desktop's preferences
+- Rancher Desktop provisions a local, single-node k3s-based Kubernetes cluster
+- Resulting cluster configuration is written to `~/.kube/config`
+- Rancher Desktop and Docker Desktop cannot run their Kubernetes clusters at the same time — only one can be active
+
 ## [01.03 Installing git-bash](<Contents/01-Local Kubernetes Cluster Setup/01.03-Installing git-bash.md>)
 <!-- lesson: Contents/01-Local Kubernetes Cluster Setup/01.03-Installing git-bash.md -->
+
+- Download and install Git for Windows, which bundles Git Bash
+- Git Bash provides a bash-compatible shell used for all `kubectl` and command-line exercises
+- Optionally enable `kubectl` tab-completion via `source <(kubectl completion bash)`
+- Verify Git Bash opens correctly and runs basic shell commands
+- Git Bash is the assumed terminal environment throughout the workshop
 
 ------------------------------------------------------------------------------
 
