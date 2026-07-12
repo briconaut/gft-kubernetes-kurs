@@ -1,5 +1,5 @@
 ---
-revision: 30
+revision: 31
 path: ".claude/TASKS.md"
 title: "Task Backlog"
 abstract: "Single, cumulative task list for all workshop phases (0-8), grouped by phase. Status model: [ ] Open, [~] In Progress, [R] Needs Rework, [B] Blocked, [X] Done."
@@ -39,6 +39,7 @@ history:
   - "v29: completed task 4.6 — added prose for '## Declarative configuration via manifests' in Contents/01-introduction/01-container-orchestration.md"
   - "v30: completed task 4.7 — added prose for '## Resource requests & limits (brief mention)' in Contents/01-introduction/01-container-orchestration.md; all 7 bullets now filled, file state advanced to 'in progress'"
   - "v31: completed task 4.8 — reviewed Contents/01-introduction/01-container-orchestration.md; no [R] rework recommended for 4.1-4.7, closing out this lesson file"
+  - "v32: completed tasks 4.9-4.14 — added prose for all 6 bullets in Contents/01-introduction/02-kubernetes-vs-docker.md; all placeholders now filled, file state advanced to 'in progress'"
 ---
 
 # Task Backlog
@@ -102,12 +103,12 @@ One task per `## <bullet>` subheading (replaces its `_Content pending (Phase 4).
 
 **Contents/01-introduction/02-kubernetes-vs-docker.md** — "How is Kubernetes different from plain Docker?"
 
-- 4.9 [ ] Write prose for `## Single host vs. multi-node cluster` in Contents/01-introduction/02-kubernetes-vs-docker.md (file: Contents/01-introduction/02-kubernetes-vs-docker.md)
-- 4.10 [ ] Write prose for `## Manual \`docker run\`/\`compose\` vs. declarative manifests` in Contents/01-introduction/02-kubernetes-vs-docker.md (file: Contents/01-introduction/02-kubernetes-vs-docker.md)
-- 4.11 [ ] Write prose for `## No built-in scheduling in plain Docker` in Contents/01-introduction/02-kubernetes-vs-docker.md (file: Contents/01-introduction/02-kubernetes-vs-docker.md)
-- 4.12 [ ] Write prose for `## No built-in self-healing in plain Docker` in Contents/01-introduction/02-kubernetes-vs-docker.md (file: Contents/01-introduction/02-kubernetes-vs-docker.md)
-- 4.13 [ ] Write prose for `## No cross-host service discovery/networking in Docker Compose` in Contents/01-introduction/02-kubernetes-vs-docker.md (file: Contents/01-introduction/02-kubernetes-vs-docker.md)
-- 4.14 [ ] Write prose for `## When plain Docker is still sufficient` in Contents/01-introduction/02-kubernetes-vs-docker.md (file: Contents/01-introduction/02-kubernetes-vs-docker.md)
+- 4.9 [X] Write prose for `## Single host vs. multi-node cluster` in Contents/01-introduction/02-kubernetes-vs-docker.md (file: Contents/01-introduction/02-kubernetes-vs-docker.md)
+- 4.10 [X] Write prose for `## Manual \`docker run\`/\`compose\` vs. declarative manifests` in Contents/01-introduction/02-kubernetes-vs-docker.md (file: Contents/01-introduction/02-kubernetes-vs-docker.md)
+- 4.11 [X] Write prose for `## No built-in scheduling in plain Docker` in Contents/01-introduction/02-kubernetes-vs-docker.md (file: Contents/01-introduction/02-kubernetes-vs-docker.md)
+- 4.12 [X] Write prose for `## No built-in self-healing in plain Docker` in Contents/01-introduction/02-kubernetes-vs-docker.md (file: Contents/01-introduction/02-kubernetes-vs-docker.md)
+- 4.13 [X] Write prose for `## No cross-host service discovery/networking in Docker Compose` in Contents/01-introduction/02-kubernetes-vs-docker.md (file: Contents/01-introduction/02-kubernetes-vs-docker.md)
+- 4.14 [X] Write prose for `## When plain Docker is still sufficient` in Contents/01-introduction/02-kubernetes-vs-docker.md (file: Contents/01-introduction/02-kubernetes-vs-docker.md)
 - 4.15 [ ] Review Contents/01-introduction/02-kubernetes-vs-docker.md: subheading consistency/style; fit of each subheading and the whole file for the workshop (scope/audience/non-goals per CLAUDE.md) and for its topic "How is Kubernetes different from plain Docker?" (file: Contents/01-introduction/02-kubernetes-vs-docker.md)
 
 **Contents/01-introduction/03-key-benefits.md** — "What are the key benefits of using Kubernetes?"
