@@ -2,12 +2,13 @@
 revision: 1
 path: ".claude/STYLE.md"
 title: "Style Guide"
-abstract: "Binding format specifications for generated artifacts: frontmatter header, lesson-file structure, topic/subtopic/subject numbering, and the format of Contents.md, lessons/practice/solution files. Referenced from CLAUDE.md."
+abstract: "Binding format specifications for generated artifacts: frontmatter header, lesson-file structure, and the format of Contents.md. Referenced from CLAUDE.md."
 state: in progress
 lang: en
 numbersections: true
+finished_sections: [ ]
 history:
-  - "v1: initial version"
+  - "v1: intial version"
 ---
 
 # Style Guide
@@ -71,17 +72,31 @@ The overall format of `Contents.md` is:
 
     # <#topic> <topic title>
 
-    ## [<#topic>.<#subtopic> <subtopic title>](<file link to `Contents/<#topic>-<topic title>/<#topic>.<#subtopic>-<subtopic title>.lesson.md`)
+    ## [<#topic>.<#subtopic> <subtopic title>](<file link to `Contents/<#topic>-<topic title>/<#topic>.<#subtopic>-<subtopic title>.lesson.md`>)
+    <!-- lesson: Contents/<#topic>-<topic title>/<#topic>.<#subtopic>-<subtopic title>.lesson.md -->
 
     - [<#topic>.<#subtopic>.<#subject> <subject title>](<file link to `Contents/<#topic>-<topic title>/<#topic>.<#subtopic>-<subtopic title>.lesson.md#<#topic>.<#subtopic>.<#subject>-<subject title>`>)
+      <!-- anchor: Contents/<#topic>-<topic title>/<#topic>.<#subtopic>-<subtopic title>.lesson.md#<#topic>.<#subtopic>.<#subject>-<subject title> -->
       <subject contents if any>
 
     <repeat for all subject, subtopics and topics>
 
+## Generated HTML comments
+
+Directly below each Subtopic heading and each Subject list item, `Contents.md` carries a generated HTML comment mirroring that entry's file link. These comments let skills and tooling locate the target file/anchor without re-parsing the markdown link syntax, and let a stale link be detected against its comment.
+
+- **Subtopic level** — `<!-- lesson: <path> -->`, placed directly below the Subtopic heading. `<path>` is the same lesson-file path used in the heading's link, without the `Contents/…` link wrapper.
+- **Subject level** — `<!-- anchor: <path>#<anchor> -->`, placed directly below the Subject's list item (before any `<subject contents>`). `<path>#<anchor>` is the same path+anchor used in the Subject's link.
+
+Rules:
+- If the comment is missing for a Subtopic/Subject that should have one per the format above, create it.
+- If the comment already exists but no longer matches the current link (e.g. after a rename/renumber), update it to match — never leave a stale comment.
+- Comments use `lesson` at Subtopic level and `anchor` at Subject level — no other comment keys are used in `Contents.md`.
+
 # Lesson File Format
 
-The files `Contents/<#topic>-<topic title>/<#subtopic>-<subtopic title>.md` contain the frontmatter header.
-The overall format of `Contents/<#topic>-<topic title>/<#subtopic>-<subtopic title>.md` is:
+The files `Contents/<#topic>-<topic title>/<#topic>.<#subtopic>-<subtopic title>.lesson.md` contain the frontmatter header.
+The overall format of `Contents/<#topic>-<topic title>/<#topic>.<#subtopic>-<subtopic title>.lesson.md` is:
 
     # <#topic> <topic title>
 

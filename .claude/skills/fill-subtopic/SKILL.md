@@ -1,11 +1,17 @@
 ---
 name: fill-subtopic
-description: Fill exactly one selected subtopic in Contents.md with a subject list: a concise, non-redundant bullet list of Steps aligned to .claude/VISION.md, moving any existing list content to Contents-removed.md. No helper scripts are included or required.
+description: Fill exactly one selected Subtopic in Contents.md with a concise, non-redundant bullet list of Subjects aligned to .claude/VISION.md, moving any existing Subject list to Contents-removed.md. Produces plain bullet content only — numbering, links, and comments are rebuilt later by /build-contents per .claude/STYLE.md. No helper scripts are included or required.
 ---
 
 # fill-subtopic
 
-Use this skill when the user wants to populate one specific Subtopic in `Contents.md` with a list of Subjects.
+Use this skill when the user wants to populate one specific Subtopic in `Contents.md` with a compact list of Subjects.
+
+This skill only edits `Contents.md` (and, when replacing an existing list, `Contents-removed.md`). It never creates, renames, or edits `.lesson.md` / `.practice.md` / `.solution.md` content files — those are out of scope, to avoid any conflict with `.claude/STYLE.md`'s file-format specifications for those files.
+
+## Terminology
+
+Use "Topic", "Subtopic", and "Subject" exactly as defined in `.claude/STYLE.md` → Numbering (Level-1 heading = Topic, Level-2 heading = Subtopic, bullet point under a Subtopic = Subject).
 
 ## Required parameter
 
@@ -22,32 +28,28 @@ If the parameter does not identify exactly one Subtopic, stop and ask for a more
 
 - `Contents.md`
 - `.claude/VISION.md`
+- `.claude/STYLE.md` — authoritative for Topic/Subtopic/Subject naming and numbering; consult it whenever this skill needs to recognize or match existing structure.
 - Optional existing `Contents-removed.md`
 
 ## Output files
 
 - Updated `Contents.md`
-- Updated or created `Contents-removed.md`, but only when an existing list was moved out of the selected Subtopic
+- Updated or created `Contents-removed.md`, but only when an existing Subject list was moved out of the selected Subtopic
 
 ## File interpretation
 
 ### `Contents.md`
 
 - Preserve YAML frontmatter as-is.
-- Preserve existing topic order, subtopic order, numbering, links, lesson comments, separators, and unrelated content.
-- Treat level-1 headings (`#`) as Topics.
-- Treat level-2 headings (`##`) as Subtopics.
-- Treat list elements (`-` or `*`) under a Subtopic as Steps.
+- Preserve existing Topic order, Subtopic order, numbering, links, comments, separators, and unrelated content.
+- Identify Topics, Subtopics, and Subjects per `.claude/STYLE.md` → Numbering.
 - Ignore markdown links when matching headings; compare visible link text.
-- Ignore numbering prefixes when matching headings:
-  - Topic numbers such as `01`.
-  - Subtopic numbers such as `01.02`.
-  - Subject numbers such as `01.02.03`.
+- Ignore numbering prefixes when matching headings or Subjects.
 - The selected Subtopic block starts at its `##` heading and ends before the next `##` or `#` heading, or end of file.
 
 ### `.claude/VISION.md`
 
-Use `.claude/VISION.md` as the content guardrail for all generated bullet points:
+Use `.claude/VISION.md` as the content guardrail for all generated Subjects:
 
 - Respect the stated audience, assumed prior knowledge, language, scope, non-goals, and workshop structure.
 - Keep content in English.
@@ -58,18 +60,18 @@ Use `.claude/VISION.md` as the content guardrail for all generated bullet points
 
 ## Existing list handling
 
-A Subtopic has an existing list when, after the Subtopic heading and generated lesson comment, the Subtopic body contains a top-level markdown list.
+A Subtopic has an existing list when, after the Subtopic heading (and any existing generated comment), the Subtopic body contains a top-level markdown list of Subjects.
 
 Before inserting the new list:
 
-1. Move the existing top-level list from the selected Subtopic to `Contents-removed.md`.
-2. Preserve the moved list exactly, including existing numbering, links, comments, nested list items, and blank lines that belong to it.
-3. Append the moved list under a clear removal heading:
+1. Move the existing top-level list of Subjects from the selected Subtopic to `Contents-removed.md`.
+2. Preserve the moved Subjects exactly, including existing numbering, links, comments, nested list items, and blank lines that belong to them.
+3. Append the moved Subjects under a clear removal heading:
 
 ```markdown
 -------------------------------------------------------------------------------
 
-# Removed Subtopic Points
+# Removed Subjects
 
 ## <topic title>
 
@@ -77,12 +79,12 @@ Before inserting the new list:
 
 Moved from `Contents.md` by `fill-subtopic`.
 
-<old list>
+<old Subject list>
 ```
 
 4. If `Contents-removed.md` already exists, append a new removal block; do not overwrite previous removals.
-5. Remove the old list from the selected Subtopic in `Contents.md` before writing the new one.
-6. Preserve non-list prose in the Subtopic unless it is clearly part of the old list. Insert the new list after the Subtopic heading and lesson comment, before any preserved non-list prose.
+5. Remove the old Subject list from the selected Subtopic in `Contents.md` before writing the new one.
+6. Preserve non-list prose in the Subtopic unless it is clearly part of the old list. Insert the new Subject list after the Subtopic heading (and any existing comment), before any preserved non-list prose.
 
 ## Generated list requirements
 
@@ -90,13 +92,13 @@ Generate one top-level markdown bullet list of Subjects in the selected Subtopic
 
 The list must satisfy all of these constraints:
 
-- Minimum 4 Subjects.
-- Maximum 8 Subjects.
+- Minimum 4 entries.
+- Maximum 8 entries.
 - Each Subject is a concise bullet point, not a paragraph.
 - Each Subject fits the selected Subtopic.
 - The set of Subjects covers the Subtopic adequately for workshop contents planning.
 - Subjects are mutually non-redundant.
-- Subjects do not duplicate bullet points or obvious point coverage already present in other Subtopics.
+- Subjects do not duplicate bullet points or obvious coverage already present in other Subtopics.
 - Subjects require no explanations that belong only to later Topics.
 - Subjects stay consistent with `.claude/VISION.md`.
 - Subjects are written in English.
@@ -104,9 +106,9 @@ The list must satisfy all of these constraints:
 
 ## Cross-subtopic redundancy check
 
-Before writing the new Subject
+Before writing the new list:
 
-1. Read all existing Subject points in other Subtopics of `Contents.md`.
+1. Read all existing Subjects in other Subtopics of `Contents.md`.
 2. Normalize them for comparison by:
    - Removing numbering prefixes.
    - Removing markdown links while keeping visible text.
@@ -128,13 +130,13 @@ Use the order in `Contents.md` as the teaching progression:
 
 ## Formatting rules
 
-Preserve the selected Subtopic heading and its existing lesson comment exactly unless the file format already requires a minor blank-line normalization.
+Preserve the selected Subtopic heading and any existing generated comment exactly unless the file format already requires a minor blank-line normalization.
 
-Insert the generated list directly below the Subtopic lesson comment:
+Insert the generated list directly below the Subtopic heading (and its comment, if any):
 
 ```markdown
-## [03.03 Control Plane](<Contents/03-Kubernetes Architecture/03.03-Control Plane.md>)
-<!-- lesson: Contents/03-Kubernetes Architecture/03.03-Control Plane.md -->
+## [03.03 Control Plane](<...>)
+<!-- lesson: ... -->
 
 - API Server as the central Kubernetes API entry point
 - Scheduler assigning pending Pods to suitable Worker Nodes
@@ -142,11 +144,11 @@ Insert the generated list directly below the Subtopic lesson comment:
 - etcd as the persistent store for cluster state
 ```
 
-Do not add point-level lesson or anchor comments. This skill creates plain bullet lists only.
+This skill creates plain, unlinked, unnumbered Subject bullets only — no per-Subject links or comments. Numbering, links, and any generated comments for Subjects are rebuilt later by `/build-contents`, per `.claude/STYLE.md`.
 
-Do not renumber Topics, Subtopics, or Subjects. Numbering and link maintenance belongs to `build-contents`, not to `fill-subtopic`.
+Do not renumber Topics, Subtopics, or Subjects. Numbering and link maintenance belongs to `/build-contents`, not to `/fill-subtopic`.
 
-## Documen versioning
+## Document versioning
 
 After all changes are done, increase the revision number in the header.
 Add a one-line descriptive message to the history.
@@ -175,7 +177,7 @@ When resolving the required Subtopic parameter:
 Before saving the final `Contents.md`, verify:
 
 - Exactly one Subtopic was modified.
-- `Contents-removed.md` was changed only if an existing list was moved.
+- `Contents-removed.md` was changed only if an existing Subject list was moved.
 - The new list has 4 to 8 Subjects.
 - The new list is under the selected Subtopic only.
 - No generated Subject is a duplicate of another generated Subject.
@@ -183,12 +185,16 @@ Before saving the final `Contents.md`, verify:
 - The generated Subjects do not violate `.claude/VISION.md` scope or non-goals.
 - Topic/Subtopic numbering and links were not rebuilt by this skill.
 
+## Out of scope
+
+- Does not create, rename, or edit `.lesson.md`, `.practice.md`, or `.solution.md` files.
+- Does not renumber or relink Topics/Subtopics/Subjects — that's `/build-contents`.
+
 ## Response after execution
 
 After editing, report briefly:
 
 - Which Subtopic was filled.
-- How many Subject points were generated.
-- Whether an old list was moved to `Contents-removed.md`.
+- How many Subjects were generated.
+- Whether an old Subject list was moved to `Contents-removed.md`.
 - Any uncertainty or skipped change, if applicable.
-
