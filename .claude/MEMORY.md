@@ -23,7 +23,7 @@ Entries are added here only when a decision or convention from one task is neede
 
 ## How the old Contents.md draft was reused/deviated from (Task 1.4)
 
-- The pre-Phase-0 draft is `Contents.qmd` (commit `b189aa8`, "Erste Ideen") — a Quarto/LaTeX-PDF narrative doc, not the current `Contents.md`. It was inspiration only (per CLAUDE.md task 1.1), not binding.
+- The intial draft is `Original/Contents.qmd` — a Quarto/LaTeX-PDF narrative doc, not the current `Contents.md`. It was inspiration only, not binding.
 - **Section order/topics mostly reused**, but format was not: draft was prose with `##` narrative subsections; current `Contents.md` is a flat headings+bullets list, split further into audience-facing `##` questions (task 1.2).
 - **Section mapping, old → new**:
   - "Core Components of Kubernetes / Kubernetes-Architecture" (Control Plane + Worker Nodes prose) → `02-architecture`, split into 4 granular question-topics.
@@ -33,21 +33,3 @@ Entries are added here only when a decision or convention from one task is neede
 - **Entirely new topics, not present in the draft at all**: "How is Kubernetes different from plain Docker?" (bridges the assumed Docker prerequisite explicitly), "What is GitOps?" (draft's "# CI / CD" heading was empty), the Docker Desktop `hostpath` StorageClass bullet, and the `kubectl apply/create/delete` bullet (draft's kubectl list only had read-only verbs: cluster-info/namespaces/pods/logs/events).
 - **Dropped from the draft**: all inline explanatory prose and links (e.g. the Ingress-vs-Gateway-API blog link under the old Services section) — `Contents.md` keeps only the original 4 links under "Further Reading / Links". Such supplementary links can be reintroduced in Phase 4 lesson content if useful there.
 - **Diagram assets**: the draft referenced two SVGs. Only `.media/components-of-kubernetes.svg` still exists in the repo; `KubernetesConcepts.svg` (used for the old Pods/Namespaces section) is missing. Phase 4 either needs a replacement diagram for `03-pods-and-namespaces` or should proceed without one.
-
-## Folder & lesson-file numbering convention (Tasks 1.3, 1.3.1)
-
-The `folder:`/`lesson:` HTML-comment convention established by these tasks is now documented as binding style in `.claude/STYLE.md` → Format of Contents.md — see there for the exact rule (comment placement, global vs. local numbering, `## Practice: ...` and "Further Reading / Links" exclusions). Nothing further to add here.
-
-## Review Notes
-
-Deliberate exception to the "current state, not append-only log" rule above (per `.claude/skills/review/SKILL.md` → Step 8): one entry per reviewed manual edit, recording what it reveals about the user's content/style preferences. Entries accumulate and are never condensed or overwritten.
-
-### Contents/01-introduction/01-container-orchestration.md — "## Automated scheduling & placement" (reviewed after Task 4.1)
-
-- **Content**: The user's manual edit added (1) a claim that scheduling placement "can be influenced by labels and selectors", and (2) a brief Docker Swarm comparison. (1) pointed at the wrong later topic — `Contents.md`'s "What are labels and selectors?" lesson covers Deployment/Service label matching, not node placement — and was corrected during review to "node selectors and affinity". (2) is **not** a topic anywhere in `Contents.md`, but the user explicitly confirmed it's fine as a short, harmless aside — the user is comfortable with brief topic-list-external comparisons/asides as long as they stay short, even outside the fixed topic structure.
-- **Style**: Leans toward slightly more specific/technical phrasing than this agent's default conceptual tone (e.g. names "distribution strategies" rather than staying at "the scheduler picks a node"). Tends to draft short, separate sentences meant as distinct paragraphs (one idea per line) rather than one flowing paragraph — when reviewing similar edits, check that intended paragraph breaks got blank lines, since the raw draft often omits them. First-pass drafts routinely contain minor slips (missed capitalization of "Kubernetes", small grammar issues) that are expected to be caught at review time, not something to flag as a concern in itself.
-
-### Contents/01-introduction/01-container-orchestration.md — "## Desired-state reconciliation" (reviewed after Task 4.2)
-
-- **Content**: The user's manual edit added (1) a good framing opening sentence introducing the "declarative" term (kept), and (2) an extra sentence appended to the control-loop explanation, restating the same idea while adding a self-healing example ("starting a replacement container or the unexpected termination of a container") that preempted the next bullet's own topic ("Self-healing / auto-restart of failed containers"). The user agreed to drop (2) entirely rather than reword it. **Takeaway**: when a manual addition's example material belongs to an upcoming, not-yet-written bullet, flag it as a boundary/redundancy issue during review — the user has confirmed removal (not merging) is the preferred resolution.
-- **Style**: Confirms the pattern from the first review note — a second, closely related sentence is again added directly below an existing one without a blank line in between (same no-blank-line-between-distinct-sentences habit, now observed twice). Also confirms a tendency to add one extra clarifying/example sentence per paragraph that can end up restating the preceding sentence rather than adding new information — worth a light redundancy check specifically on trailing "It also ..." / "for example ..." follow-up sentences.

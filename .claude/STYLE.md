@@ -25,21 +25,26 @@ Workshop topics are the Level 1 headings in `Contents.md` except `# Further Read
 These are numbered starting at 1. 
 Numbering format is `01`, `02`, ...
 The numbering is refered to as `<#topic>`.
+The text of the topic is refered to as `<topic title>`
+The contents of the Level 1 heading is refered to as `<topic contents>`
 
 ## Workshop subtopic numbering
 
-Workshop topics are the Level 1 headings in `Contents.md`.
-These are numbered starting at 1. 
-Numbering format is `<topic-number>.01`, `<topic-number>.02`, ... where the `<topic-number>` is the topic numbering of their respective topic.
+Workshop subtopics are the Level 2 headings in `Contents.md`.
+These are numbered starting at 1 for each topic. 
+Numbering format is `<#topic>.01`, `<#topic>.02`, ... where the `<#topic>` is the topic numbering of their respective topic.
 The numbering is refered to as `<#subtopic>`.
+The text of the subtopic is refered to as `<subtopic title>`
+The contents of the Level 2 heading is refered to as `<subtopic contents>`
 
 ## Subject numbering
 
 Subjects are the bulletpoints of Level 2 headings in `Contents.md`.
-These are numbered starting at 1. 
-Numbering format is `<topic-number>.<subtopic-number>.01`, `<topic-number>.<subtopic-number>.02`, ... where the `<topic-number>.<subtopic-number>` is the subtopic numbering of their respective subtopic.
-This numbering is exclusively used to identify a subjet in the prompts. It never appears in workshop related contents but is allowed in the scaffolding (`.claude/TASKS.md`, `.claude/MEMORY.md`, ... )
+These are numbered starting at 1 for each subtopic. 
+Numbering format is `<#topic>.<#subtopic>.01`, `<#topic>.<#subtopic>.02`, ... where the `<#topic>` is the topic numbering of their respective topic and the `<#subtopic>` is the subtopic numbering of their respective subtopic.
 The numbering is refered to as `<#subject>`.
+The first line of the list item is refered to as `<subject title>`.
+The full contents of the list item is refered to as `<subject contents>`.
 
 # Frontmatter for Generated `.md` Files
 
@@ -62,3 +67,30 @@ Rules:
 - Append one entry to `history` per regenerated version, summarizing what changed.
 - Additional information may be present and will remain untouched.
 
+# Format of Contents.md
+
+`Contents.md` contains the frontmatter header.
+The overall format of `Contents.md` is:
+
+    # <#topic> <topic title>
+
+    ## [<#topic>.<#subtopic> <subtopic title>](<file link to `Contents/<#topic>-<topic title>/<#topic>.<#subtopic>-<subtopic title>.lesson.md`)
+
+    - [<#topic>.<#subtopic>.<#subject> <subject title>](<file link to `Contents/<#topic>-<topic title>/<#subtopic>-<subtopic title>.lesson.md#<#topic>.<#subtopic>.<#subject>-<subject title>`>)
+      <subject contents if any>
+
+    <repeat for all subject, subtopics and topics>
+
+# Lesson File Format
+
+The files `Contents/<#topic>-<topic title>/<#subtopic>-<subtopic title>.md` contain the frontmatter header.
+The overall format of `Contents/<#topic>-<topic title>/<#subtopic>-<subtopic title>.md` is:
+
+    # <#topic> <topic title>
+
+    ## <#topic>.<#subtopic> <subtopic title>
+
+    - <#topic>.<#subtopic>.<#subject> <subject title>
+      <subject contents if any>
+
+    <repeat for all subject, for one subtopic and one topic>

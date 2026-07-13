@@ -9,6 +9,7 @@ numbersections: false
 finished_sections: [ ]
 history:
   - "v1: initial build from Original/"
+  - "v2: added more rancher details"
 ---
 
 ## Content Guardrails
@@ -56,8 +57,9 @@ history:
 ### Exercise environment
 
 - Kubernetes as bundled with Docker Desktop (currently kubeadm-based, single-node cluster).
+  Alternatively Kubernetes as bundled with Rancher Desktop.
 - No cloud cluster.
-- Setup involves activating Kubernetes in the Docker Desktop GUI, installing `kubectl` (e.g. via `winget`/`chocolatey`), and working from Git Bash; `~/.kube/config` is the resulting/default kubeconfig location, with `KUBECONFIG` usable to switch configs for multiple clusters.
+- Setup involves activating Kubernetes in the Docker Desktop GUI (or Rancher Desktop GUI), installing `kubectl` (e.g. via `winget`/`chocolatey`), and working from Git Bash; `~/.kube/config` is the resulting/default kubeconfig location, with `KUBECONFIG` usable to switch configs for multiple clusters.
 - Draft exercise flow found in the source material: local cluster setup and first `kubectl` commands (`cluster-info`, `get nodes`, `describe node`, `get namespaces`, `get pods -n kube-system`) → deploying containers into the cluster and inspecting/deleting pods → deployment with a Service (2 replicas, NodePort/Gateway) → deployment with ConfigMap and Secret.
 - Exercise material references example images from the "Kubernetes in Action, 2nd Edition" book/repo.
 
