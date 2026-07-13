@@ -146,7 +146,7 @@ Insert the generated list directly below the Subtopic heading (and its comment, 
 
 This skill creates plain, unlinked, unnumbered Subject bullets only — no per-Subject links or comments. Numbering, links, and any generated comments for Subjects are rebuilt later by `/build-contents`, per `.claude/STYLE.md`.
 
-Do not renumber Topics, Subtopics, or Subjects. Numbering and link maintenance belongs to `/build-contents`, not to `/fill-subtopic`.
+Do not renumber Topics, Subtopics, or Subjects. Numbering and link maintenance belongs to `/enumerate`, not to `/fill-subtopic`.
 
 ## Document versioning
 
@@ -188,7 +188,7 @@ Before saving the final `Contents.md`, verify:
 ## Out of scope
 
 - Does not create, rename, or edit `.lesson.md`, `.practice.md`, or `.solution.md` files.
-- Does not renumber or relink Topics/Subtopics/Subjects — that's `/build-contents`.
+- Does not renumber or relink Topics/Subtopics/Subjects — that's `/enumerate`.
 
 ## Response after execution
 

@@ -74,7 +74,7 @@ All of the following are taken directly from `.claude/STYLE.md` and are not rest
 
 ## Numbering, links, and comments
 
-After reconciliation, rebuild `Contents.md`'s numbering, headings, links, and any generated comments exactly as specified in `.claude/STYLE.md` → Numbering and → Format of Contents.md. Do not invent or reuse any numbering/path/comment convention not documented there — if something needed here isn't covered by `.claude/STYLE.md`, stop and ask whether to extend `.claude/STYLE.md` first, rather than improvising.
+This skill does not renumber, relink, or rewrite generated comments — that's `/enumerate`'s job, run as a separate step afterward. After reconciliation, tell the user to run `/enumerate` next if any Topics/Subtopics were inserted, removed, or reordered.
 
 ## `Contents-removed.md` format
 
