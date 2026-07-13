@@ -1,5 +1,5 @@
 ---
-revision: 7
+revision: 8
 path: "Contents.md"
 title: "GFT Kubernetes-Workshop"
 subtitle: "Contents"
@@ -16,6 +16,7 @@ history:
   - "v5: build-contents sync with TOPICS.md rev 1."
   - "v6: revision bump only — build-contents run aborted before content changes."
   - "v7: enumerate — updated all 34 lesson file references to .lesson.md extension; no files moved (none exist yet)."
+  - "v8: fill-subtopic 02.01 — added 6 subjects to What Are Containers."
 ---
 
 ------------------------------------------------------------------------------
@@ -60,6 +61,13 @@ history:
 
 ## [02.01 What Are Containers](<Contents/02-Introduction to Kubernetes & Container Orchestration/02.01-What Are Containers.lesson.md>)
 <!-- lesson: Contents/02-Introduction to Kubernetes & Container Orchestration/02.01-What Are Containers.lesson.md -->
+
+- A container is an isolated, portable process bundling the application with its dependencies and configuration
+- Container image as an immutable, layered build artifact; a running container as an instance spawned from that image
+- Containers vs. virtual machines: shared host OS kernel, lighter resource footprint, faster startup time
+- Container runtime (e.g. containerd, Docker Engine) as the component that starts, stops, and manages containers on a host
+- Image registries (Docker Hub, private registries) as the distribution layer for container images
+- Why many containers across many hosts introduce scheduling, networking, and lifecycle challenges — the gap Kubernetes fills
 
 ## [02.02 What is Kubernetes](<Contents/02-Introduction to Kubernetes & Container Orchestration/02.02-What is Kubernetes.lesson.md>)
 <!-- lesson: Contents/02-Introduction to Kubernetes & Container Orchestration/02.02-What is Kubernetes.lesson.md -->
