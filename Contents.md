@@ -1,5 +1,5 @@
 ---
-revision: 5
+revision: 7
 path: "Contents.md"
 title: "GFT Kubernetes-Workshop"
 subtitle: "Contents"
@@ -14,14 +14,16 @@ history:
   - "v3: Filling 01.02 with content."
   - "v4: Filling 01.03 with content."
   - "v5: build-contents sync with TOPICS.md rev 1."
+  - "v6: revision bump only — build-contents run aborted before content changes."
+  - "v7: enumerate — updated all 34 lesson file references to .lesson.md extension; no files moved (none exist yet)."
 ---
 
 ------------------------------------------------------------------------------
 
 # 01 Local Kubernetes Cluster Setup
 
-## [01.01 Installing Docker Desktop](<Contents/01-Local Kubernetes Cluster Setup/01.01-Installing Docker Desktop.md>)
-<!-- lesson: Contents/01-Local Kubernetes Cluster Setup/01.01-Installing Docker Desktop.md -->
+## [01.01 Installing Docker Desktop](<Contents/01-Local Kubernetes Cluster Setup/01.01-Installing Docker Desktop.lesson.md>)
+<!-- lesson: Contents/01-Local Kubernetes Cluster Setup/01.01-Installing Docker Desktop.lesson.md -->
 
 - Download and install Docker Desktop for your operating system (Windows/macOS/Linux)
 - Enable Kubernetes in Docker Desktop's settings/preferences
@@ -30,8 +32,8 @@ history:
 - Resulting cluster configuration is written to `~/.kube/config`
 - No cloud account or external cluster required — everything runs locally
 
-## [01.02 Installing Rancher Desktop](<Contents/01-Local Kubernetes Cluster Setup/01.02-Installing Rancher Desktop.md>)
-<!-- lesson: Contents/01-Local Kubernetes Cluster Setup/01.02-Installing Rancher Desktop.md -->
+## [01.02 Installing Rancher Desktop](<Contents/01-Local Kubernetes Cluster Setup/01.02-Installing Rancher Desktop.lesson.md>)
+<!-- lesson: Contents/01-Local Kubernetes Cluster Setup/01.02-Installing Rancher Desktop.lesson.md -->
 
 - Download and install Rancher Desktop for your operating system (Windows/macOS/Linux)
 - Choose a container runtime (dockerd/moby or containerd) during setup
@@ -40,11 +42,11 @@ history:
 - Resulting cluster configuration is written to `~/.kube/config`
 - Rancher Desktop and Docker Desktop cannot run their Kubernetes clusters at the same time — only one can be active
 
-## [01.03 Enable Kubernetes](<Contents/01-Local Kubernetes Cluster Setup/01.03-Enable Kubernetes.md>)
-<!-- lesson: Contents/01-Local Kubernetes Cluster Setup/01.03-Enable Kubernetes.md -->
+## [01.03 Enable Kubernetes](<Contents/01-Local Kubernetes Cluster Setup/01.03-Enable Kubernetes.lesson.md>)
+<!-- lesson: Contents/01-Local Kubernetes Cluster Setup/01.03-Enable Kubernetes.lesson.md -->
 
-## [01.04 Installing git-bash](<Contents/01-Local Kubernetes Cluster Setup/01.04-Installing git-bash.md>)
-<!-- lesson: Contents/01-Local Kubernetes Cluster Setup/01.04-Installing git-bash.md -->
+## [01.04 Installing git-bash](<Contents/01-Local Kubernetes Cluster Setup/01.04-Installing git-bash.lesson.md>)
+<!-- lesson: Contents/01-Local Kubernetes Cluster Setup/01.04-Installing git-bash.lesson.md -->
 
 - Download and install Git for Windows, which bundles Git Bash
 - Git Bash provides a bash-compatible shell used for all `kubectl` and command-line exercises
@@ -56,120 +58,120 @@ history:
 
 # 02 Introduction to Kubernetes & Container Orchestration
 
-## [02.01 What Are Containers](<Contents/02-Introduction to Kubernetes & Container Orchestration/02.01-What Are Containers.md>)
-<!-- lesson: Contents/02-Introduction to Kubernetes & Container Orchestration/02.01-What Are Containers.md -->
+## [02.01 What Are Containers](<Contents/02-Introduction to Kubernetes & Container Orchestration/02.01-What Are Containers.lesson.md>)
+<!-- lesson: Contents/02-Introduction to Kubernetes & Container Orchestration/02.01-What Are Containers.lesson.md -->
 
-## [02.02 What is Kubernetes](<Contents/02-Introduction to Kubernetes & Container Orchestration/02.02-What is Kubernetes.md>)
-<!-- lesson: Contents/02-Introduction to Kubernetes & Container Orchestration/02.02-What is Kubernetes.md -->
+## [02.02 What is Kubernetes](<Contents/02-Introduction to Kubernetes & Container Orchestration/02.02-What is Kubernetes.lesson.md>)
+<!-- lesson: Contents/02-Introduction to Kubernetes & Container Orchestration/02.02-What is Kubernetes.lesson.md -->
 
 ------------------------------------------------------------------------------
 
 # 03 Kubernetes Architecture
 
-## [03.01 Overview](<Contents/03-Kubernetes Architecture/03.01-Overview.md>)
-<!-- lesson: Contents/03-Kubernetes Architecture/03.01-Overview.md -->
+## [03.01 Overview](<Contents/03-Kubernetes Architecture/03.01-Overview.lesson.md>)
+<!-- lesson: Contents/03-Kubernetes Architecture/03.01-Overview.lesson.md -->
 
-## [03.02 Control Plane](<Contents/03-Kubernetes Architecture/03.02-Control Plane.md>)
-<!-- lesson: Contents/03-Kubernetes Architecture/03.02-Control Plane.md -->
+## [03.02 Control Plane](<Contents/03-Kubernetes Architecture/03.02-Control Plane.lesson.md>)
+<!-- lesson: Contents/03-Kubernetes Architecture/03.02-Control Plane.lesson.md -->
 
-## [03.03 Worker Nodes](<Contents/03-Kubernetes Architecture/03.03-Worker Nodes.md>)
-<!-- lesson: Contents/03-Kubernetes Architecture/03.03-Worker Nodes.md -->
+## [03.03 Worker Nodes](<Contents/03-Kubernetes Architecture/03.03-Worker Nodes.lesson.md>)
+<!-- lesson: Contents/03-Kubernetes Architecture/03.03-Worker Nodes.lesson.md -->
 
-## [03.04 Networking](<Contents/03-Kubernetes Architecture/03.04-Networking.md>)
-<!-- lesson: Contents/03-Kubernetes Architecture/03.04-Networking.md -->
+## [03.04 Networking](<Contents/03-Kubernetes Architecture/03.04-Networking.lesson.md>)
+<!-- lesson: Contents/03-Kubernetes Architecture/03.04-Networking.lesson.md -->
 
-## [03.05 Data Storage](<Contents/03-Kubernetes Architecture/03.05-Data Storage.md>)
-<!-- lesson: Contents/03-Kubernetes Architecture/03.05-Data Storage.md -->
+## [03.05 Data Storage](<Contents/03-Kubernetes Architecture/03.05-Data Storage.lesson.md>)
+<!-- lesson: Contents/03-Kubernetes Architecture/03.05-Data Storage.lesson.md -->
 
 ------------------------------------------------------------------------------
 
 # 04 Key Concepts
 
-## [04.01 Pods + Container (Runtime)](<Contents/04-Key Concepts/04.01-Pods + Container (Runtime).md>)
-<!-- lesson: Contents/04-Key Concepts/04.01-Pods + Container (Runtime).md -->
+## [04.01 Pods + Container (Runtime)](<Contents/04-Key Concepts/04.01-Pods + Container (Runtime).lesson.md>)
+<!-- lesson: Contents/04-Key Concepts/04.01-Pods + Container (Runtime).lesson.md -->
 
-## [04.02 Services](<Contents/04-Key Concepts/04.02-Services.md>)
-<!-- lesson: Contents/04-Key Concepts/04.02-Services.md -->
+## [04.02 Services](<Contents/04-Key Concepts/04.02-Services.lesson.md>)
+<!-- lesson: Contents/04-Key Concepts/04.02-Services.lesson.md -->
 
-## [04.03 Namespaces](<Contents/04-Key Concepts/04.03-Namespaces.md>)
-<!-- lesson: Contents/04-Key Concepts/04.03-Namespaces.md -->
+## [04.03 Namespaces](<Contents/04-Key Concepts/04.03-Namespaces.lesson.md>)
+<!-- lesson: Contents/04-Key Concepts/04.03-Namespaces.lesson.md -->
 
 ------------------------------------------------------------------------------
 
 # 05 Deployment
 
-## [05.01 Why not just pods?](<Contents/05-Deployment/05.01-Why not just pods?.md>)
-<!-- lesson: Contents/05-Deployment/05.01-Why not just pods?.md -->
+## [05.01 Why not just pods?](<Contents/05-Deployment/05.01-Why not just pods?.lesson.md>)
+<!-- lesson: Contents/05-Deployment/05.01-Why not just pods?.lesson.md -->
 
-## [05.02 Deployment Types](<Contents/05-Deployment/05.02-Deployment Types.md>)
-<!-- lesson: Contents/05-Deployment/05.02-Deployment Types.md -->
+## [05.02 Deployment Types](<Contents/05-Deployment/05.02-Deployment Types.lesson.md>)
+<!-- lesson: Contents/05-Deployment/05.02-Deployment Types.lesson.md -->
 
-## [05.03 Replicas](<Contents/05-Deployment/05.03-Replicas.md>)
-<!-- lesson: Contents/05-Deployment/05.03-Replicas.md -->
+## [05.03 Replicas](<Contents/05-Deployment/05.03-Replicas.lesson.md>)
+<!-- lesson: Contents/05-Deployment/05.03-Replicas.lesson.md -->
 
-## [05.04 Deployments Overview](<Contents/05-Deployment/05.04-Deployments Overview.md>)
-<!-- lesson: Contents/05-Deployment/05.04-Deployments Overview.md -->
+## [05.04 Deployments Overview](<Contents/05-Deployment/05.04-Deployments Overview.lesson.md>)
+<!-- lesson: Contents/05-Deployment/05.04-Deployments Overview.lesson.md -->
 
 ------------------------------------------------------------------------------
 
 # 06 Services & kube-proxy
 
-## [06.01 kube-proxy](<Contents/06-Services & kube-proxy/06.01-kube-proxy.md>)
-<!-- lesson: Contents/06-Services & kube-proxy/06.01-kube-proxy.md -->
+## [06.01 kube-proxy](<Contents/06-Services & kube-proxy/06.01-kube-proxy.lesson.md>)
+<!-- lesson: Contents/06-Services & kube-proxy/06.01-kube-proxy.lesson.md -->
 
-## [06.02 Labels and Selectors](<Contents/06-Services & kube-proxy/06.02-Labels and Selectors.md>)
-<!-- lesson: Contents/06-Services & kube-proxy/06.02-Labels and Selectors.md -->
+## [06.02 Labels and Selectors](<Contents/06-Services & kube-proxy/06.02-Labels and Selectors.lesson.md>)
+<!-- lesson: Contents/06-Services & kube-proxy/06.02-Labels and Selectors.lesson.md -->
 
-## [06.03 NodePort / Ingress / Gateway](<Contents/06-Services & kube-proxy/06.03-NodePort - Ingress - Gateway.md>)
-<!-- lesson: Contents/06-Services & kube-proxy/06.03-NodePort - Ingress - Gateway.md -->
+## [06.03 NodePort / Ingress / Gateway](<Contents/06-Services & kube-proxy/06.03-NodePort - Ingress - Gateway.lesson.md>)
+<!-- lesson: Contents/06-Services & kube-proxy/06.03-NodePort - Ingress - Gateway.lesson.md -->
 
-## [06.04 LoadBalancer](<Contents/06-Services & kube-proxy/06.04-LoadBalancer.md>)
-<!-- lesson: Contents/06-Services & kube-proxy/06.04-LoadBalancer.md -->
+## [06.04 LoadBalancer](<Contents/06-Services & kube-proxy/06.04-LoadBalancer.lesson.md>)
+<!-- lesson: Contents/06-Services & kube-proxy/06.04-LoadBalancer.lesson.md -->
 
 ------------------------------------------------------------------------------
 
 # 07 Configuration
 
-## [07.01 ConfigMaps](<Contents/07-Configuration/07.01-ConfigMaps.md>)
-<!-- lesson: Contents/07-Configuration/07.01-ConfigMaps.md -->
+## [07.01 ConfigMaps](<Contents/07-Configuration/07.01-ConfigMaps.lesson.md>)
+<!-- lesson: Contents/07-Configuration/07.01-ConfigMaps.lesson.md -->
 
-## [07.02 Secrets](<Contents/07-Configuration/07.02-Secrets.md>)
-<!-- lesson: Contents/07-Configuration/07.02-Secrets.md -->
+## [07.02 Secrets](<Contents/07-Configuration/07.02-Secrets.lesson.md>)
+<!-- lesson: Contents/07-Configuration/07.02-Secrets.lesson.md -->
 
 ------------------------------------------------------------------------------
 
 # 08 Advanced Concepts
 
-## [08.01 Rights Management](<Contents/08-Advanced Concepts/08.01-Rights Management.md>)
-<!-- lesson: Contents/08-Advanced Concepts/08.01-Rights Management.md -->
+## [08.01 Rights Management](<Contents/08-Advanced Concepts/08.01-Rights Management.lesson.md>)
+<!-- lesson: Contents/08-Advanced Concepts/08.01-Rights Management.lesson.md -->
 
-## [08.02 Service Accounts](<Contents/08-Advanced Concepts/08.02-Service Accounts.md>)
-<!-- lesson: Contents/08-Advanced Concepts/08.02-Service Accounts.md -->
+## [08.02 Service Accounts](<Contents/08-Advanced Concepts/08.02-Service Accounts.lesson.md>)
+<!-- lesson: Contents/08-Advanced Concepts/08.02-Service Accounts.lesson.md -->
 
-## [08.03 Persistence](<Contents/08-Advanced Concepts/08.03-Persistence.md>)
-<!-- lesson: Contents/08-Advanced Concepts/08.03-Persistence.md -->
+## [08.03 Persistence](<Contents/08-Advanced Concepts/08.03-Persistence.lesson.md>)
+<!-- lesson: Contents/08-Advanced Concepts/08.03-Persistence.lesson.md -->
 
-## [08.04 StatefulSet](<Contents/08-Advanced Concepts/08.04-StatefulSet.md>)
-<!-- lesson: Contents/08-Advanced Concepts/08.04-StatefulSet.md -->
+## [08.04 StatefulSet](<Contents/08-Advanced Concepts/08.04-StatefulSet.lesson.md>)
+<!-- lesson: Contents/08-Advanced Concepts/08.04-StatefulSet.lesson.md -->
 
-## [08.05 DaemonSet](<Contents/08-Advanced Concepts/08.05-DaemonSet.md>)
-<!-- lesson: Contents/08-Advanced Concepts/08.05-DaemonSet.md -->
+## [08.05 DaemonSet](<Contents/08-Advanced Concepts/08.05-DaemonSet.lesson.md>)
+<!-- lesson: Contents/08-Advanced Concepts/08.05-DaemonSet.lesson.md -->
 
-## [08.06 Init Containers](<Contents/08-Advanced Concepts/08.06-Init Containers.md>)
-<!-- lesson: Contents/08-Advanced Concepts/08.06-Init Containers.md -->
+## [08.06 Init Containers](<Contents/08-Advanced Concepts/08.06-Init Containers.lesson.md>)
+<!-- lesson: Contents/08-Advanced Concepts/08.06-Init Containers.lesson.md -->
 
-## [08.07 Sidecar](<Contents/08-Advanced Concepts/08.07-Sidecar.md>)
-<!-- lesson: Contents/08-Advanced Concepts/08.07-Sidecar.md -->
+## [08.07 Sidecar](<Contents/08-Advanced Concepts/08.07-Sidecar.lesson.md>)
+<!-- lesson: Contents/08-Advanced Concepts/08.07-Sidecar.lesson.md -->
 
-## [08.08 Operators](<Contents/08-Advanced Concepts/08.08-Operators.md>)
-<!-- lesson: Contents/08-Advanced Concepts/08.08-Operators.md -->
+## [08.08 Operators](<Contents/08-Advanced Concepts/08.08-Operators.lesson.md>)
+<!-- lesson: Contents/08-Advanced Concepts/08.08-Operators.lesson.md -->
 
 ------------------------------------------------------------------------------
 
 # 09 Helm and Kustomize
 
-## [09.01 Helm](<Contents/09-Helm and Kustomize/09.01-Helm.md>)
-<!-- lesson: Contents/09-Helm and Kustomize/09.01-Helm.md -->
+## [09.01 Helm](<Contents/09-Helm and Kustomize/09.01-Helm.lesson.md>)
+<!-- lesson: Contents/09-Helm and Kustomize/09.01-Helm.lesson.md -->
 
-## [09.02 Kustomize](<Contents/09-Helm and Kustomize/09.02-Kustomize.md>)
-<!-- lesson: Contents/09-Helm and Kustomize/09.02-Kustomize.md -->
+## [09.02 Kustomize](<Contents/09-Helm and Kustomize/09.02-Kustomize.lesson.md>)
+<!-- lesson: Contents/09-Helm and Kustomize/09.02-Kustomize.lesson.md -->
