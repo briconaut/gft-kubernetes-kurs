@@ -6,7 +6,6 @@ abstract: "Full analysis output: every topic/subtopic found in Original/, split 
 state: in progress
 lang: en
 numbersections: false
-finished_sections: [ ]
 vision_revision: 1
 history:
   - "v1: initial build from Original/, filtered against VISION.md rev 1"

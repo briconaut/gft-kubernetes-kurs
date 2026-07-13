@@ -6,7 +6,6 @@ abstract: "Curated topic/subtopic tracking list, seeded from TOPICS-ORIGINAL.md 
 state: in progress
 lang: en
 numbersections: false
-finished_sections: [ ]
 topics_original_revision: 1
 history:
   - "v1: initial copy of Topics/Exercises headings from TOPICS-ORIGINAL.md rev 1"

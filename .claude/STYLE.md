@@ -1,21 +1,18 @@
 ---
-revision: 3
+revision: 1
 path: ".claude/STYLE.md"
 title: "Style Guide"
-abstract: "Binding format specifications for generated artifacts: frontmatter header, lesson-file structure, and the format of Contents.md. Referenced from CLAUDE.md."
+abstract: "Binding format specifications for generated artifacts: frontmatter header, lesson-file structure, topic/subtopic/subject numbering, and the format of Contents.md, lessons/practice/solution files. Referenced from CLAUDE.md."
 state: in progress
 lang: en
-numbersections: true
-finished_sections: [ ]
+numbersections: <true|false>
 history:
-  - "v1: extracted from CLAUDE.md v14 (Frontmatter for generated .md files, Lesson File Body Format) per user request. Added a new 'Format of Contents.md' section, consolidating rules previously scattered across CLAUDE.md → Process/Phases and .claude/Memory.md → 'Folder & lesson-file numbering convention' into a single explicit style spec."
-  - "v2: documented the bullet-anchor-link convention (Task 2.3.1) in 'Format of Contents.md' — Contents.md's bullets were changed to link to their lesson-file anchor via /improve, but that change intentionally left this file unedited at the time; Task 3.1 review reconciles the spec with the actual, now-established format."
-  - "v3: documented the heading-numbering convention added to Contents.md's `#`/`##` headings per direct user request — `# <folder-nr> - <title>` and `## <folder-nr>.<lesson-nr> - <title>`, derived from the existing `folder:`/`lesson:` comments; unnumbered exceptions (Further Reading, Practice headings) match the pre-existing folder:/lesson:-comment exclusions"
+  - "v1: initial version"
 ---
 
 # Style Guide
 
-This file collects the binding format rules for generated artifacts. `CLAUDE.md` remains the single source of truth for scope, phases, and process — consult this file whenever a task involves producing or editing one of the file types below. Practices.md's analogous format is not yet defined; it will be added here once Phase 5 planning fixes it.
+This file collects the binding format rules for generated artifacts. `CLAUDE.md` remains the single source of truth for scope and process — consult this file whenever a task involves producing or editing one of the file types below. Practices.md's analogous format is not yet defined; it will be added here at a later point in time.
 
 # Numbering
 
@@ -48,7 +45,7 @@ The full contents of the list item is refered to as `<subject contents>`.
 
 # Frontmatter for Generated `.md` Files
 
-**Applies to:** every generated or regenerated `.md` file in this repository, in every phase — `Contents.md`, `Practices.md`, every lesson file, every exercise/solution file, and both `Memory.md` levels.
+**Applies to:** every generated or regenerated `.md` file in this repository: `Contents.md`, `Practices.md`, every lesson file, every exercise/solution file, and both `Memory.md` levels.
 
     ---
     revision: <int, starts at 1, incremented on every regenerated version>
@@ -76,7 +73,7 @@ The overall format of `Contents.md` is:
 
     ## [<#topic>.<#subtopic> <subtopic title>](<file link to `Contents/<#topic>-<topic title>/<#topic>.<#subtopic>-<subtopic title>.lesson.md`)
 
-    - [<#topic>.<#subtopic>.<#subject> <subject title>](<file link to `Contents/<#topic>-<topic title>/<#subtopic>-<subtopic title>.lesson.md#<#topic>.<#subtopic>.<#subject>-<subject title>`>)
+    - [<#topic>.<#subtopic>.<#subject> <subject title>](<file link to `Contents/<#topic>-<topic title>/<#topic>.<#subtopic>-<subtopic title>.lesson.md#<#topic>.<#subtopic>.<#subject>-<subject title>`>)
       <subject contents if any>
 
     <repeat for all subject, subtopics and topics>
@@ -94,3 +91,11 @@ The overall format of `Contents/<#topic>-<topic title>/<#subtopic>-<subtopic tit
       <subject contents if any>
 
     <repeat for all subject, for one subtopic and one topic>
+
+# Practice File Format
+
+** TO BE DONE **
+
+# Solution File Format
+
+** TO BE DONE **

@@ -1,14 +1,13 @@
 ---
-revision: 0
+revision: 1
 path: "CLAUDE.md"
 title: "CLAUDE.md"
 abstract: "Guidance for the Claude Code agent that builds the GFT Kubernetes Workshop content and exercises in this repository."
 state: in progress
 lang: en
 numbersections: true
-current_phase: 4
-finished_sections: [ ]
-history: [ ]
+history: 
+  - "v1: initial version"
 ---
 
 # CLAUDE.md
@@ -21,7 +20,7 @@ You're an Kubernetes expert trainer und you build a workshop to train a technica
 
 This is **not a software project** — it is the content source for a Kubernetes workshop for developers with no prior Kubernetes experience (GFT DevOps Community). There is no application code, no build system, no tests, and no linter. Work here consists of writing and refining course material.
 
-`CLAUDE.md` is produced and maintained in a separate planning session (a Claude Project chat) and handed to the Claude Code agent working in this repository. Claude Code should treat this file — and the tasks it currently points to in `.claude/TASKS.md` — as the authoritative brief for what to produce next, not as something to redesign on its own initiative.
+`CLAUDE.md` is produced and maintained in a separate planning session (a Claude Project chat) and handed to the Claude Code agent working in this repository. Claude Code should treat this file as the authoritative brief for what to produce next, not as something to redesign on its own initiative.
 
 ## Language
 
@@ -38,12 +37,12 @@ This is **not a software project** — it is the content source for a Kubernetes
 
 ## Workshop Scope
 
-- **Structure**: two parts — a mandatory introduction (~4h) and an optional deep-dive (~4h: StatefulSet, RBAC, Storage, …).d
+- **Structure**: two parts — a mandatory introduction (~4h) and an optional deep-dive (~4h: StatefulSet, RBAC, Storage, …).
 - **Focus**: concepts *within* Kubernetes (Pods, Deployments, Services, Config, …). Underlying infrastructure (nodes, networking, storage backends) is mentioned briefly, not taught in depth.
-- **Prerequisites**: Docker/container basics (CLI, images). No prior Kubernetes knowledge assumed.
-- **Target Kubernetes version**: whatever ships with Docker Desktop's built-in Kubernetes (currently kubeadm-based, single-node).
-- **Exercise environment**: Kubernetes as bundled with Docker Desktop. No cloud cluster, no Rancher-specific features.
-- **Artifact format**: Markdown for all content and exercise files. Details in `.claude/STYLES.md`
+- **Prerequisites**: Docker/Rancher/container basics (CLI, images). No prior Kubernetes knowledge assumed.
+- **Target Kubernetes version**: whatever ships with Docker/Rancher Desktop's built-in Kubernetes (currently kubeadm-based, single-node).
+- **Exercise environment**: Kubernetes as bundled with Docker/Rancher Desktop. No cloud cluster, no Rancher-exclusive features.
+- **Artifact format**: Markdown for all content and exercise files. Details in `.claude/STYLE.md`
 
 ## Non-Goals
 
@@ -52,10 +51,11 @@ This is **not a software project** — it is the content source for a Kubernetes
 - No CI/CD tool-specific implementation — CI/CD is covered conceptually only.
 - No production-hardening / security deep-dive beyond what's covered in the optional deep-dive part.
 
-# How to work with this repositoy
+# How to work with this repository
 
 ## Folder & File Conventions
 
+- Intent, audience and guardrails in `.claude/VISION.md` for the overarching structure of all components.
 - Topic list (which concepts are covered, no prose): `.claude/TOPICS.md` — used as a central control for the topics/subtopics of the workshop.
 - Format specifications for generated content files: `.claude/STYLE.md`
 - Workshop details (topics, subtopics and subjects ) `Contents.md` — exact structure and formatting rules in `.claude/STYLE.md` → Format of Contents.md.
@@ -69,7 +69,7 @@ This is **not a software project** — it is the content source for a Kubernetes
 - Solutions: `Contents/<#topic>-<topic title>/<#subtopic>-<subtopic title>.solution.md`
   - See `.claude/STYLE.md` for `<#topic>`, `<topic title>`, `<#subtopic>` and `<subtopic title>`.
   - Body structure of these files is fixed and built in two stages — see `.claude/STYLE.md` → Solution File Format.
-- Module-scoped memory: `Contents/<nr>-<section>/Memory.md` (see Memory Structure below)
+- Topic-scoped memory: `Contents/<#topic>-<topic title>/Memory.md` (see Memory Structure below)
 - Project-wide memory: `.claude/Memory.md` (see Memory Structure below)
 - `README.md` is **out of scope**.
 
@@ -77,18 +77,17 @@ This is **not a software project** — it is the content source for a Kubernetes
 
 File-format specifications for generated artifacts — the frontmatter header, the lesson-file structure, and the format of `Contents.md` — are documented in `.claude/STYLE.md`. Consult it before producing or editing any of those file types. This section covers only the two harness-process file formats that aren't generated *content* artifacts: the task backlog and the Memory files.
 
-# Task handling
-
 # Memory Structure (`Memory.md`)
 
 Purpose: give the agent the minimal context needed to work a task **consistently with previously completed tasks** — not a full history or diary. Only what would otherwise be lost or ambiguous belongs here; everything already visible in the produced file itself, in `CLAUDE.md`, or in `.claude/STYLE.md` does not.
 
 Two levels:
-- **Global** — `.claude/Memory.md`: cross-cutting decisions/conventions relevant across the whole project (e.g. the module numbering scheme, terminology choices, how Practices.md topics were mapped to Contents.md modules). Read before, and updated after, tasks that span multiple modules or files (mainly Phase 1 and Phase 6, plus Phase 3/5/7 planning).
-- **Per module** — `Contents/<nr>-<section>/Memory.md`: context scoped to one module (learning objectives already fixed, terminology used in that module, prerequisites established, deviations from the module template). Read before, and updated after, tasks scoped to a single module (mainly Phase 2, Phase 4, and Phase 8). Created the first time a task touches that module.
+- **Global** — `.claude/Memory.md`: cross-cutting decisions/conventions relevant across the whole project (e.g. the topic numbering scheme, terminology choices, how Practices.md topics were mapped to Contents.md topics). Read before, and updated after, tasks that span multiple topics or files.
+- **Per topic** — `Contents/<#topic>-<topic title>/Memory.md`: context scoped to one topic (learning objectives already fixed, terminology used in that topic, prerequisites established, deviations from the topic template). Read before, and updated after, tasks scoped to a single topic. Created the first time a task touches that topic.
 
 Rules:
-- Before starting a task, the agent reads `.claude/Memory.md`, plus the module's `Memory.md` if the task is module-scoped.
+- Before starting a task, the agent reads `.claude/Memory.md`, plus the topic's `Memory.md` if the task is topic-scoped.
 - After finishing or blocking a task, the agent appends at most a few bullet points — only genuinely new, load-bearing context.
-- `Memory.md` files hold *current* state, not an append-only diff log — if a fact becomes obsolete, replace it rather than leaving contradictory entries.
+- Section `# Project Memory` in `Memory.md` files hold *current* state, not an append-only diff log — if a fact becomes obsolete, replace it rather than leaving contradictory entries.
+- Section `# Review Notes` in `Memory.md` is an append-only diff log — it will be exclusively maintained by certain skills.
 - Blocker entries include: what's blocking, why, what's needed to unblock.
