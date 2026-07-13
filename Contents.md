@@ -1,5 +1,5 @@
 ---
-revision: 4
+revision: 5
 path: "Contents.md"
 title: "GFT Kubernetes-Workshop"
 subtitle: "Contents"
@@ -13,6 +13,7 @@ history:
   - "v2: Filling 01.01 with content."
   - "v3: Filling 01.02 with content."
   - "v4: Filling 01.03 with content."
+  - "v5: build-contents sync with TOPICS.md rev 1."
 ---
 
 ------------------------------------------------------------------------------
@@ -39,8 +40,11 @@ history:
 - Resulting cluster configuration is written to `~/.kube/config`
 - Rancher Desktop and Docker Desktop cannot run their Kubernetes clusters at the same time — only one can be active
 
-## [01.03 Installing git-bash](<Contents/01-Local Kubernetes Cluster Setup/01.03-Installing git-bash.md>)
-<!-- lesson: Contents/01-Local Kubernetes Cluster Setup/01.03-Installing git-bash.md -->
+## [01.03 Enable Kubernetes](<Contents/01-Local Kubernetes Cluster Setup/01.03-Enable Kubernetes.md>)
+<!-- lesson: Contents/01-Local Kubernetes Cluster Setup/01.03-Enable Kubernetes.md -->
+
+## [01.04 Installing git-bash](<Contents/01-Local Kubernetes Cluster Setup/01.04-Installing git-bash.md>)
+<!-- lesson: Contents/01-Local Kubernetes Cluster Setup/01.04-Installing git-bash.md -->
 
 - Download and install Git for Windows, which bundles Git Bash
 - Git Bash provides a bash-compatible shell used for all `kubectl` and command-line exercises
@@ -65,20 +69,17 @@ history:
 ## [03.01 Overview](<Contents/03-Kubernetes Architecture/03.01-Overview.md>)
 <!-- lesson: Contents/03-Kubernetes Architecture/03.01-Overview.md -->
 
-## [03.02 Infrastructure](<Contents/03-Kubernetes Architecture/03.02-Infrastructure.md>)
-<!-- lesson: Contents/03-Kubernetes Architecture/03.02-Infrastructure.md -->
+## [03.02 Control Plane](<Contents/03-Kubernetes Architecture/03.02-Control Plane.md>)
+<!-- lesson: Contents/03-Kubernetes Architecture/03.02-Control Plane.md -->
 
-## [03.03 Control Plane](<Contents/03-Kubernetes Architecture/03.03-Control Plane.md>)
-<!-- lesson: Contents/03-Kubernetes Architecture/03.03-Control Plane.md -->
+## [03.03 Worker Nodes](<Contents/03-Kubernetes Architecture/03.03-Worker Nodes.md>)
+<!-- lesson: Contents/03-Kubernetes Architecture/03.03-Worker Nodes.md -->
 
-## [03.04 Worker Nodes](<Contents/03-Kubernetes Architecture/03.04-Worker Nodes.md>)
-<!-- lesson: Contents/03-Kubernetes Architecture/03.04-Worker Nodes.md -->
+## [03.04 Networking](<Contents/03-Kubernetes Architecture/03.04-Networking.md>)
+<!-- lesson: Contents/03-Kubernetes Architecture/03.04-Networking.md -->
 
-## [03.05 Networking](<Contents/03-Kubernetes Architecture/03.05-Networking.md>)
-<!-- lesson: Contents/03-Kubernetes Architecture/03.05-Networking.md -->
-
-## [03.06 Data Storage](<Contents/03-Kubernetes Architecture/03.06-Data Storage.md>)
-<!-- lesson: Contents/03-Kubernetes Architecture/03.06-Data Storage.md -->
+## [03.05 Data Storage](<Contents/03-Kubernetes Architecture/03.05-Data Storage.md>)
+<!-- lesson: Contents/03-Kubernetes Architecture/03.05-Data Storage.md -->
 
 ------------------------------------------------------------------------------
 
@@ -139,47 +140,36 @@ history:
 
 # 08 Advanced Concepts
 
-## [08.01 Namespaces](<Contents/08-Advanced Concepts/08.01-Namespaces.md>)
-<!-- lesson: Contents/08-Advanced Concepts/08.01-Namespaces.md -->
+## [08.01 Rights Management](<Contents/08-Advanced Concepts/08.01-Rights Management.md>)
+<!-- lesson: Contents/08-Advanced Concepts/08.01-Rights Management.md -->
 
-## [08.02 Rights Management](<Contents/08-Advanced Concepts/08.02-Rights Management.md>)
-<!-- lesson: Contents/08-Advanced Concepts/08.02-Rights Management.md -->
+## [08.02 Service Accounts](<Contents/08-Advanced Concepts/08.02-Service Accounts.md>)
+<!-- lesson: Contents/08-Advanced Concepts/08.02-Service Accounts.md -->
 
-## [08.03 Service Accounts](<Contents/08-Advanced Concepts/08.03-Service Accounts.md>)
-<!-- lesson: Contents/08-Advanced Concepts/08.03-Service Accounts.md -->
+## [08.03 Persistence](<Contents/08-Advanced Concepts/08.03-Persistence.md>)
+<!-- lesson: Contents/08-Advanced Concepts/08.03-Persistence.md -->
 
-## [08.04 Persistence](<Contents/08-Advanced Concepts/08.04-Persistence.md>)
-<!-- lesson: Contents/08-Advanced Concepts/08.04-Persistence.md -->
+## [08.04 StatefulSet](<Contents/08-Advanced Concepts/08.04-StatefulSet.md>)
+<!-- lesson: Contents/08-Advanced Concepts/08.04-StatefulSet.md -->
 
-## [08.05 StatefulSet](<Contents/08-Advanced Concepts/08.05-StatefulSet.md>)
-<!-- lesson: Contents/08-Advanced Concepts/08.05-StatefulSet.md -->
+## [08.05 DaemonSet](<Contents/08-Advanced Concepts/08.05-DaemonSet.md>)
+<!-- lesson: Contents/08-Advanced Concepts/08.05-DaemonSet.md -->
 
-## [08.06 DaemonSet](<Contents/08-Advanced Concepts/08.06-DaemonSet.md>)
-<!-- lesson: Contents/08-Advanced Concepts/08.06-DaemonSet.md -->
+## [08.06 Init Containers](<Contents/08-Advanced Concepts/08.06-Init Containers.md>)
+<!-- lesson: Contents/08-Advanced Concepts/08.06-Init Containers.md -->
 
-## [08.07 Init Containers](<Contents/08-Advanced Concepts/08.07-Init Containers.md>)
-<!-- lesson: Contents/08-Advanced Concepts/08.07-Init Containers.md -->
+## [08.07 Sidecar](<Contents/08-Advanced Concepts/08.07-Sidecar.md>)
+<!-- lesson: Contents/08-Advanced Concepts/08.07-Sidecar.md -->
 
-## [08.08 Sidecar](<Contents/08-Advanced Concepts/08.08-Sidecar.md>)
-<!-- lesson: Contents/08-Advanced Concepts/08.08-Sidecar.md -->
-
-## [08.09 Operators](<Contents/08-Advanced Concepts/08.09-Operators.md>)
-<!-- lesson: Contents/08-Advanced Concepts/08.09-Operators.md -->
+## [08.08 Operators](<Contents/08-Advanced Concepts/08.08-Operators.md>)
+<!-- lesson: Contents/08-Advanced Concepts/08.08-Operators.md -->
 
 ------------------------------------------------------------------------------
 
-# 09 CI/CD
+# 09 Helm and Kustomize
 
-## [09.01 GitOps](<Contents/09-CI-CD/09.01-GitOps.md>)
-<!-- lesson: Contents/09-CI-CD/09.01-GitOps.md -->
+## [09.01 Helm](<Contents/09-Helm and Kustomize/09.01-Helm.md>)
+<!-- lesson: Contents/09-Helm and Kustomize/09.01-Helm.md -->
 
-------------------------------------------------------------------------------
-
-# 10 Helm and Kustomize
-
-## [10.01 Helm](<Contents/10-Helm and Kustomize/10.01-Helm.md>)
-<!-- lesson: Contents/10-Helm and Kustomize/10.01-Helm.md -->
-
-## [10.02 Kustomize](<Contents/10-Helm and Kustomize/10.02-Kustomize.md>)
-<!-- lesson: Contents/10-Helm and Kustomize/10.02-Kustomize.md -->
-
+## [09.02 Kustomize](<Contents/09-Helm and Kustomize/09.02-Kustomize.md>)
+<!-- lesson: Contents/09-Helm and Kustomize/09.02-Kustomize.md -->

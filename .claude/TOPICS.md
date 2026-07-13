@@ -20,6 +20,8 @@ history:
 
 ### Installing Rancher Desktop
 
+### Enable Kubernetes
+
 ### Installing git-bash
 
 ## Introduction to Kubernetes & Container Orchestration
