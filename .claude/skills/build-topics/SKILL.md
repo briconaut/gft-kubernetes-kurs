@@ -31,8 +31,8 @@ Same isolation as `.claude/skills/build-vision/SKILL.md`, with exactly
 one explicit exception: this skill **must** read `.claude/VISION.md` to
 filter topics/subtopics against its `## Content Guardrails`. Everything
 else in the repository remains off-limits — `CLAUDE.md`, `.claude/STYLE.md`,
-`.claude/TASKS.md`, `.claude/Memory.md`, `Contents.md`, `Practices.md`,
-and all lesson/exercise files must not be read or otherwise influence the
+`.claude/Memory.md`, `Contents.md`, `Practices.md`, and all
+lesson/exercise/solution files must not be read or otherwise influence the
 output.
 
 - `VISION.md` is used only as a **filter** — never as a source of topics.
@@ -285,10 +285,9 @@ as described above/by the user.
 ## Out of scope
 
 - Does not evaluate the "all subtopics of a topic excluded → topic drops
-  out of the workshop" rule — that's documented for a later phase to
-  apply when deriving `Contents.md` from `TOPICS.md`, not enforced here.
+  out of the workshop" rule — that's left for `/build-contents` to apply
+  when deriving `Contents.md` from `TOPICS.md`, not enforced here.
 - Does not modify `# Topics`, `# Exercises`, or `# Excluded` in
   `.claude/TOPICS.md` once it exists — user-owned from creation onward.
 - Does not modify `.claude/VISION.md` — read-only dependency.
-- Does not create or modify `.claude/TASKS.md` entries.
 - Does not touch `.claude/Memory.md`.

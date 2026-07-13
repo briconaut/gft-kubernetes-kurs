@@ -39,12 +39,11 @@ Use this skill when the user wants `Contents.md` rebuilt from `.claude/TOPICS.md
 - Ignore markdown links in headings; compare only the visible link text.
 - Preserve existing content under kept Subtopics except for generated numbering, generated comments, and generated point links/comments.
 
-### Points
+### Subjects
 
-- A Point exists only when a Subtopic body consists exclusively of a top-level markdown list, ignoring blank lines and generated HTML comments.
-- Each top-level list item is one Point.
-- Ignore numbering prefixes and markdown links when comparing or renumbering Point titles.
-- For Points, use `anchor` comments. If an existing generated Point comment uses `lesson`, update it to `anchor`.
+- A Subject exists only when a Subtopic body consists exclusively of a top-level markdown list, ignoring blank lines and generated HTML comments.
+- Each top-level list item is one Subject.
+- Ignore numbering prefixes and markdown links when comparing or renumbering Subject titles.
 
 ## Reconciliation rules
 
@@ -66,7 +65,7 @@ Rebuild numbering after reconciliation:
 
 - Topics: `01`, `02`, `03`, ...
 - Subtopics: `01.01`, `01.02`, ... inside each Topic
-- Points: `01.01.01`, `01.01.02`, ... inside each Subtopic
+- Subject: `01.01.01`, `01.01.02`, ... inside each Subtopic
 
 For generated lesson/anchor paths use this shape:
 

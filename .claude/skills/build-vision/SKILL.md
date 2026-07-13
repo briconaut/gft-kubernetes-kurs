@@ -22,8 +22,8 @@ This skill must not read, reference, or let its output be influenced by
 **any file in this repository other than `Original/` and `.claude/VISION.md`
 itself** (its own previous version — for diffing and the Source Files
 table only). This explicitly includes `CLAUDE.md`, `.claude/STYLE.md`,
-`.claude/TASKS.md`, `.claude/Memory.md`, `Contents.md`, `Practices.md`,
-and all lesson/exercise files.
+`.claude/Memory.md`, `Contents.md`, `Practices.md`, and all
+lesson/exercise/solution files.
 
 - The Content Guardrails text is derived exclusively from what's in
   `Original/` — never adjusted to match, avoid overlap with, or otherwise
@@ -175,5 +175,4 @@ user to choose:
   lesson files) or `CLAUDE.md` → Workshop Scope against `VISION.md` —
   deliberately isolated (see Isolation above); that relationship is a
   separate, manual decision.
-- Does not create or modify `.claude/TASKS.md` entries.
 - Does not touch `.claude/Memory.md`.

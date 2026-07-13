@@ -1,11 +1,11 @@
 ---
 name: fill-subtopic
-description: Fill exactly one selected subtopic in Contents.md with a concise, non-redundant bullet list of Steps aligned to .claude/VISION.md, moving any existing list content to Contents-removed.md. No helper scripts are included or required.
+description: Fill exactly one selected subtopic in Contents.md with a subject list: a concise, non-redundant bullet list of Steps aligned to .claude/VISION.md, moving any existing list content to Contents-removed.md. No helper scripts are included or required.
 ---
 
 # fill-subtopic
 
-Use this skill when the user wants to populate one specific Subtopic in `Contents.md` with a compact list of content points.
+Use this skill when the user wants to populate one specific Subtopic in `Contents.md` with a list of Subjects.
 
 ## Required parameter
 
@@ -42,7 +42,7 @@ If the parameter does not identify exactly one Subtopic, stop and ask for a more
 - Ignore numbering prefixes when matching headings:
   - Topic numbers such as `01`.
   - Subtopic numbers such as `01.02`.
-  - Step numbers such as `01.02.03`.
+  - Subject numbers such as `01.02.03`.
 - The selected Subtopic block starts at its `##` heading and ends before the next `##` or `#` heading, or end of file.
 
 ### `.claude/VISION.md`
@@ -86,33 +86,33 @@ Moved from `Contents.md` by `fill-subtopic`.
 
 ## Generated list requirements
 
-Generate one top-level markdown bullet list in the selected Subtopic.
+Generate one top-level markdown bullet list of Subjects in the selected Subtopic.
 
 The list must satisfy all of these constraints:
 
-- Minimum 4 entries.
-- Maximum 8 entries.
-- Each entry is a concise bullet point, not a paragraph.
-- Each entry fits the selected Subtopic.
-- The set of entries covers the Subtopic adequately for workshop contents planning.
-- Entries are mutually non-redundant.
-- Entries do not duplicate bullet points or obvious point coverage already present in other Subtopics.
-- Entries require no explanations that belong only to later Topics.
-- Entries stay consistent with `.claude/VISION.md`.
-- Entries are written in English.
-- Entries should be specific enough to guide later lesson writing, but not so detailed that they become full lesson prose.
+- Minimum 4 Subjects.
+- Maximum 8 Subjects.
+- Each Subject is a concise bullet point, not a paragraph.
+- Each Subject fits the selected Subtopic.
+- The set of Subjects covers the Subtopic adequately for workshop contents planning.
+- Subjects are mutually non-redundant.
+- Subjects do not duplicate bullet points or obvious point coverage already present in other Subtopics.
+- Subjects require no explanations that belong only to later Topics.
+- Subjects stay consistent with `.claude/VISION.md`.
+- Subjects are written in English.
+- Subjects should be specific enough to guide later lesson writing, but not so detailed that they become full lesson prose.
 
 ## Cross-subtopic redundancy check
 
-Before writing the new list:
+Before writing the new Subject
 
-1. Read all existing bullet points in other Subtopics of `Contents.md`.
+1. Read all existing Subject points in other Subtopics of `Contents.md`.
 2. Normalize them for comparison by:
    - Removing numbering prefixes.
    - Removing markdown links while keeping visible text.
    - Removing generated HTML comments.
    - Collapsing whitespace.
-3. Avoid creating bullets with the same meaning as bullets already present elsewhere.
+3. Avoid creating Subjects with the same meaning as Subjects already present elsewhere.
 4. If the selected Subtopic is closely related to another Subtopic, keep the boundary explicit.
    - Example: `Control Plane` should cover API Server, Scheduler, Controller Manager, and etcd at architecture level.
    - Example: `Worker Nodes` should cover kubelet, container runtime, Pods on nodes, and node-local responsibilities.
@@ -122,8 +122,8 @@ Before writing the new list:
 
 Use the order in `Contents.md` as the teaching progression:
 
-- A bullet may rely on concepts introduced in earlier Topics/Subtopics.
-- A bullet must not require detailed knowledge from later Topics/Subtopics.
+- A Subject may rely on concepts introduced in earlier Topics/Subtopics.
+- A Subject must not require detailed knowledge from later Topics/Subtopics.
 - If a later concept must be mentioned for orientation, keep it as a short forward reference, not as a required explanation.
 
 ## Formatting rules
@@ -144,7 +144,7 @@ Insert the generated list directly below the Subtopic lesson comment:
 
 Do not add point-level lesson or anchor comments. This skill creates plain bullet lists only.
 
-Do not renumber Topics, Subtopics, or Points. Numbering and link maintenance belongs to `build-contents`, not to `fill-subtopic`.
+Do not renumber Topics, Subtopics, or Subjects. Numbering and link maintenance belongs to `build-contents`, not to `fill-subtopic`.
 
 ## Documen versioning
 
@@ -176,11 +176,11 @@ Before saving the final `Contents.md`, verify:
 
 - Exactly one Subtopic was modified.
 - `Contents-removed.md` was changed only if an existing list was moved.
-- The new list has 4 to 8 entries.
+- The new list has 4 to 8 Subjects.
 - The new list is under the selected Subtopic only.
-- No generated bullet is a duplicate of another generated bullet.
-- No generated bullet is a clear duplicate of a bullet in another Subtopic.
-- The generated bullets do not violate `.claude/VISION.md` scope or non-goals.
+- No generated Subject is a duplicate of another generated Subject.
+- No generated Subject is a clear duplicate of a Subject in another Subtopic.
+- The generated Subjects do not violate `.claude/VISION.md` scope or non-goals.
 - Topic/Subtopic numbering and links were not rebuilt by this skill.
 
 ## Response after execution
@@ -188,7 +188,7 @@ Before saving the final `Contents.md`, verify:
 After editing, report briefly:
 
 - Which Subtopic was filled.
-- How many bullet points were generated.
+- How many Subject points were generated.
 - Whether an old list was moved to `Contents-removed.md`.
 - Any uncertainty or skipped change, if applicable.
 
