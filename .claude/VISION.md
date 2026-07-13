@@ -9,7 +9,6 @@ numbersections: false
 finished_sections: [ ]
 history:
   - "v1: initial build from Original/"
-  - "v2: added more rancher details"
 ---
 
 ## Content Guardrails
@@ -44,12 +43,13 @@ history:
   5. Deployments: deployment types, replicas, rolling updates/rollback framing.
   6. Services & kube-proxy: labels/selectors, service types (NodePort, Ingress, Gateway, LoadBalancer), Ingress-vs-Gateway-API distinction.
   7. Configuration: ConfigMaps and Secrets, separating config/sensitive data from images.
-- Deep-dive/optional-part topics found in the source material: rights management / RBAC, service accounts, persistence, StatefulSet, DaemonSet, Init containers, Sidecar containers, Operators, CI/CD (conceptual), Helm and Kustomize (deployment templating), and — as an extension topic beyond the core list — service mesh (e.g. Istio).
+- Deep-dive/optional-part topics found in the source material: rights management / RBAC, service accounts, persistence, StatefulSet, DaemonSet, Init containers, Sidecar containers, Operators, CI/CD (conceptual), Helm and Kustomize (deployment templating), and — as an extension topic beyond the core list — service mesh concepts (e.g. Istio) limited to the parts that extend Kubernetes' native Service/Ingress model: traffic routing and traffic splitting, and service-to-service communication patterns (e.g. VirtualService/Gateway-style routing).
 
 ### Scope and depth
 
 - Focus stays on concepts *within* Kubernetes (Pods, Deployments, Services, Configuration, …).
 - Underlying infrastructure (nodes, networking, storage backends) is mentioned briefly, not taught in depth.
+- Service mesh (e.g. Istio) is in scope only for concepts that extend Kubernetes' own Service/Ingress model — e.g. traffic routing/splitting and service-to-service communication. Istio's own infrastructure layer (sidecar proxy internals, mTLS/certificate management, control-plane operations, multi-cluster mesh) stays out of scope, consistent with the "no infrastructure deep-dive" non-goal below.
 - CI/CD is covered conceptually only, not via a specific tool's implementation details.
 - Production-hardening / security is only covered in depth within the optional deep-dive part (e.g. RBAC).
 - Cloud-provider-specific content (EKS/GKE/AKS particulars) is out of scope; content stays generic/portable.

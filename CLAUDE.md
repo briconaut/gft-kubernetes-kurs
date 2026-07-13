@@ -39,7 +39,7 @@ This is **not a software project** — it is the content source for a Kubernetes
 
 - **Structure**: two parts — a mandatory introduction (~4h) and an optional deep-dive (~4h: StatefulSet, RBAC, Storage, …).
 - **Focus**: concepts *within* Kubernetes (Pods, Deployments, Services, Config, …). Underlying infrastructure (nodes, networking, storage backends) is mentioned briefly, not taught in depth.
-- **Prerequisites**: Docker/Rancher/container basics (CLI, images). No prior Kubernetes knowledge assumed.
+- **Prerequisites**: Docker/container basics (CLI, images, Docker Swarm, Docker Compose) and basic shell (bash) knowledge. No prior Kubernetes knowledge assumed.
 - **Target Kubernetes version**: whatever ships with Docker/Rancher Desktop's built-in Kubernetes (currently kubeadm-based, single-node).
 - **Exercise environment**: Kubernetes as bundled with Docker/Rancher Desktop. No cloud cluster, no Rancher-exclusive features.
 - **Artifact format**: Markdown for all content and exercise files. Details in `.claude/STYLE.md`
@@ -60,13 +60,13 @@ This is **not a software project** — it is the content source for a Kubernetes
 - Format specifications for generated content files: `.claude/STYLE.md`
 - Workshop details (topics, subtopics and subjects ) `Contents.md` — exact structure and formatting rules in `.claude/STYLE.md` → Format of Contents.md.
 - Exercise list (which exercises are covered, no prose): `Practices.md`
-- Actual lesson content: `Contents/<#topic>-<topic title>/<#subtopic>-<subtopic title>.lesson.md`
+- Actual lesson content: `Contents/<#topic>-<topic title>/<#topic>.<#subtopic>-<subtopic title>.lesson.md`
   - See `.claude/STYLE.md` for `<#topic>`, `<topic title>`, `<#subtopic>` and `<subtopic title>`.
   - Body structure of these files is fixed and built in two stages — see `.claude/STYLE.md` → Lesson File Format.
-- Exercises: `Contents/<#topic>-<topic title>/<#subtopic>-<subtopic title>.practice.md`
+- Exercises: `Contents/<#topic>-<topic title>/<#topic>.<#subtopic>-<subtopic title>.practice.md`
   - See `.claude/STYLE.md` for `<#topic>`, `<topic title>`, `<#subtopic>` and `<subtopic title>`.
   - Body structure of these files is fixed and built in two stages — see `.claude/STYLE.md` → Practice File Format.
-- Solutions: `Contents/<#topic>-<topic title>/<#subtopic>-<subtopic title>.solution.md`
+- Solutions: `Contents/<#topic>-<topic title>/<#topic>.<#subtopic>-<subtopic title>.solution.md`
   - See `.claude/STYLE.md` for `<#topic>`, `<topic title>`, `<#subtopic>` and `<subtopic title>`.
   - Body structure of these files is fixed and built in two stages — see `.claude/STYLE.md` → Solution File Format.
 - Topic-scoped memory: `Contents/<#topic>-<topic title>/Memory.md` (see Memory Structure below)
@@ -75,7 +75,7 @@ This is **not a software project** — it is the content source for a Kubernetes
 
 ## Styleguide
 
-File-format specifications for generated artifacts — the frontmatter header, the lesson-file structure, and the format of `Contents.md` — are documented in `.claude/STYLE.md`. Consult it before producing or editing any of those file types. This section covers only the two harness-process file formats that aren't generated *content* artifacts: the task backlog and the Memory files.
+File-format specifications for generated artifacts — the frontmatter header, the lesson-file structure, and the format of `Contents.md` — are documented in `.claude/STYLE.md`. Consult it before producing or editing any of those file types. 
 
 # Memory Structure (`Memory.md`)
 

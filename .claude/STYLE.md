@@ -5,7 +5,7 @@ title: "Style Guide"
 abstract: "Binding format specifications for generated artifacts: frontmatter header, lesson-file structure, topic/subtopic/subject numbering, and the format of Contents.md, lessons/practice/solution files. Referenced from CLAUDE.md."
 state: in progress
 lang: en
-numbersections: <true|false>
+numbersections: true
 history:
   - "v1: initial version"
 ---
@@ -45,7 +45,7 @@ The full contents of the list item is refered to as `<subject contents>`.
 
 # Frontmatter for Generated `.md` Files
 
-**Applies to:** every generated or regenerated `.md` file in this repository: `Contents.md`, `Practices.md`, every lesson file, every exercise/solution file, and both `Memory.md` levels.
+**Applies to:** every generated or regenerated `.md` file in this repository.
 
     ---
     revision: <int, starts at 1, incremented on every regenerated version>
@@ -54,7 +54,7 @@ The full contents of the list item is refered to as `<subject contents>`.
     abstract: "<one-sentence description>"
     state: <not started|in progress|done>
     lang: en
-    numbersections: true
+    numbersections: <true|false>
     history: [ ]
     ---
 
