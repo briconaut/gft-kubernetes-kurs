@@ -45,6 +45,9 @@ history:
 ## [01.03 Enable Kubernetes](<Contents/01-Local Kubernetes Cluster Setup/01.03-Enable Kubernetes.lesson.md>)
 <!-- lesson: Contents/01-Local Kubernetes Cluster Setup/01.03-Enable Kubernetes.lesson.md -->
 
+- Enable Kubernetes in Docker Desktop
+- Enable Kubernetes in Rancher Desktop
+
 ## [01.04 Installing git-bash](<Contents/01-Local Kubernetes Cluster Setup/01.04-Installing git-bash.lesson.md>)
 <!-- lesson: Contents/01-Local Kubernetes Cluster Setup/01.04-Installing git-bash.lesson.md -->
 
