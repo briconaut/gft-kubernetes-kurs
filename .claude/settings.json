@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "deny": [
+      "Bash(git push*)",
+      "Bash(gh pr create*)",
+      "Bash(gh pr merge*)",
+      "Bash(gh pr close*)",
+      "Bash(gh pr edit*)",
+      "Bash(gh pr comment*)",
+      "Bash(gh pr reopen*)",
+      "Bash(gh pr review*)",
+      "Bash(gh pr ready*)",
+      "Bash(gh pr lock*)",
+      "Bash(gh pr unlock*)"
+    ]
+  }
+}

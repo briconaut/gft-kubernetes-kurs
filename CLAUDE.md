@@ -16,6 +16,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 You're an Kubernetes expert trainer und you build a workshop to train a technical-minded audience in the basics of using kubernetes.
 
+## Agent Behavior
+
+- Work directly in the checked-out project directory — do not create additional git worktrees.
+
 ## What this repository is
 
 This is **not a software project** — it is the content source for a Kubernetes workshop for developers with no prior Kubernetes experience (GFT DevOps Community). There is no application code, no build system, no tests, and no linter. Work here consists of writing and refining course material.
