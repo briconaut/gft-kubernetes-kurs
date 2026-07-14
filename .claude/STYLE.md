@@ -31,7 +31,7 @@ The contents of the Level 1 heading is refered to as `<topic contents>`
 Workshop subtopics are the Level 2 headings in `Contents.md`.
 These are numbered starting at 1 for each topic. 
 Numbering format is `<#topic>.01`, `<#topic>.02`, ... where the `<#topic>` is the topic numbering of their respective topic.
-The numbering is refered to as `<#subtopic>`.
+The numbering after `<#topic>.` is refered to as `<#subtopic>`.
 The text of the subtopic is refered to as `<subtopic title>`
 The contents of the Level 2 heading is refered to as `<subtopic contents>`
 
@@ -40,7 +40,7 @@ The contents of the Level 2 heading is refered to as `<subtopic contents>`
 Subjects are the bulletpoints of Level 2 headings in `Contents.md`.
 These are numbered starting at 1 for each subtopic. 
 Numbering format is `<#topic>.<#subtopic>.01`, `<#topic>.<#subtopic>.02`, ... where the `<#topic>` is the topic numbering of their respective topic and the `<#subtopic>` is the subtopic numbering of their respective subtopic.
-The numbering is refered to as `<#subject>`.
+The numbering after `<#topic>.<#subtopic>.` is refered to as `<#subject>`.
 The first line of the list item is refered to as `<subject title>`.
 The full contents of the list item is refered to as `<subject contents>`.
 
@@ -114,3 +114,4 @@ The overall format of `Contents/<#topic>-<topic title>/<#topic>.<#subtopic>-<sub
 # Solution File Format
 
 ** TO BE DONE **
+

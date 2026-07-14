@@ -77,6 +77,13 @@ This is **not a software project** — it is the content source for a Kubernetes
 - Project-wide memory: `.claude/Memory.md` (see Memory Structure below)
 - `README.md` is **out of scope**.
 
+Only when the user's current prompt explicitly requests **Next task** or **Next subtopic**, then these files are relevant:
+
+- Slide-generation tasks: `.claude/TASKS.md`
+- Task execution process: `.claude/TASK-EXECUTION.md`
+- Task-file format: `.claude/STYLE-TASKS.md`
+
+
 ## Styleguide
 
 File-format specifications for generated artifacts — the frontmatter header, the lesson-file structure, and the format of `Contents.md` — are documented in `.claude/STYLE.md`. Consult it before producing or editing any of those file types. 
@@ -95,3 +102,18 @@ Rules:
 - Section `# Project Memory` in `Memory.md` files hold *current* state, not an append-only diff log — if a fact becomes obsolete, replace it rather than leaving contradictory entries.
 - Section `# Review Notes` in `Memory.md` is an append-only diff log — it will be exclusively maintained by certain skills.
 - Blocker entries include: what's blocking, why, what's needed to unblock.
+
+# Task Execution
+
+Tasks are never executed implicitly.
+
+Only when the user's current prompt explicitly requests **Next task** or **Next subtopic**:
+
+1. Read `.claude/TASK-EXECUTION.md`.
+2. Read `.claude/STYLE-TASKS.md`.
+3. Read and validate `.claude/TASKS.md`.
+4. Execute the requested mode according to `.claude/TASK-EXECUTION.md`.
+
+Do not read `.claude/TASK-EXECUTION.md` or `.claude/STYLE-TASKS.md` during repository initialization or for requests unrelated to task execution.
+
+Reading, displaying, or discussing `.claude/TASKS.md` does not authorize task execution.
